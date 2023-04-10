@@ -1,0 +1,92 @@
+//sass --watch Navbar.scss Navbar.css
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+.navbar {
+    max-height: 87px;
+    min-height: 87px;
+    // border-bottom: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1 300px;
+    .logo_wrapper {
+        max-height: 48px;
+        max-height: 48px;
+
+        img {
+            max-height: inherit;
+            max-width: 200px;
+            padding-left: 40px;
+        }
+    }
+
+    .link_container {
+        display: none;
+        @media (min-width: 400px) {
+        padding-left: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        div {
+        font-size: 16px;
+        font-weight: 600;
+        &:hover {
+            transition: 300ms;
+            color: #21009D;
+            cursor: pointer;
+        }
+        &:active {
+            transition: 300ms;
+            color: aquamarine;
+        }
+        }
+        }
+    }
+     
+    .button_wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items:  center;
+        flex: 1 1 auto;
+       
+        button {
+            transition: 300ms;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #21009D;
+            // border: 1px solid #21009D;
+                width: 227px;
+                margin: 5px;
+            height: 57px;
+            border-radius: 20px;
+            
+            color: white;
+            font-size: 18px;
+            &:hover {
+                transition: 300ms;
+                color: invert(white);
+                background-color: #0056D0;  
+                transform: translate(-2px, -2px);
+                box-shadow: 2px 2px #21009D;
+                filter: brightness(125%);
+                img {
+                    transition: 300ms;
+                    filter: invert(100%)
+                }
+            }
+            &:active {
+                transform: translate(2px, 2px);
+                box-shadow: 0px 0px;
+                filter: brightness(175%);
+            }
+        }
+    }
+}
+
