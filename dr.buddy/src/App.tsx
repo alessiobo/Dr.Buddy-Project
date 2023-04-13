@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import "./App.css";
 import HomePage from "./Pages/HomePage/HomePage";
 import DoctorProfile from "./Pages/DoctorProfile/DoctorProfile";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
