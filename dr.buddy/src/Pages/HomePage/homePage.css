@@ -1,7 +1,11 @@
-@font-face {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  src:local("./video/Doctors.mp4");
-}
+
+
+/*@font-face {
+  font-family: "Merriweather";
+  src:local("Fonts")url(./Fonts/Merriweather-Regular.ttf) format('truetype');
+}*/
+
+
 *{
   box-sizing: border-box;
 }
@@ -24,6 +28,14 @@ video {
     display: flex;
     align-items: center;
     justify-content: center;
+    position:relative;
+    top:20vh;
+   }
+   .Join button {
+    width: 27vh;
+    height: 6vh;
+    border-radius: 2vh;
+    
    }
 header{
   position: fixed;
@@ -32,11 +44,8 @@ header{
   color: aliceblue;
   transition: .4s;
 }
-header:hover{
-  
-}
 h1{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Merriweather';
   text-align: center;
   font-size: 2rem;
   width: 100%;
@@ -45,7 +54,8 @@ h1{
 nav a {
   text-decoration: none;
   color: inherit;
-  padding: 1rem;
+  padding: 6rem;
+  color: aqua;
 }
 h2{
   font-family:'Times New Roman', Times, serif ;
