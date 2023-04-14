@@ -1,12 +1,9 @@
-
-
 /*@font-face {
   font-family: "Merriweather";
   src:local("Fonts")url(./Fonts/Merriweather-Regular.ttf) format('truetype');
 }*/
 
-
-*{
+* {
   box-sizing: border-box;
 }
 body {
@@ -16,53 +13,62 @@ body {
 }
 video {
   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   object-position: center;}
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
-   .Join{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position:relative;
-    top:20vh;
-   }
-   .Join button {
-    width: 27vh;
-    height: 6vh;
-    border-radius: 2vh;
-    
-   }
-header{
+.Join {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 18vh;
+}
+.Join button {
+  width: 27vh;
+  height: 6vh;
+  border-radius: 2vh;
+  box-shadow: 0 3px 3px 0 hsla(145, 95%, 64%, 0.6);
+  background-color: transparent;
+  color: hsla(145, 95%, 64%, 0.6);
+  border-color: hsla(145, 95%, 64%, 0.6);
+  font-size: 1.5rem;
+}
+header {
   position: fixed;
   width: 100%;
   text-align: center;
   color: aliceblue;
-  transition: .4s;
+  transition: 0.4s;
 }
-h1{
-  font-family: 'Merriweather';
+h1 {
+  font-family: "Merriweather";
   text-align: center;
   font-size: 2rem;
   width: 100%;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
 }
 nav a {
   text-decoration: none;
   color: inherit;
   padding: 6rem;
-  color: aqua;
+  color: hsla(145, 95%, 64%, 0.6);
+  font-size: 2vh;
+  letter-spacing: 0.2rem;
+  position: relative;
+  top: 1.5vh;
 }
-h2{
-  font-family:'Times New Roman', Times, serif ;
+h2 {
+  font-family: "Times New Roman", Times, serif;
   font-size: 8vmin;
   text-align: center;
   margin: 2rem 3rem 0;
   mix-blend-mode: overlay;
-  color:#fff ;
+  color: #fff;
   font-weight: 100;
 }
