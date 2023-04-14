@@ -1,0 +1,20 @@
+.ulp-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.ulp-container img {
+  height: 50px;
+}
+.ulp-container .ulp-online {
+  background-color: rgb(4, 128, 41);
+  position: relative;
+  top: 15px;
+  right: 15px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+/*# sourceMappingURL=userLoginPic.css.map */

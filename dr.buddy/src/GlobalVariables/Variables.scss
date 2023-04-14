@@ -1,0 +1,23 @@
+body {
+  font-family: "Merriweather", sans-serif;
+  src: url("/dr.buddy/src/Fonts/Merriweather-Regular.ttf") format("truetype");
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 1.625rem;
+}
+h4 {
+  font-size: 1.438rem;
+}
+
+//colors
+$primary-color: #21009d;
+$primary-color-dark: darken(#21009d, 25%);
+$primary-color-light: lighten(#21009d, 25%);
+
+$secondary-color: #028c69;
+$secondary-color-dark: darken(#028c69, 25%);
+$secondary-color-light: lighten(#028c69, 25%);
