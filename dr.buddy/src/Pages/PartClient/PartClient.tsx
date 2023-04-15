@@ -22,9 +22,9 @@ export default function Drbuddy() {
       </div>
       <div className="client-container">
         <div className="data-time">
-          <label>Selezina giorno:</label>
+          <label>Seleziona data:</label>
           <input type="date" />
-          <label>Selezina ora:</label>
+          <label>Seleziona ora:</label>
           <input type="time" />
         </div>
       </div>

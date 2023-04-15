@@ -5,12 +5,8 @@
   margin: 0px;
   box-sizing: border-box;
 }
-.upper-client {
-  .poligonoBlu {
-    background-color: blue;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  }
 
+.upper-client {
   nav {
     border: 1px solid black;
     display: flex;
@@ -51,10 +47,10 @@
   .client-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 230px;
     height: 300px;
     background: #03c988;
-    // background: $secondary-color;
     border-radius: 20px;
     justify-content: center;
     margin: auto;
