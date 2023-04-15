@@ -1,17 +1,4 @@
 
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 1.625rem;
-}
-
-h4 {
-  font-size: 1.438rem;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -32,24 +19,16 @@ video {
 }
 
 .Join {
-  min-height: 100vh;
+  width: 200vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  top: 23vh;
+  position: absolute;
+  top: 110vh;
+ 
 }
 
-.Join button {
-  width: 27vh;
-  height: 6vh;
-  border-radius: 2vh;
-  box-shadow: 0 3px 3px 0 #12fcc0;
-  background-color: transparent;
-  color: #12fcc0;
-  border-color: #12fcc0 145, 95%, 64%, 0.6;
-  font-size: 1.5rem;
-}
+
 
 header {
   position: fixed;
@@ -86,7 +65,13 @@ h2 {
   color: #fff;
   font-weight: 100;
 }
-
+.homeContainer{
+  height: 100vh;
+}
+.homeFoot{
+  position: relative;
+  top:80vh
+}
 
 
 /*# sourceMappingURL=homePage.css.map */
