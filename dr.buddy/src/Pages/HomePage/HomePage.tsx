@@ -1,19 +1,14 @@
 import "./homePage.css";
-import Title from "./Components/Title";
-import Video from "./Components/Video";
-
+import Title from "./HomeComponents/TitleHome";
+import Video from "./HomeComponents/VideoHome";
+import { Nav } from "./HomeComponents/NavHome";
 function HomePage() {
   return (
     <div>
       <Video />
       <header>
         <Title title="Dr. Buddy"></Title>
-        <nav>
-          <a href="">Home</a>
-          <a href="">Menu</a>
-          <a href="">Option</a>
-          <a href="">Home</a>
-        </nav>
+        <Nav />
         <div className="Join">
           <button type="button">Join</button>
         </div>
