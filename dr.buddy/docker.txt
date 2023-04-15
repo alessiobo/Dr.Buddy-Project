@@ -1,0 +1,7 @@
+-- installare docker desktop ed avviarlo
+
+-- mettere in una cartella il file docker-compose.yml 
+
+-- apri il terminale dentro la cartella dove hai messo docker-compose.yml e immettere questo comando: docker compose -f docker-compose.yml up
+
+-- qui è dove possiamo vedere se funziona o meno : http://localhost:9090/swagger-ui/index.html#/

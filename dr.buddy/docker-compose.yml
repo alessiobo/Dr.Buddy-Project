@@ -1,0 +1,29 @@
+services:
+  app:
+    image: mohamedlarmani/doctorbuddy:latest
+    ports:
+      - 9090:8080
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: buddy
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+    - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: buddy
+      MYSQL_DATABASE: doctorbuddy
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+
+
