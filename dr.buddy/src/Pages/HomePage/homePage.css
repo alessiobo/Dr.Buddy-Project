@@ -10,10 +10,10 @@ body {
 
 video {
   position: absolute;
-  top: 13vh;
+  top: 10vh;
   left: 0;
   width: 100%;
-  height: 85%;
+  height: 81%;
   object-fit: cover;
   object-position: center;
 }
