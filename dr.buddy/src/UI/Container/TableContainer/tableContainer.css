@@ -1,0 +1,13 @@
+.tableContainer {
+  border: 2px solid #028c69;
+  margin: 40px 0;
+  border-radius: 15px;
+}
+.tableContainer h3 {
+  border-radius: 10px 10px 0 0;
+  padding: 2%;
+  background-color: #028c69;
+  color: #fff;
+}
+
+/*# sourceMappingURL=tableContainer.css.map */
