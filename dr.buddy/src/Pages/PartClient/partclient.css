@@ -1,0 +1,102 @@
+@import url(/dr.buddy/src/GlobalVariables/Variables.scss);
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.upper-client .poligonoBlu {
+  background-color: blue;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.upper-client nav {
+  border: 1px solid black;
+  display: flex;
+  justify-content: flex-start;
+}
+.upper-client nav img {
+  max-height: inherit;
+  max-width: 200px;
+  padding-left: 40px;
+}
+.upper-client nav .link-container {
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.upper-client .utente {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+}
+.upper-client .utente h3 {
+  margin-right: 10px;
+}
+.upper-client .utente .green-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: green;
+  display: flex;
+  justify-content: end;
+}
+.upper-client .client-container {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  height: 300px;
+  background: #03c988;
+  border-radius: 20px;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+}
+.upper-client .client-container .data-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  align-items: center;
+  gap: 10px;
+}
+.upper-client button {
+  margin: 10px auto;
+  width: 86px;
+  height: 37px;
+  background: #ffff00;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.upper-client .tabella {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -10px;
+}
+.upper-client table {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 25px auto;
+  width: 356px;
+  height: 100px;
+  background: #ffffff;
+  text-align: center;
+}
+.upper-client footer {
+  border: 1px solid black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.upper-client footer img {
+  max-height: inherit;
+  max-width: 200px;
+  padding-left: 20px;
+}
+
+/*# sourceMappingURL=partclient.css.map */

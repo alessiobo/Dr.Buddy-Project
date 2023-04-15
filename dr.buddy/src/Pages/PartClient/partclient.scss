@@ -1,0 +1,113 @@
+@import url(/dr.buddy/src/GlobalVariables/Variables.scss);
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.upper-client {
+  .poligonoBlu {
+    background-color: blue;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  nav {
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    img {
+      max-height: inherit;
+      max-width: 200px;
+      padding-left: 40px;
+    }
+
+    .link-container {
+      padding-left: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  .utente {
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+
+    h3 {
+      margin-right: 10px;
+    }
+    .green-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: green;
+      display: flex;
+      justify-content: end;
+    }
+  }
+
+  .client-container {
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    height: 300px;
+    background: #03c988;
+    // background: $secondary-color;
+    border-radius: 20px;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+
+    .data-time {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 10px;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  button {
+    margin: 10px auto;
+    width: 86px;
+    height: 37px;
+    background: #ffff00;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .tabella {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -10px;
+  }
+
+  table {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 25px auto;
+    width: 356px;
+    height: 100px;
+    background: #ffffff;
+    text-align: center;
+  }
+  footer {
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    img {
+      max-height: inherit;
+      max-width: 200px;
+      padding-left: 20px;
+    }
+  }
+}
