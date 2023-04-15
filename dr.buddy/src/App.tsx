@@ -3,7 +3,7 @@ import "./App.css";
 import HomePage from "./Pages/HomePage/HomePage";
 import DoctorProfile from "./Pages/DoctorProfile/DoctorProfile";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "../src/Components/Navbar/Navbar";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import Footer from "./Components/Footer/Footer"
 function App() {
