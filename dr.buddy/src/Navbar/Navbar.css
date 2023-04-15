@@ -6,6 +6,9 @@
 }
 
 .navbar {
+  background-color: white;
+  position: relative;
+  z-index: 99;
   max-height: 87px;
   min-height: 87px;
   display: flex;

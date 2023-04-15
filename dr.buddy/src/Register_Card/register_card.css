@@ -1,0 +1,114 @@
+.register_card {
+  background: green;
+  box-shadow: 2px 2px green;
+  position: relative;
+  z-index: 1;
+}
+
+.card,
+.register_card {
+  height: 400px;
+  aspect-ratio: 3/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  padding: 50px 20px;
+}
+.card h2,
+.register_card h2 {
+  color: white;
+  width: 100%;
+}
+.card input,
+.register_card input {
+  height: 2rem;
+  width: 100%;
+  transition: 300ms;
+}
+.card input:focus,
+.register_card input:focus {
+  transition: 300ms;
+  outline: 1px solid rgb(39, 178, 236);
+}
+.card h3,
+.register_card h3 {
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+}
+.card h3 .link,
+.register_card h3 .link {
+  color: rgb(33, 0, 157);
+  text-decoration: none;
+  transition: 300ms;
+}
+.card h3 .link:hover,
+.register_card h3 .link:hover {
+  transition: 300ms;
+  filter: brightness(125%);
+}
+.card .btn_wrapper,
+.register_card .btn_wrapper {
+  width: 100%;
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+.card .btn_wrapper .btn,
+.register_card .btn_wrapper .btn {
+  height: 2.5rem;
+  aspect-ratio: 2/1;
+  border-radius: 20px;
+  background-color: rgb(33, 0, 157);
+  color: white;
+  transition: 300ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #21009D;
+  font-size: 18px;
+}
+.card .btn_wrapper .btn:hover,
+.register_card .btn_wrapper .btn:hover {
+  transition: 300ms;
+  color: black;
+  background-color: #0056D0;
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px #21009D;
+  filter: brightness(125%);
+}
+.card .btn_wrapper .btn:active,
+.register_card .btn_wrapper .btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px;
+  filter: brightness(175%);
+}
+
+#register_top_button {
+  background-color: green;
+  border-radius: 20px 20px 0px 0px;
+  height: 4rem;
+  width: 50%;
+  color: white;
+  font-size: 2rem;
+  transition: 300ms;
+  position: relative;
+  z-index: 100;
+  top: 20px;
+  left: calc(50% + 2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#register_top_button:hover {
+  transition: 300ms;
+  filter: brightness(115%);
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=register_card.css.map */

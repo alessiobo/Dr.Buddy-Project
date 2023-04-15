@@ -1,0 +1,20 @@
+.body {
+  height: 500px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body .body_element_container {
+  height: 500px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_button_wrapper {
+  position: absolute;
+}
+
+/*# sourceMappingURL=LoginPage.css.map */
