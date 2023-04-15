@@ -1,6 +1,6 @@
 
-import Login_card from "../Login_Card/Login_Card"
-import Register_Card from "../Register_Card/Register_Card"
+import Login_card from "../../Login_Card/Login_Card"
+import Register_Card from "../../Register_Card/Register_Card"
 import "./LoginPage.css"
 
 

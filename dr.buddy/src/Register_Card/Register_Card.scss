@@ -1,9 +1,12 @@
 // sass --watch Register_Card.scss Register_Card.css
+* {
+    overflow-x: hidden;
+}
 .register_card {
-    background:green;
-    box-shadow: 2px 2px green;
+    background: #03C988;
+    box-shadow: 2px 2px #03C988;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .card,
@@ -96,7 +99,7 @@
 }
 
 #register_top_button {
-    background-color: green;
+    background-color: #03C988;
     border-radius: 20px 20px 0px 0px;
     height: 4rem;
     width: 50%;
