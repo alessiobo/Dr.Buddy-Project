@@ -1,0 +1,55 @@
+* {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.Footer {
+  position: relative;
+  z-index: 99;
+  background-color: white;
+  max-width: 100vw;
+  padding: 0px 40px;
+  display: flex;
+  height: 87px;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+.Footer .logo_wrapper {
+  margin-right: px;
+}
+.Footer img {
+  max-height: 48px;
+  max-width: 200px;
+}
+.Footer p {
+  color: black;
+}
+.Footer .social_wrapper {
+  min-width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Footer .social_wrapper :first-child, .Footer .social_wrapper :nth-child(2), .Footer .social_wrapper :nth-child(3) {
+  transition: 300ms;
+}
+.Footer .social_wrapper :first-child:hover {
+  transition: 300ms;
+  filter: brightness(125%);
+  transform: translate(0px, -1px);
+}
+.Footer .social_wrapper :nth-child(2):hover {
+  transition: 300ms;
+  filter: brightness(125%);
+  transform: translate(0px, -1px);
+}
+.Footer .social_wrapper :nth-child(3):hover {
+  transition: 300ms;
+  filter: brightness(125%);
+  transform: translate(0px, -1px);
+}
+
+/*# sourceMappingURL=Footer.css.map */

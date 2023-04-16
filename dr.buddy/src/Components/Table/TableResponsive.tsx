@@ -1,5 +1,5 @@
-import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
+import Table from "react-bootstrap/esm/Table";
+import Button from "react-bootstrap/esm/Button";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 
 type appuntamento = {
