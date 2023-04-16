@@ -1,13 +1,14 @@
-// import defaultPic from "./circle_user.svg"
-
 import "./userLoginPic.css";
 
-function UserLoginPic() {
+//@ts-ignore
+import defaultPic from "./circle-user.svg";
+
+function UserLoginPic({ name = "" }) {
   return (
     <div className="ulp-container">
-      <img  alt="pic" />
+      <img src={defaultPic} alt="pic" />
       <span className="ulp-online"></span>
-      <h3>Dr. Paperino</h3>
+      <h3 style={{ margin: "0" }}>Dr.{name}</h3>
     </div>
   );
 }
