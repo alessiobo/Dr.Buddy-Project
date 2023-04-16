@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import "./App.css";
 import HomePage from "./Pages/HomePage/HomePage";
 import DoctorProfile from "./Pages/DoctorProfile/DoctorProfile";
+import PartClient from "./Pages/PartClient/PartClient";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "../src/Components/Navbar/Navbar";
 import LoginPage from "./Pages/LoginPage/LoginPage";
@@ -11,7 +12,7 @@ function App() {
     <div>
       
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<PartClient />} />
         <Route path="/doctor/profile" element={<DoctorProfile />} />
         <Route path="/loginpage" element={<LoginPage />} />
       </Routes>
