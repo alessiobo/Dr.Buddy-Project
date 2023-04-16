@@ -6,17 +6,17 @@ import PartClient from "./Pages/PartClient/PartClient";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "../src/Components/Navbar/Navbar";
 import LoginPage from "./Pages/LoginPage/LoginPage";
-import Footer from "./Components/Footer/Footer"
+import Footer from "./Components/Footer/Footer";
+
 function App() {
   return (
     <div>
-      
       <Routes>
-        <Route path="/" element={<PartClient />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/doctor/profile" element={<DoctorProfile />} />
         <Route path="/loginpage" element={<LoginPage />} />
+        <Route path="/bookingpage" element={<PartClient />} />
       </Routes>
-      
     </div>
   );
 }

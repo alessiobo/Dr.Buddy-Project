@@ -1,27 +1,10 @@
 /* @import url(/dr.buddy/src/GlobalVariables/Variables.scss); */
-* {
+/* * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
 
-.upper-client nav {
-  border: 1px solid black;
-  display: flex;
-  justify-content: flex-start;
-}
-.upper-client nav img {
-  max-height: inherit;
-  max-width: 200px;
-  padding-left: 40px;
-}
-.upper-client nav .link-container {
-  padding-left: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
 .upper-client .utente {
   display: flex;
   justify-content: end;
@@ -94,6 +77,6 @@
   max-height: inherit;
   max-width: 200px;
   padding-left: 20px;
-}
+} */
 
 /*# sourceMappingURL=partclient.css.map */
