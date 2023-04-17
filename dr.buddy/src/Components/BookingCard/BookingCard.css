@@ -19,8 +19,8 @@
   text-align: center;
   width: 100%;
   max-width: 600px;
-  padding: 0; /* Rimuovi il padding predefinito */
-  display: block; /* Imposta la visualizzazione su blocco */
+  padding: 0;
+  display: block;
 }
 .card-title {
   width: 100%;
