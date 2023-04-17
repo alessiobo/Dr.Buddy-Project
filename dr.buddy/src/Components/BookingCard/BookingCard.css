@@ -12,10 +12,25 @@
   margin: 0 auto;
 }
 
-.card-title {
+.card-header {
   margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 0; /* Rimuovi il padding predefinito */
+  display: block; /* Imposta la visualizzazione su blocco */
+}
+.card-title {
+  width: 100%;
+  max-width: 600px;
+  color: #028c69;
 }
 
+.form-style {
+  color: #fff;
+}
 .time-label {
   padding-top: 20px !important;
 }
