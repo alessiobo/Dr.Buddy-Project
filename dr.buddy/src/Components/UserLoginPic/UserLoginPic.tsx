@@ -1,10 +1,4 @@
-// import defaultPic from "./circle_user.svg"
-
 import "./userLoginPic.css";
-
-interface UserLoginPicProps {
-username: string;
-}
 
 function UserLoginPic({username}: UserLoginPicProps) {
 return (

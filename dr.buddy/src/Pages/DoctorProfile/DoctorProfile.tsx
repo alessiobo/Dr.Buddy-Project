@@ -6,7 +6,7 @@ function DoctorProfile() {
   return (
     <section style={{ padding: "40px" }}>
       <div>
-        <UserLoginPic username="Dr.Paperino" />
+        <UserLoginPic name={"Paperino"} />
       </div>
       <Agenda />
       <TableResponsive title="Nuove Prenotazioni" />
