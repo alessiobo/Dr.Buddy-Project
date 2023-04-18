@@ -1,7 +1,10 @@
 import Table from "react-bootstrap/Table";
+import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 
 function Tabella() {
   return (
+    <TableContainer>
+      <h3 style={{ margin: "0" }}>Visite Prenotate</h3>
     <Table striped="columns">
       <thead>
         <tr>
@@ -28,6 +31,7 @@ function Tabella() {
         </tr>
       </tbody>
     </Table>
+    </TableContainer>
   );
 }
 
