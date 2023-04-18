@@ -21,7 +21,7 @@ function BookingCard({ onBook }: BookingCardProps) {
         <div className="card-header">
           <h3 className="card-title">Prenota una visita</h3>
         </div>
-        <Form>
+        <Form className="form-style">
           <FormGroup>
             <Label>Data</Label>
             <Input
@@ -41,7 +41,7 @@ function BookingCard({ onBook }: BookingCardProps) {
           <div className="booking-btn">
             <Button
               className="custom-btn"
-              size="lg"
+              size="sm"
               color="primary"
               onClick={handleBookClick}
             >
