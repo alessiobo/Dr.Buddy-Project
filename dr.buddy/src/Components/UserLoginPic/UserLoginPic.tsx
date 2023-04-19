@@ -8,7 +8,7 @@ function UserLoginPic({ name = "" }) {
     <div className="ulp-container">
       <img src={defaultPic} alt="pic" />
       <span className="ulp-online"></span>
-      <h3 style={{ margin: "0" }}>Dr.{name}</h3>
+      <h3>Dr.{name}</h3>
     </div>
   );
 }
