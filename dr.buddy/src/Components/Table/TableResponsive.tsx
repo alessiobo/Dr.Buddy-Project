@@ -19,7 +19,7 @@ function TableResponsive({
 }) {
   return (
     <TableContainer>
-      <h3 style={{ margin: "0" }}>{title}:</h3>
+      <h3>{title}:</h3>
       <Table responsive="xl">
         <thead>
           <tr>
