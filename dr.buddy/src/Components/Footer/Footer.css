@@ -28,6 +28,7 @@
   color: black;
 }
 .Footer .social_wrapper {
+  min-height: 100%;
   min-width: 200px;
   display: flex;
   justify-content: space-between;
@@ -35,18 +36,9 @@
 }
 .Footer .social_wrapper :first-child, .Footer .social_wrapper :nth-child(2), .Footer .social_wrapper :nth-child(3) {
   transition: 300ms;
+  overflow: auto;
 }
-.Footer .social_wrapper :first-child:hover {
-  transition: 300ms;
-  filter: brightness(125%);
-  transform: translate(0px, -1px);
-}
-.Footer .social_wrapper :nth-child(2):hover {
-  transition: 300ms;
-  filter: brightness(125%);
-  transform: translate(0px, -1px);
-}
-.Footer .social_wrapper :nth-child(3):hover {
+.Footer .social_wrapper :first-child:hover, .Footer .social_wrapper :nth-child(2):hover, .Footer .social_wrapper :nth-child(3):hover {
   transition: 300ms;
   filter: brightness(125%);
   transform: translate(0px, -1px);

@@ -23,7 +23,7 @@
 }
 .card h2,
 .register_card h2 {
-  color: white;
+  color: white !important;
   width: 100%;
 }
 .card input,
@@ -63,8 +63,8 @@
   justify-content: end;
   align-items: end;
 }
-.card .btn_wrapper .btn,
-.register_card .btn_wrapper .btn {
+.card .btn_wrapper .btn_custom,
+.register_card .btn_wrapper .btn_custom {
   height: 2.5rem;
   aspect-ratio: 2/1;
   border-radius: 20px;
@@ -77,8 +77,8 @@
   background-color: #21009D;
   font-size: 18px;
 }
-.card .btn_wrapper .btn:hover,
-.register_card .btn_wrapper .btn:hover {
+.card .btn_wrapper .btn_custom:hover,
+.register_card .btn_wrapper .btn_custom:hover {
   transition: 300ms;
   color: black;
   background-color: #0056D0;
@@ -86,8 +86,8 @@
   box-shadow: 2px 2px #21009D;
   filter: brightness(125%);
 }
-.card .btn_wrapper .btn:active,
-.register_card .btn_wrapper .btn:active {
+.card .btn_wrapper .btn_custom:active,
+.register_card .btn_wrapper .btn_custom:active {
   transform: translate(2px, 2px);
   box-shadow: 0px 0px;
   filter: brightness(175%);
