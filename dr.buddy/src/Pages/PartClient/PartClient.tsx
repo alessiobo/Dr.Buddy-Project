@@ -14,7 +14,7 @@ export default function Drbuddy() {
   }
 
   return (
-    <div className="upper-client">
+    <div>
       <Navbar />
       <UserLoginPic name="Utente x" />
       <BookingCard onBook={handleBook} />

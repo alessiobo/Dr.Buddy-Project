@@ -1,3 +1,6 @@
 .booked-tab {
-    padding: 0 300px 0 300px;
+  max-width: 100%;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
 }
