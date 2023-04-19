@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<PartClient />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/doctor/profile" element={<DoctorProfile />} />
         <Route path="/loginpage" element={<LoginPage />} />
         <Route path="/bookingpage" element={<PartClient />} />
