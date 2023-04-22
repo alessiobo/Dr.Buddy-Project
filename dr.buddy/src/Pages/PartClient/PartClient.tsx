@@ -6,10 +6,19 @@ import Tabella from "../../Components/Table/Tabella";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 
+interface Appointment {
+  date: string;
+  time: string;
+  visit: string;
+}
+
 export default function Drbuddy() {
+  const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [bookedDateTime, setBookedDateTime] = useState<Date | null>(null);
 
   function handleBook(dateTime: Date) {
+    const newAppointment = { date: dateTime.toLocaleDateString(), time: dateTime.toLocaleTimeString(), visit: "Visita di Controllo" };
+    setAppointments([...appointments, newAppointment]);
     setBookedDateTime(dateTime);
   }
 
@@ -20,7 +29,7 @@ export default function Drbuddy() {
         <UserLoginPic name="Utente x" />
       </div>
       <BookingCard onBook={handleBook} />
-      <Tabella />
+      <Tabella appointments={appointments} />
       <Footer />
     </div>
   );
