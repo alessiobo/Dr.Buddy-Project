@@ -6,16 +6,19 @@ type appuntamento = {
   ora: number;
   paziente: { nome: string; cognome: string };
   telefono: number;
+  data?: string;
 };
 
 function TableResponsive({
   title = "",
   typeID = "num",
   placeholderJSON,
+  buttons = false,
 }: {
   title?: string;
   typeID?: string;
   placeholderJSON?: Record<string, any>;
+  buttons?: boolean;
 }) {
   return (
     <TableContainer>
@@ -23,7 +26,7 @@ function TableResponsive({
       <Table responsive="xl">
         <thead>
           <tr>
-            <th>#</th>
+            <th>Ore</th>
             <th>Nome</th>
             <th>Cognome</th>
             <th>Telefono</th>
@@ -38,6 +41,17 @@ function TableResponsive({
                   <td>{el.paziente.nome}</td>
                   <td>{el.paziente.cognome}</td>
                   <td>{el.telefono}</td>
+                  <td>{el.data}</td>
+                  {buttons && (
+                    <td>
+                      <Button variant="success">Accetta</Button>
+                    </td>
+                  )}
+                  {buttons && (
+                    <td>
+                      <Button variant="danger">Elimina</Button>
+                    </td>
+                  )}
                 </tr>
               );
             })}

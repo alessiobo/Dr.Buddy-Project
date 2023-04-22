@@ -7,7 +7,7 @@ function Tabella() {
     <div className="booked-tab">
     <TableContainer>
       <h3 style={{ margin: "0" }}>Visite Prenotate</h3>
-      <Table striped="columns">
+      <Table>
         <thead>
           <tr>
             <th>Data</th>
@@ -17,17 +17,17 @@ function Tabella() {
         </thead>
         <tbody>
           <tr>
-            <td>18/04</td>
+            <td>18/04/2023</td>
             <td>10.30</td>
             <td>Controllo x</td>
           </tr>
           <tr>
-            <td>18/04</td>
+            <td>18/04/2023</td>
             <td>10.30</td>
             <td>Controllo x</td>
           </tr>
           <tr>
-            <td>18/04</td>
+            <td>18/04/2023</td>
             <td>10.30</td>
             <td>Controllo x</td>
           </tr>
