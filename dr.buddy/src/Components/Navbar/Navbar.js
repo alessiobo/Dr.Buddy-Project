@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css"
 import logo_white from "./img/logo_white.png"
 import calendar from "./img/calendar.svg"
+import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <div className="navbar">
@@ -20,7 +21,7 @@ function Navbar() {
                 </div>
             </div>
             <div className="button_wrapper">
-                <button><img src={calendar} alt="calendar"></img>Book an appointment</button>
+                 <Link to={"/loginpage"}><button><img src={calendar} alt="calendar"></img>Book an appointment</button></Link>
             </div>
         </div>
     )
