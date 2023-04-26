@@ -14,9 +14,11 @@ export default function Drbuddy() {
   }
 
   return (
-    <div className="upper-client">
+    <div>
       <Navbar />
-      <UserLoginPic name="Utente x" />
+      <div className="user-logo">
+        <UserLoginPic name="Utente x" />
+      </div>
       <BookingCard onBook={handleBook} />
       <Tabella />
       <Footer />

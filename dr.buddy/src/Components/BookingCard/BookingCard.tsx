@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 import "./BookingCard.css";
 
 interface BookingCardProps {
@@ -16,11 +17,11 @@ function BookingCard({ onBook }: BookingCardProps) {
   }
 
   return (
-    <div className="booking-card">
-      <div className="card-body">
-        <div className="card-header">
-          <h3 className="card-title">Prenota una visita</h3>
-        </div>
+    <div className="booked-card">
+    <TableContainer>
+      <h3 className="card-title" style={{ margin: "0" }}>Prenota ora la tua visita</h3>
+      <div className="booking-card">
+        <div className="card-body"></div>
         <Form className="form-style">
           <FormGroup>
             <Label>Data</Label>
@@ -50,6 +51,7 @@ function BookingCard({ onBook }: BookingCardProps) {
           </div>
         </Form>
       </div>
+    </TableContainer>
     </div>
   );
 }

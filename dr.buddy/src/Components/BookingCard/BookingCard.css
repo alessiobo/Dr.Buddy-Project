@@ -1,5 +1,5 @@
 .booking-card {
-  background-color: #028c69;
+  background-color: white;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -22,12 +22,10 @@
   padding: 0;
   display: block;
 }
-.card-title {
-  width: 100%;
-  max-width: 600px;
-  color: #028c69;
-}
 
+.form-label {
+  color: black;
+}
 .form-style {
   color: #fff;
 }
@@ -66,4 +64,16 @@
   transform: translate(2px, 2px) !important;
   box-shadow: 0px 0px !important;
   filter: brightness(175%) !important;
+}
+
+.booked-card {
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.card-title {
+  padding: 5% !important;
 }
