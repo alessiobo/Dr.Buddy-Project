@@ -33,10 +33,10 @@ const setupDB = async () => {
     `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Mario','Rossi', 'email@email.com','12345','password')`
   );
   await db.none(
-    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Luigi','Rossi', 'email@email.com','12345','password')`
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Luigi','Bianchi', 'email@email.com','12345','password')`
   );
   await db.none(
-    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Pippo','Rossi', 'email@email.com','12345','password')`
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Pippo','Verdi', 'email@email.com','12345','password')`
   );
 
   await db.none(
@@ -46,7 +46,7 @@ const setupDB = async () => {
     `INSERT INTO reservation (id_patient,ora,stato) VALUES (2,'14:00','ok')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato) VALUES (2,'17:00','ok')`
+    `INSERT INTO reservation (id_patient,ora,stato) VALUES (3,'17:00','ok')`
   );
 };
 

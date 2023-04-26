@@ -3,22 +3,25 @@ import Button from "react-bootstrap/esm/Button";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 
 type appuntamento = {
-  ora: number;
-  paziente: { nome: string; cognome: string };
-  telefono: number;
-  data?: string;
+  id_reservation: number;
+  firstname: string;
+  lastname: string;
+  email: string;
+  tel_num: string;
+  password: string;
+  ora: string;
 };
 
 function TableResponsive({
   title = "",
   typeID = "num",
-  placeholderJSON,
   buttons = false,
+  getAllReservations,
 }: {
   title?: string;
   typeID?: string;
-  placeholderJSON?: Record<string, any>;
   buttons?: boolean;
+  getAllReservations: any;
 }) {
   return (
     <TableContainer>
@@ -26,22 +29,25 @@ function TableResponsive({
       <Table responsive="xl">
         <thead>
           <tr>
-            <th>Ore</th>
+            <th>ID</th>
             <th>Nome</th>
             <th>Cognome</th>
             <th>Telefono</th>
+            <th>Email</th>
+            <th>Ora</th>
           </tr>
         </thead>
         <tbody>
-          {placeholderJSON &&
-            placeholderJSON.map((el: appuntamento, k: number) => {
+          {getAllReservations &&
+            getAllReservations.map((el: appuntamento) => {
               return (
-                <tr key={k}>
-                  <td>{el.ora}:00</td>
-                  <td>{el.paziente.nome}</td>
-                  <td>{el.paziente.cognome}</td>
-                  <td>{el.telefono}</td>
-                  <td>{el.data}</td>
+                <tr key={el.id_reservation}>
+                  <td>{el.firstname}</td>
+                  <td>{el.lastname}</td>
+                  <td>{el.tel_num}</td>
+                  <td>{el.email}</td>
+                  <td>{el.ora}</td>
+
                   {buttons && (
                     <td>
                       <Button variant="success">Accetta</Button>
@@ -55,27 +61,6 @@ function TableResponsive({
                 </tr>
               );
             })}
-          {/* <tr>
-            <td>1</td>
-            <td>Pippo</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr> */}
         </tbody>
       </Table>
     </TableContainer>
