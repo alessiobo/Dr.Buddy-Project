@@ -20,22 +20,29 @@ async function getPatientByID(req: Request, res: Response) {
 }
 
 const patientSchemaBody = Joi.object({
-  name: Joi.string().required(),
+  firstname: Joi.string().required(),
+  lastname: Joi.string().required(),
+  email: Joi.string().required(),
+  tel_num: Joi.string().required(),
+  password: Joi.string().required(),
 });
 
 // async function createPatient(req: Request, res: Response,next) {
 async function createPatient(req: Request, res: Response) {
   try {
-    const { name } = req.body;
+    const { firstname, lastname, email, tel_num, password } = req.body;
 
-    const newPatient = { name };
+    const newPatient = { firstname, lastname, email, tel_num, password };
 
     const validation = patientSchemaBody.validate(newPatient);
 
     if (validation.error) {
       res.status(400).json({ msg: "error 400" });
     } else {
-      await db.none(`INSERT INTO patient (name) VALUES ($1)`, name);
+      await db.none(
+        `INSERT INTO patient (firstname, lastname, email, tel_num, password) VALUES ($1,$2,$3,$4,$5)`,
+        [firstname, lastname, email, tel_num, password]
+      );
       res.status(200).json({ msg: "create new patient" });
     }
   } catch (error) {
@@ -45,9 +52,12 @@ async function createPatient(req: Request, res: Response) {
 
 async function updatePatientByID(req: Request, res: Response) {
   const { id } = req.params;
-  const { name } = req.body;
+  const { firstname } = req.body;
 
-  await db.none(`UPDATE patient SET name=$2 WHERE id_patient=$1`, [id, name]);
+  await db.none(`UPDATE patient SET firstname=$2 WHERE id_patient=$1`, [
+    id,
+    firstname,
+  ]);
 
   res.status(200).json({ msg: "updato" });
 }

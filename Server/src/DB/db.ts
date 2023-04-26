@@ -9,12 +9,19 @@ const setupDB = async () => {
 
   CREATE TABLE patient (
     id_patient SERIAL NOT NULL PRIMARY KEY,
-    name TEXT NOT NULL
+    firstname VARCHAR(45) NOT NULL,
+    lastname VARCHAR(45) NOT NULL,
+    email VARCHAR(45) NOT NULL,
+    tel_num VARCHAR(15),
+    password VARCHAR(65) NOT NULL,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
   );  
 
   CREATE TABLE reservation(
     id_reservation SERIAL NOT NULL PRIMARY KEY,
     id_patient INTEGER NOT NULL,
+    date_reservation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     ora VARCHAR(20) NOT NULL,
     stato VARCHAR(20) NOT NULL,
     FOREIGN KEY (id_patient) REFERENCES patient (id_patient)
@@ -22,9 +29,15 @@ const setupDB = async () => {
 
 
 `);
-  await db.none(`INSERT INTO patient (name) VALUES ('Mario')`);
-  await db.none(`INSERT INTO patient (name) VALUES ('Luigi')`);
-  await db.none(`INSERT INTO patient (name) VALUES ('Peach')`);
+  await db.none(
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Mario','Rossi', 'email@email.com','12345','password')`
+  );
+  await db.none(
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Luigi','Rossi', 'email@email.com','12345','password')`
+  );
+  await db.none(
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Pippo','Rossi', 'email@email.com','12345','password')`
+  );
 
   await db.none(
     `INSERT INTO reservation (id_patient,ora,stato) VALUES (1,'12:00','ok')`
