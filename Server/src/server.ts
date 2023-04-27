@@ -84,6 +84,6 @@ server.put("/reservations/:id", updateReservationByID);
 
 server.delete("/reservations/:id", deleteReservationByID);
 
-// server.use(errori)
+// server.use(error)
 
 server.listen(port);

@@ -42,6 +42,7 @@ function TableResponsive({
             getAllReservations.map((el: appuntamento) => {
               return (
                 <tr key={el.id_reservation}>
+                  <td>{el.id_reservation}</td>
                   <td>{el.firstname}</td>
                   <td>{el.lastname}</td>
                   <td>{el.tel_num}</td>
