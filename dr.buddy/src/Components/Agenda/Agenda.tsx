@@ -19,11 +19,7 @@ const agenda: appuntamento[] = [
 function Agenda() {
   return (
     <div>
-      <TableResponsive
-        title={"Appuntamenti di oggi"}
-        typeID={"ora"}
-        placeholderJSON={agenda}
-      />
+      {/* <TableResponsive title={"Appuntamenti di oggi"} typeID={"ora"} /> */}
     </div>
   );
 }
