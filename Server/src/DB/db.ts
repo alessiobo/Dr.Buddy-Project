@@ -21,7 +21,7 @@ const setupDB = async () => {
   CREATE TABLE reservation(
     id_reservation SERIAL NOT NULL PRIMARY KEY,
     id_patient INTEGER NOT NULL,
-    date_reservation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    date_reservation VARCHAR(10),
     ora VARCHAR(20) NOT NULL,
     stato VARCHAR(20) NOT NULL,
     FOREIGN KEY (id_patient) REFERENCES patient (id_patient)
@@ -40,13 +40,13 @@ const setupDB = async () => {
   );
 
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato) VALUES (1,'12:00','ok')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'12:00','ok','28-01-1994')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato) VALUES (2,'14:00','ok')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (2,'14:00','ok','29-01-2000')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato) VALUES (3,'17:00','ok')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (3,'17:00','ok','24-56-2023')`
   );
 };
 
