@@ -21,6 +21,16 @@ async function getReservationByID(req: Request, res: Response) {
 
   res.status(200).json(reservation);
 }
+async function getAllReservationByID(req: Request, res: Response) {
+  const { id } = req.params;
+
+  const reservation = await db.manyOrNone(
+    `SELECT * FROM reservation WHERE id_patient=$1;`,
+    Number(id)
+  );
+
+  res.status(200).json(reservation);
+}
 
 const reservationSchemaBody = Joi.object({
   id_patient: Joi.number().integer().required(),
@@ -72,4 +82,5 @@ export {
   createReservation,
   updateReservationByID,
   deleteReservationByID,
+  getAllReservationByID,
 };

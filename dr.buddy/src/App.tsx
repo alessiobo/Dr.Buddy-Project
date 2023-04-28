@@ -24,6 +24,7 @@ function App() {
     createObj: createReservation,
     updateObj: updateReservation,
     deleteObj: deleteReservation,
+    getAllReservationByID,
   } = useServer("reservations");
 
   return (
@@ -35,7 +36,15 @@ function App() {
           element={<DoctorProfile getAllReservations={getAllReservations} />}
         />
         <Route path="/loginpage" element={<LoginPage />} />
-        <Route path="/bookingpage" element={<PartClient />} />
+        <Route
+          path="/bookingpage"
+          element={
+            <PartClient
+              createReservation={createReservation}
+              getAllReservationByID={getAllReservationByID}
+            />
+          }
+        />
       </Routes>
     </div>
   );

@@ -21,6 +21,20 @@ function useServer(url) {
   //GetAll
   const { data, error } = useSWR(URL, fetcher);
 
+  //GetAllReservationByID
+  async function getAllReservationByID(id) {
+    try {
+      const res = await fetch(URL + "/patient/" + id);
+      const json = await res.json();
+
+      console.log(json);
+
+      return json;
+    } catch (error) {
+      console.log("Error: " + error);
+    }
+  }
+
   //GetOne
   async function getOneObj(id) {
     try {
@@ -81,6 +95,7 @@ function useServer(url) {
     createObj,
     updateObj,
     deleteObj,
+    getAllReservationByID,
   };
 }
 export default useServer;
