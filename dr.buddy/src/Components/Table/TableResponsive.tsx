@@ -15,12 +15,10 @@ type appuntamento = {
 
 function TableResponsive({
   title = "",
-  typeID = "num",
   buttons = false,
   getAllReservations,
 }: {
   title?: string;
-  typeID?: string;
   buttons?: boolean;
   getAllReservations: any;
 }) {
@@ -32,7 +30,6 @@ function TableResponsive({
           <tr>
             <th>ID</th>
             <th>Nome e Cognome</th>
-
             <th>Telefono</th>
             <th>Email</th>
             <th>Data</th>
@@ -50,7 +47,7 @@ function TableResponsive({
                   </td>
                   <td>{el.tel_num}</td>
                   <td>{el.email}</td>
-                  <td>{el.date_reservation}</td>
+                  <td>{el.date_reservation.split("-").reverse().join("/")}</td>
                   <td>{el.ora}</td>
 
                   {buttons && (

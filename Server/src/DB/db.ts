@@ -40,13 +40,16 @@ const setupDB = async () => {
   );
 
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'12:00','ok','28-01-1994')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'12:00','ok','1994-01-28')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (2,'14:00','ok','29-01-2000')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (2,'14:00','ok','2000-01-29')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (3,'17:00','ok','24-56-2023')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (3,'17:00','ok','2023-06-24')`
+  );
+  await db.none(
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'21:00','ok','2023-06-28')`
   );
 };
 

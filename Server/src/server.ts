@@ -15,6 +15,7 @@ import {
   createReservation,
   updateReservationByID,
   deleteReservationByID,
+  getAllReservationByID,
 } from "./controllers/reservations.js";
 
 const server = express();
@@ -77,6 +78,8 @@ server.delete("/patients/:id", deletePatientByID);
 server.get("/reservations", getAllReservations);
 
 server.get("/reservations/:id", getReservationByID);
+
+server.get("/reservations/patient/:id", getAllReservationByID);
 
 server.post("/reservations", createReservation);
 
