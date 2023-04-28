@@ -25,13 +25,14 @@ async function getReservationByID(req: Request, res: Response) {
 const reservationSchemaBody = Joi.object({
   id_patient: Joi.number().integer().required(),
   ora: Joi.string().required(),
+  data: Joi.string().required(),
   stato: Joi.string().required(),
 });
 
 async function createReservation(req: Request, res: Response) {
-  const { id_patient, ora, stato } = req.body;
+  const { id_patient, ora, stato, data } = req.body;
 
-  const newReservation = { id_patient, ora, stato };
+  const newReservation = { id_patient, ora, stato, data };
 
   const validation = reservationSchemaBody.validate(newReservation);
 
@@ -39,8 +40,8 @@ async function createReservation(req: Request, res: Response) {
     res.status(400).json({ msg: "error 400" });
   } else {
     await db.none(
-      `INSERT INTO reservation (id_patient,ora,stato) VALUES ($1,$2,$3)`,
-      [id_patient, ora, stato]
+      `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES ($1,$2,$3,$4)`,
+      [id_patient, ora, stato, data]
     );
     res.status(200).json({ msg: "create new reservation" });
   }

@@ -10,6 +10,7 @@ type appuntamento = {
   tel_num: string;
   password: string;
   ora: string;
+  date_reservation: string;
 };
 
 function TableResponsive({
@@ -30,10 +31,11 @@ function TableResponsive({
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nome</th>
-            <th>Cognome</th>
+            <th>Nome e Cognome</th>
+
             <th>Telefono</th>
             <th>Email</th>
+            <th>Data</th>
             <th>Ora</th>
           </tr>
         </thead>
@@ -43,10 +45,12 @@ function TableResponsive({
               return (
                 <tr key={el.id_reservation}>
                   <td>{el.id_reservation}</td>
-                  <td>{el.firstname}</td>
-                  <td>{el.lastname}</td>
+                  <td>
+                    {el.firstname} {el.lastname}
+                  </td>
                   <td>{el.tel_num}</td>
                   <td>{el.email}</td>
+                  <td>{el.date_reservation}</td>
                   <td>{el.ora}</td>
 
                   {buttons && (

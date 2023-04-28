@@ -17,7 +17,7 @@ function DoctorProfile({ getAllReservations }: { getAllReservations: any }) {
         <Agenda />
         <TableResponsive
           title="Nuove Prenotazioni"
-          buttons={true}
+          buttons={false}
           getAllReservations={getAllReservations}
         />
       </section>
