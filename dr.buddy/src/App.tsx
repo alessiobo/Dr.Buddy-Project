@@ -33,7 +33,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route
           path="/doctor/profile"
-          element={<DoctorProfile getAllReservations={getAllReservations} />}
+          element={
+            <DoctorProfile
+              getAllReservations={getAllReservations}
+              updateReservation={updateReservation}
+            />
+          }
         />
         <Route path="/loginpage" element={<LoginPage />} />
         <Route
