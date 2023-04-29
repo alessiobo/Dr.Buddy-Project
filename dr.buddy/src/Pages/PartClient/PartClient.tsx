@@ -6,30 +6,33 @@ import Tabella from "../../Components/Table/Tabella";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 
-interface Appointment {
-  date: string;
-  time: string;
-  visit: string;
-}
+export default function PartClient({
+  createReservation,
+  getAllReservationByID,
+}: {
+  createReservation: any;
+  getAllReservationByID: any;
+}) {
+  // const [bookedDateTime, setBookedDateTime] = useState<Date | null>(null);
 
-export default function Drbuddy() {
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
-  const [bookedDateTime, setBookedDateTime] = useState<Date | null>(null);
+  // function handleBook(dateTime: Date) {
+  //   setBookedDateTime(dateTime);
+  // }
 
-  function handleBook(dateTime: Date) {
-    const newAppointment = { date: dateTime.toLocaleDateString(), time: dateTime.toLocaleTimeString(), visit: "Visita di Controllo" };
-    setAppointments([...appointments, newAppointment]);
-    setBookedDateTime(dateTime);
-  }
+  //! errore Promise
+  const data = getAllReservationByID(1);
+
+  console.log(data);
 
   return (
     <div>
       <Navbar />
       <div className="user-logo">
-        <UserLoginPic name="Utente x" />
+        <UserLoginPic name="Mario Rossi" />
       </div>
-      <BookingCard onBook={handleBook} />
-      <Tabella appointments={appointments} />
+      {/* <BookingCard onBook={handleBook} /> */}
+      <BookingCard createReservation={createReservation} />
+      <Tabella getAllReservationByID={data} />
       <Footer />
     </div>
   );

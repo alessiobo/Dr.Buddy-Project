@@ -3,17 +3,10 @@ import Table from "react-bootstrap/Table";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 import "./Tabella.css";
 
-interface Appointment {
-  date: string;
-  time: string;
-  visit: string;
-}
+function Tabella({ getAllReservationByID }: { getAllReservationByID: any }) {
+  const data = getAllReservationByID;
+  // console.log(data);
 
-interface TabellaProps {
-  appointments: Appointment[];
-}
-
-function Tabella({ appointments }: TabellaProps) {
   return (
     <div className="booked-tab">
       <TableContainer>
@@ -24,16 +17,35 @@ function Tabella({ appointments }: TabellaProps) {
               <th>Data</th>
               <th>Ora</th>
               <th>Visita</th>
+              <th>Stato</th>
             </tr>
           </thead>
           <tbody>
-            {appointments.map((appointment, index) => (
-              <tr key={index}>
-                <td>{appointment.date}</td>
-                <td>{appointment.time}</td>
-                <td>{appointment.visit}</td>
-              </tr>
-            ))}
+            {/* {data &&
+              data.map((el: any) => {
+                return (
+                  <tr key={el.id_reservation}>
+                    <td>
+                      {el.firstname} {el.lastname}
+                    </td>
+                  </tr>
+                );
+              })} */}
+            {/* <tr>
+              <td>18/04/2023</td>
+              <td>10.30</td>
+              <td>Controllo x</td>
+            </tr>
+            <tr>
+              <td>18/04/2023</td>
+              <td>10.30</td>
+              <td>Controllo x</td>
+            </tr>
+            <tr>
+              <td>18/04/2023</td>
+              <td>10.30</td>
+              <td>Controllo x</td>
+            </tr> */}
           </tbody>
         </Table>
       </TableContainer>

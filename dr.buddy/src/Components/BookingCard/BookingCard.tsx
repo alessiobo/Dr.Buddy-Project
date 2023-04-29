@@ -3,20 +3,33 @@ import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 import "./BookingCard.css";
 
-interface BookingCardProps {
-  onBook: (dateTime: Date) => void;
-}
+// interface BookingCardProps {
+//   onBook: (dateTime: Date) => void;
+// }
 
-function BookingCard({ onBook }: BookingCardProps) {
+// function BookingCard({ onBook }: BookingCardProps) {
+function BookingCard({ createReservation }: { createReservation: any }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
-  function handleBookClick() {
-    const dateTime = new Date(`${date}T${time}:00`);
-    onBook(dateTime);
+  // function handleBookClick() {
+  //   const dateTime = new Date(`${date}T${time}:00`);
+  //   onBook(dateTime);
+  // }
+
+  const createReservatioHandler = (ev: any) => {
+    ev.preventDefault();
+    const reserv = {
+      id_patient: 1, //per ora solo Mario
+      data: date,
+      ora: time,
+      stato: "pending",
+    };
+
+    createReservation(reserv);
     setDate("");
     setTime("");
-  }
+  };
 
   return (
     <div className="booked-card">
@@ -48,7 +61,7 @@ function BookingCard({ onBook }: BookingCardProps) {
                 className="custom-btn"
                 size="sm"
                 color="primary"
-                onClick={handleBookClick}
+                onClick={createReservatioHandler}
               >
                 Prenota
               </Button>
