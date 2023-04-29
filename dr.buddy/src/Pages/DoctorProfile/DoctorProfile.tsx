@@ -6,7 +6,13 @@ import UserLoginPic from "../../Components/UserLoginPic/UserLoginPic";
 
 //CD PLACEHOLDER
 
-function DoctorProfile({ getAllReservations }: { getAllReservations: any }) {
+function DoctorProfile({
+  getAllReservations,
+  updateReservation,
+}: {
+  getAllReservations: any;
+  updateReservation: any;
+}) {
   return (
     <>
       <Navbar />
@@ -17,8 +23,9 @@ function DoctorProfile({ getAllReservations }: { getAllReservations: any }) {
         <Agenda />
         <TableResponsive
           title="Nuove Prenotazioni"
-          buttons={false}
+          buttons={true}
           getAllReservations={getAllReservations}
+          updateReservation={updateReservation}
         />
       </section>
       <Footer />
