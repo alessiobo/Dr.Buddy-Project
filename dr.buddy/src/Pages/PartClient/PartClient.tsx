@@ -20,9 +20,6 @@ export default function PartClient({
   // }
 
   //! errore Promise
-  const data = getAllReservationByID(1);
-
-  console.log(data);
 
   return (
     <div>
@@ -32,7 +29,7 @@ export default function PartClient({
       </div>
       {/* <BookingCard onBook={handleBook} /> */}
       <BookingCard createReservation={createReservation} />
-      <Tabella getAllReservationByID={data} />
+      <Tabella getAllReservationByID={getAllReservationByID} />
       <Footer />
     </div>
   );
