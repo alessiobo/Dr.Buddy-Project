@@ -3,22 +3,27 @@ import Button from "react-bootstrap/esm/Button";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 
 type appuntamento = {
-  ora: number;
-  paziente: { nome: string; cognome: string };
-  telefono: number;
-  data?: string;
+  id_reservation: number;
+  firstname: string;
+  lastname: string;
+  email: string;
+  tel_num: string;
+  password: string;
+  ora: string;
+  date_reservation: string;
+  stato: string;
 };
 
 function TableResponsive({
   title = "",
-  typeID = "num",
-  placeholderJSON,
   buttons = false,
+  getAllReservations,
+  updateReservation,
 }: {
   title?: string;
-  typeID?: string;
-  placeholderJSON?: Record<string, any>;
   buttons?: boolean;
+  getAllReservations: any;
+  updateReservation: any;
 }) {
   return (
     <TableContainer>
@@ -26,56 +31,59 @@ function TableResponsive({
       <Table responsive="xl">
         <thead>
           <tr>
-            <th>Ore</th>
-            <th>Nome</th>
-            <th>Cognome</th>
+            <th>ID</th>
+            <th>Nome e Cognome</th>
             <th>Telefono</th>
+            <th>Email</th>
+            <th>Data</th>
+            <th>Ora</th>
+            <th>Stato</th>
           </tr>
         </thead>
         <tbody>
-          {placeholderJSON &&
-            placeholderJSON.map((el: appuntamento, k: number) => {
+          {getAllReservations &&
+            getAllReservations.map((el: appuntamento) => {
               return (
-                <tr key={k}>
-                  <td>{el.ora}:00</td>
-                  <td>{el.paziente.nome}</td>
-                  <td>{el.paziente.cognome}</td>
-                  <td>{el.telefono}</td>
-                  <td>{el.data}</td>
-                  {buttons && (
+                <tr key={el.id_reservation}>
+                  <td>{el.id_reservation}</td>
+                  <td>
+                    {el.firstname} {el.lastname}
+                  </td>
+                  <td>{el.tel_num}</td>
+                  <td>{el.email}</td>
+                  <td>{el.date_reservation.split("-").reverse().join("/")}</td>
+                  <td>{el.ora}</td>
+                  <td>{el.stato}</td>
+
+                  {buttons && el.stato !== "ok" && (
                     <td>
-                      <Button variant="success">Accetta</Button>
+                      <Button
+                        variant="success"
+                        onClick={() =>
+                          updateReservation(el.id_reservation, { stato: "ok" })
+                        }
+                      >
+                        Accetta
+                      </Button>
                     </td>
                   )}
-                  {buttons && (
+                  {buttons && el.stato !== "ok" && (
                     <td>
-                      <Button variant="danger">Elimina</Button>
+                      <Button
+                        variant="danger"
+                        onClick={() =>
+                          updateReservation(el.id_reservation, {
+                            stato: "rifiutata",
+                          })
+                        }
+                      >
+                        Rifiuta
+                      </Button>
                     </td>
                   )}
                 </tr>
               );
             })}
-          {/* <tr>
-            <td>1</td>
-            <td>Pippo</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr> */}
         </tbody>
       </Table>
     </TableContainer>

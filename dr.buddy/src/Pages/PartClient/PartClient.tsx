@@ -6,21 +6,30 @@ import Tabella from "../../Components/Table/Tabella";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 
-export default function Drbuddy() {
-  const [bookedDateTime, setBookedDateTime] = useState<Date | null>(null);
+export default function PartClient({
+  createReservation,
+  getAllReservationByID,
+}: {
+  createReservation: any;
+  getAllReservationByID: any;
+}) {
+  // const [bookedDateTime, setBookedDateTime] = useState<Date | null>(null);
 
-  function handleBook(dateTime: Date) {
-    setBookedDateTime(dateTime);
-  }
+  // function handleBook(dateTime: Date) {
+  //   setBookedDateTime(dateTime);
+  // }
+
+  //! errore Promise
 
   return (
     <div>
       <Navbar />
       <div className="user-logo">
-        <UserLoginPic name="Utente x" />
+        <UserLoginPic name="Mario Rossi" />
       </div>
-      <BookingCard onBook={handleBook} />
-      <Tabella />
+      {/* <BookingCard onBook={handleBook} /> */}
+      <BookingCard createReservation={createReservation} />
+      <Tabella getAllReservationByID={getAllReservationByID} />
       <Footer />
     </div>
   );
