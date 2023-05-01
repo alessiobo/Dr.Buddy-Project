@@ -27,8 +27,6 @@ function useServer(url) {
       const res = await fetch(URL + "/patient/" + id);
       const json = await res.json();
 
-      console.log(json);
-
       return json;
     } catch (error) {
       console.log("Error: " + error);

@@ -7,6 +7,7 @@ import {
   createPatient,
   updatePatientByID,
   deletePatientByID,
+  logIn,
 } from "./controllers/patients.js";
 
 import {
@@ -61,7 +62,7 @@ server.get("/", (req, res) => {
   res.status(200).json({ msg: "Welcome" });
 });
 
-//Clients
+//Patients
 
 server.get("/patients", getAllPatients);
 
@@ -72,6 +73,11 @@ server.post("/patients", createPatient);
 server.put("/patients/:id", updatePatientByID);
 
 server.delete("/patients/:id", deletePatientByID);
+
+//LogIN
+
+server.post("/patients/login", logIn);
+// server.post("/patients/signup", signUp);
 
 //Reservations
 

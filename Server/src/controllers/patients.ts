@@ -1,6 +1,9 @@
+import * as dotenv from "dotenv";
+dotenv.config();
 import { Request, Response } from "express";
 import Joi from "joi";
 import { db } from "../DB/db.js";
+import jwt from "jsonwebtoken";
 
 //CRUD
 async function getAllPatients(req: Request, res: Response) {
@@ -69,10 +72,63 @@ async function deletePatientByID(req: Request, res: Response) {
   res.status(200).json({ msg: "The patient was deleted." });
 }
 
+async function logIn(req: Request, res: Response) {
+  const { firstname, password } = req.body;
+
+  try {
+    const patient = await db.one(
+      `SELECT * FROM patient WHERE firstname=$1`,
+      firstname
+    );
+
+    if (patient && patient.password === password) {
+      const payload = {
+        id_patient: patient.id_patient,
+        firstname,
+      };
+      const { SECRET = "" } = process.env;
+      const token = jwt.sign(payload, SECRET);
+
+      await db.none(`UPDATE patient SET token=$2 WHERE id_patient=$1`, [
+        patient.id_patient,
+        token,
+      ]);
+
+      res.status(200).json({ id: patient.id_patient, firstname, token });
+    } else {
+      res.status(400).json({ msg: "Username or password incorrect" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ msg: "Internal server error" });
+  }
+}
+
+//!Abbiamo già create che fa la stessa cosa
+// async function signUp(req: Request, res: Response) {
+//   const { firstname, password } = req.body;
+//   const patient = await db.oneOrNone(
+//     `SELECT * FROM patient WHERE firstname=$1`,
+//     firstname
+//   );
+
+//   if (patient) {
+//     res.status(409).json({ msg: "Username already exist" });
+//   } else {
+//     const { id_patient } = await db.one(
+//       `INSERT INTO patient (firstname,password) VALUES ($1,$2) RETURNING id_patient`,
+//       [firstname, password]
+//     );
+
+//     res.status(201).json({ id_patient, msg: "User created successfully" });
+//   }
+// }
+
 export {
   getAllPatients,
   getPatientByID,
   createPatient,
   updatePatientByID,
   deletePatientByID,
+  logIn,
 };
