@@ -14,7 +14,8 @@ const setupDB = async () => {
     email VARCHAR(45) NOT NULL,
     tel_num VARCHAR(15),
     password VARCHAR(65) NOT NULL,
-    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    token TEXT
 
   );  
 
