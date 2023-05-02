@@ -55,31 +55,33 @@ function TableResponsive({
                   <td>{el.ora}</td>
                   <td>{el.stato}</td>
 
-                  {buttons && el.stato !== "ok" && (
-                    <td>
-                      <Button
-                        variant="success"
-                        onClick={() =>
-                          updateReservation(el.id_reservation, { stato: "ok" })
-                        }
-                      >
-                        Accetta
-                      </Button>
-                    </td>
-                  )}
-                  {buttons && el.stato !== "ok" && (
-                    <td>
-                      <Button
-                        variant="danger"
-                        onClick={() =>
-                          updateReservation(el.id_reservation, {
-                            stato: "rifiutata",
-                          })
-                        }
-                      >
-                        Rifiuta
-                      </Button>
-                    </td>
+                  {buttons && el.stato !== "ok" && el.stato !== "rifiutata" && (
+                    <div>
+                      <td style={{ marginRight: "20px" }}>
+                        <Button
+                          variant="success"
+                          onClick={() =>
+                            updateReservation(el.id_reservation, {
+                              stato: "ok",
+                            })
+                          }
+                        >
+                          👍
+                        </Button>
+                      </td>
+                      <td>
+                        <Button
+                          variant="danger"
+                          onClick={() =>
+                            updateReservation(el.id_reservation, {
+                              stato: "rifiutata",
+                            })
+                          }
+                        >
+                          🗙
+                        </Button>
+                      </td>
+                    </div>
                   )}
                 </tr>
               );
