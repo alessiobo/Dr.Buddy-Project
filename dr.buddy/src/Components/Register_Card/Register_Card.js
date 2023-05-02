@@ -16,8 +16,7 @@ function Register_Card({createPatient}) {
             email: email,
             password: password,
         };
-        console.log(patientinfo)
-        console.log(createPatient(patientinfo));  
+        createPatient(patientinfo);  
     }
     
     return (

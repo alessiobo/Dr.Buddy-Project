@@ -18,12 +18,16 @@ h4 {
   box-sizing: border-box;
 }
 
-.homepage body {
-  margin: 0;
-  background-size: cover;
+.homepage {
+  display: flex;
+  flex-direction: column;
+}
+.homepage .homeContainer {
+  max-height: 600px;
+  aspect-ratio: 16/9;
 }
 .homepage video {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -32,12 +36,13 @@ h4 {
   object-position: center;
 }
 .homepage .Join {
-  min-height: 100vh;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  top: 23vh;
+  top: 0px;
+  margin-bottom: 119px;
 }
 .homepage .Join button {
   width: 27vh;

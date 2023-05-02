@@ -11,18 +11,18 @@ function Navbar() {
             </div>
             <div className="link_container">
                 <div>
-                Prices
+                Prezzi
                 </div>
                 <div>
-                    How it works
+                    Come funziona
                 </div>
                 <div>
-                    Contacts
+                    Contatti
                 </div>
             </div>
-            <div className="button_wrapper">
-                 <Link to={"/loginpage"}><button><img src={calendar} alt="calendar"></img>Book an appointment</button></Link>
-            </div>
+            {/* <div className="button_">
+                <button type="button" className="
+            </div> */}
         </div>
     )
 }

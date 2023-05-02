@@ -6,14 +6,13 @@ import Footer from "../../Components/Footer/Footer";
 function HomePage() {
   return (
     <div className="homepage">
-      <header className="homeContainer">
-        <Video />
         <Navbar />
-        
+      <header className="homeContainer">
+        <div className="video_wrapper"><Video /></div>
       </header>
       <div className="Join">
-        <Footer />
       </div>
+        <Footer />
     </div>
   );
 }

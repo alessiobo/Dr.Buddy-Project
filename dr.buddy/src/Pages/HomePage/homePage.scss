@@ -6,14 +6,14 @@
 }
 
 .homepage {
-  body {
-    margin: 0;
-
-    background-size: cover;
+  display: flex;
+  flex-direction: column;
+  .homeContainer {
+    max-height: 600px;
+    aspect-ratio: 16 / 9;
   }
-
   video {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -24,12 +24,13 @@
   }
 
   .Join {
-    min-height: 100vh;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    top: 23vh;
+    top: 0px;
+    margin-bottom: 119px;
   }
 
   .Join button {
@@ -41,6 +42,7 @@
     color: $secondary-color-light;
     border-color: $secondary-color-light(145, 95%, 64%, 0.6);
     font-size: 1.5rem;
+   
   }
 
   header {
