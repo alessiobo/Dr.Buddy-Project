@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -6,6 +5,7 @@
 body {
   margin: 0;
   background-size: cover;
+  background-color: #b0c5ff;
 }
 
 video {
@@ -25,10 +25,7 @@ video {
   justify-content: center;
   position: absolute;
   top: 110vh;
- 
 }
-
-
 
 header {
   position: fixed;
@@ -65,13 +62,12 @@ h2 {
   color: #fff;
   font-weight: 100;
 }
-.homeContainer{
+.homeContainer {
   height: 100vh;
 }
-.homeFoot{
+.homeFoot {
   position: relative;
-  top:80vh
+  top: 80vh;
 }
-
 
 /*# sourceMappingURL=homePage.css.map */
