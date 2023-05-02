@@ -5,7 +5,8 @@ import AppointmentTable from "../../Components/Table/AppointmentTable/Appointmen
 import TableResponsive from "../../Components/Table/TableResponsive";
 import UserLoginPic from "../../Components/UserLoginPic/UserLoginPic";
 
-//CD PLACEHOLDER
+//@ts-ignore
+import pap from "./paperino.png";
 
 function DoctorProfile({
   getAllReservations,
@@ -16,10 +17,10 @@ function DoctorProfile({
 }) {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <section style={{ padding: "40px", backgroundColor: "#b0c5ff" }}>
         <div>
-          <UserLoginPic name={"Dr. Paperino"} />
+          <UserLoginPic name={"Dr. Paperino"} personalImg={pap} />
         </div>
         <Agenda />
         <TableResponsive
@@ -30,7 +31,7 @@ function DoctorProfile({
         />
         <AppointmentTable getAllReservations={getAllReservations} />
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
