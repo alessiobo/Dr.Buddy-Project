@@ -22,9 +22,9 @@ function Register_Card({createPatient}) {
     
     return (
         <div className="register_card">
-            <div className="register_card_header">
+            {/* <div className="register_card_header">
                 <button>Register</button>
-            </div>
+            </div> */}
             <div className="register_card_body">
                 <h2>Nome</h2>
                 <input type="text" placeholder="Nome" value={firstname} onChange={(event) => setfirstname(event.target.value)} />

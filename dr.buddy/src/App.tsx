@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import Navbar from "./Components/Navbar/Navbar";
 import PartClient from "./Pages/PartClient/PartClient";
 // import Navbar from "../src/Components/Navbar/Navbar";
-import LoginPage from "./Pages/LoginPage/LoginPage";
+import RegisterPage from "./Pages/LoginPage/RegisterPage";
 // import Footer from "./Components/Footer/Footer"; 
 import Footer from "./Components/Footer/Footer";
 import useServer from "./Hooks/useServer";
@@ -43,7 +43,7 @@ function App() {
             />
           }
         />
-        <Route path="/loginpage" element={<LoginPage createPatient={createPatient} />} />
+        <Route path="/register" element={<RegisterPage createPatient={createPatient} />} />
         <Route
           path="/bookingpage"
           element={
