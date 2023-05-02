@@ -22,12 +22,35 @@ function BookingCard({ createReservation }: { createReservation: any }) {
     setTime("");
   };
 
+  function generateTimeOptions() {
+    const options = [];
+
+    for (let hour = 8; hour < 20; hour++) {
+      for (let minute = 0; minute < 60; minute += 30) {
+        const timeString = `${hour.toString().padStart(2, "0")}:${minute
+          .toString()
+          .padStart(2, "0")}`;
+
+        options.push(
+          <option key={timeString} value={timeString}>
+            {timeString}
+          </option>
+        );
+      }
+    }
+
+    return options;
+  }
+
   return (
     <div>
       <div className="toggle-btn-wrapper">
-      <Button className="toggle-btn" onClick={() => setIsBookingVisible(!isBookingVisible)}>
-        {isBookingVisible ? "Nascondi prenotazione" : "Prenota visita"}
-      </Button>
+        <Button
+          className="toggle-btn"
+          onClick={() => setIsBookingVisible(!isBookingVisible)}
+        >
+          {isBookingVisible ? "Nascondi prenotazione" : "Prenota visita"}
+        </Button>
       </div>
       {isBookingVisible && (
         <div className="booked-card">
@@ -48,11 +71,18 @@ function BookingCard({ createReservation }: { createReservation: any }) {
                 </FormGroup>
                 <FormGroup>
                   <Label className="time-label">Ora</Label>
-                  <Input
+                  {/* <Input
                     type="time"
                     value={time}
                     onChange={(event) => setTime(event.target.value)}
-                  />
+                  /> */}
+                  <select
+                    value={time}
+                    onChange={(event) => setTime(event.target.value)}
+                  >
+                    <option value="" />
+                    {generateTimeOptions()}
+                  </select>
                 </FormGroup>
                 <div className="booking-btn">
                   <Button
