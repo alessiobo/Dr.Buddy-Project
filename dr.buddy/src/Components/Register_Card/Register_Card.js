@@ -1,28 +1,20 @@
 import { useState } from "react"
 import "./register_card.css"
+import {createObj} from "../../Hooks/useServer"
 function Register_Card() {
     const [password, setpassword] = useState("")
     const [email, setemail] = useState("")
     const [firstname, setfirstname] = useState("")
     const [lastname, setlastname] = useState("")
     const [telephoneNumber, settelephoneNumber] = useState("")
-    async function Register_fetcher() {
-        const response = await fetch("http://localhost:9090/Patient/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                firstname: firstname,
-                lastname: lastname,
-                telephoneNumber: telephoneNumber,
-                email: email,
-                password: password
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-    }
+    const patientinfo = {
+        firstname: firstname,
+        lastname: lastname,
+        tel_num: telephoneNumber,
+        email: email,
+        password: password,
+    }   
+    createObj(patientinfo)
     return (
         <div className="register_card">
             <div className="register_card_header">
