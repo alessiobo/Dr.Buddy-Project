@@ -5,15 +5,14 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 function HomePage() {
   return (
-    <div>
-      <header className="homeContainer">
-        <Video />
+    <div className="homepage">
         <Navbar />
-        
+      <header className="homeContainer">
+        <div className="video_wrapper"><Video /></div>
       </header>
       <div className="Join">
-        <Footer />
       </div>
+        <Footer />
     </div>
   );
 }
