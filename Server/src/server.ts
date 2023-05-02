@@ -1,12 +1,15 @@
 import express from "express";
 import "express-async-errors";
 import morgan from "morgan";
+import authorize from "./authorize.js";
 import {
   getAllPatients,
   getPatientByID,
   createPatient,
   updatePatientByID,
   deletePatientByID,
+  logIn,
+  logOut,
 } from "./controllers/patients.js";
 
 import {
@@ -17,6 +20,8 @@ import {
   deleteReservationByID,
   getAllReservationByID,
 } from "./controllers/reservations.js";
+
+import "./passport.js";
 
 const server = express();
 const port = 5000;
@@ -61,7 +66,7 @@ server.get("/", (req, res) => {
   res.status(200).json({ msg: "Welcome" });
 });
 
-//Clients
+//Patients
 
 server.get("/patients", getAllPatients);
 
@@ -72,6 +77,12 @@ server.post("/patients", createPatient);
 server.put("/patients/:id", updatePatientByID);
 
 server.delete("/patients/:id", deletePatientByID);
+
+//LogIN
+
+server.post("/patients/login", logIn);
+// server.post("/patients/signup", signUp);
+server.get("/patients/logout", authorize, logOut);
 
 //Reservations
 

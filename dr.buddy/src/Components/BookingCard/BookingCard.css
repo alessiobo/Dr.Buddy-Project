@@ -77,3 +77,41 @@
 .card-title {
   padding: 5% !important;
 }
+
+.toggle-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  transition: 300ms !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #21009d !important;
+  width: 227px !important;
+  margin: 5px !important;
+  height: 57px !important;
+  height: 57px !important;
+  border-radius: 20px !important;
+  color: white !important;
+  font-size: 18px !important;
+}
+
+
+.toggle-btn:hover {
+  transition: 300ms !important;
+  color: black !important;
+  background-color: #0056d0 !important;
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 2px 2px #21009d !important;
+  filter: brightness(125%) !important;
+}
+
+.toggle-btn:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 0px 0px !important;
+  filter: brightness(175%) !important;
+}
