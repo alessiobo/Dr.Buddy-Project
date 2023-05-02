@@ -1,11 +1,11 @@
 import pgPromise from "pg-promise";
 //postgres://username:password
-const db = pgPromise()("postgres://postgres:franco126@localhost:5432/postgres");
+const db = pgPromise()("postgres://postgres:hello1593@localhost:5432/postgres");
 
 const setupDB = async () => {
-  await db.none(` 
+  await db.none(`
   DROP TABLE IF EXISTS reservation;
-  DROP TABLE IF EXISTS patient; 
+  DROP TABLE IF EXISTS patient;
 
   CREATE TABLE patient (
     id_patient SERIAL NOT NULL PRIMARY KEY,
@@ -17,7 +17,7 @@ const setupDB = async () => {
     created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     token TEXT
 
-  );  
+  );
 
   CREATE TABLE reservation(
     id_reservation SERIAL NOT NULL PRIMARY KEY,
