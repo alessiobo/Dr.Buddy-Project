@@ -2,12 +2,15 @@ import { Route, Routes } from "react-router";
 import "./App.css";
 import HomePage from "./Pages/HomePage/HomePage";
 import DoctorProfile from "./Pages/DoctorProfile/DoctorProfile";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import Navbar from "./Components/Navbar/Navbar";
 import PartClient from "./Pages/PartClient/PartClient";
-import Navbar from "../src/Components/Navbar/Navbar";
-import LoginPage from "./Pages/LoginPage/LoginPage";
+// import Navbar from "../src/Components/Navbar/Navbar";
+import RegisterPage from "./Pages/LoginPage/RegisterPage";
+// import Footer from "./Components/Footer/Footer"; 
 import Footer from "./Components/Footer/Footer";
 import useServer from "./Hooks/useServer";
-
+import LoginPage from "./Pages/LoginPage/Login"
 function App() {
   const {
     data: getAllPatients,
@@ -40,7 +43,8 @@ function App() {
             />
           }
         />
-        <Route path="/loginpage" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/register" element={<RegisterPage createPatient={createPatient} />} />
         <Route
           path="/bookingpage"
           element={

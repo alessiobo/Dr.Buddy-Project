@@ -3,9 +3,9 @@ import pgPromise from "pg-promise";
 const db = pgPromise()("postgres://postgres:root@localhost:5432/postgres");
 
 const setupDB = async () => {
-  await db.none(` 
+  await db.none(`
   DROP TABLE IF EXISTS reservation;
-  DROP TABLE IF EXISTS patient; 
+  DROP TABLE IF EXISTS patient;
 
   CREATE TABLE patient (
     id_patient SERIAL NOT NULL PRIMARY KEY,
@@ -17,7 +17,7 @@ const setupDB = async () => {
     created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     token TEXT
 
-  );  
+  );
 
   CREATE TABLE reservation(
     id_reservation SERIAL NOT NULL PRIMARY KEY,
@@ -51,6 +51,9 @@ const setupDB = async () => {
   );
   await db.none(
     `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'18:00','ok','2023-05-03')`
+  );
+  await db.none(
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'08:30','ok','2023-05-02')`
   );
 };
 
