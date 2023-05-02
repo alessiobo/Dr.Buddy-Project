@@ -1,6 +1,6 @@
 import pgPromise from "pg-promise";
 //postgres://username:password
-const db = pgPromise()("postgres://postgres:hello1593@localhost:5432/postgres");
+const db = pgPromise()("postgres://postgres:root@localhost:5432/postgres");
 
 const setupDB = async () => {
   await db.none(`
@@ -41,16 +41,16 @@ const setupDB = async () => {
   );
 
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'12:00','ok','1994-01-28')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'12:00','ok','2023-05-02')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (2,'14:00','ok','2000-01-29')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (2,'08:00','ok','2023-05-02')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (3,'17:00','ok','2023-06-24')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (3,'17:00','ok','2023-05-02')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'21:00','ok','2023-06-28')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'18:00','ok','2023-05-03')`
   );
 };
 
