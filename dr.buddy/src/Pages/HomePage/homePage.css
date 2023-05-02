@@ -1,7 +1,8 @@
-/*body {
-  font-family: "Merriweather", sans-serif;
-  src: url("/dr.buddy/src/Fonts/Merriweather-Regular.ttf") format("truetype");
-}*/
+body {
+  /* font-family: "Merriweather", sans-serif;
+  src: url("/dr.buddy/src/Fonts/Merriweather-Regular.ttf") format("truetype"); */
+  background-color: #b0c5ff;
+}
 h1 {
   font-size: 2.5rem;
 }
