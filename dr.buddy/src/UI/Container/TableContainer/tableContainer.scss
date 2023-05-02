@@ -1,13 +1,12 @@
 .tableContainer {
-  border: 2px solid #028c69;
-
+  border: 2px solid #3a76e4;
   margin: 40px 0;
-
-  border-radius: 15px;
-  h3 {
-    border-radius: 10px 10px 0 0;
-    padding: 2%;
-    background-color: #028c69;
-    color: #fff;
-  }
+  border-radius: 15px 15px 0 0;
+}
+.tableContainer h3 {
+  border-radius: 10px 10px 0 0;
+  padding: 2%;
+  margin: 0;
+  background-color: #3a76e4;
+  color: #fff;
 }
