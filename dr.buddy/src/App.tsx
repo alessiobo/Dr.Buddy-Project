@@ -10,7 +10,7 @@ import RegisterPage from "./Pages/LoginPage/RegisterPage";
 // import Footer from "./Components/Footer/Footer"; 
 import Footer from "./Components/Footer/Footer";
 import useServer from "./Hooks/useServer";
-
+import LoginPage from "./Pages/LoginPage/Login"
 function App() {
   const {
     data: getAllPatients,
@@ -43,6 +43,7 @@ function App() {
             />
           }
         />
+        <Route path="/login" element={<LoginPage/>}/>
         <Route path="/register" element={<RegisterPage createPatient={createPatient} />} />
         <Route
           path="/bookingpage"

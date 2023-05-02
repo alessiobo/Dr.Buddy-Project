@@ -1,18 +1,18 @@
 
 import Footer from "../../Components/Footer/Footer"
+import Login_card from "../../Components/Login_Card/Login_Card"
 import Navbar from "../../Components/Navbar/Navbar"
-import Register_Card from "../../Components/Register_Card/Register_Card"
 import "./RegisterPage.css"
-import dottoressa from "./dottoressa.svg"
+import dottore from "./dottore.svg"
 
-function LoginPage({createPatient}) {
+function LoginPage() {
     return (
         <div className="LoginPage">
         <Navbar/>
         <div className="body" style={{ height: "530px" }}>
             <div className="body_element_container">
-                <Register_Card createPatient={createPatient} />
-                <img src={dottoressa}/>
+                <Login_card/>
+                <img src={dottore}/>
             </div>
         </div>
         <Footer/>

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./register_card.css"
+
 // import createPatient from "../../Hooks/useServer"
 function Register_Card({createPatient}) {
     const [password, setpassword] = useState("")
@@ -21,6 +22,7 @@ function Register_Card({createPatient}) {
     
     return (
         <div className="register_card">
+            
             {/* <div className="register_card_header">
                 <button>Register</button>
             </div> */}

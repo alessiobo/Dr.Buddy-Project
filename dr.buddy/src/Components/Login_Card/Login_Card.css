@@ -13,8 +13,7 @@
   height: 333px;
   width: 244px;
   padding: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 10px;
   box-shadow: 1px 1px rgba(0, 0, 255, 0.5);
 }
 .login_card .login_card_content_wrapper {
