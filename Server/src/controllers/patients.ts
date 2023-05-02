@@ -104,7 +104,7 @@ async function logIn(req: Request, res: Response) {
   }
 }
 
-//!Abbiamo già create che fa la stessa cosa
+//!Abbiamo già createPatient che fa la stessa cosa
 // async function signUp(req: Request, res: Response) {
 //   const { firstname, password } = req.body;
 //   const patient = await db.oneOrNone(
@@ -124,6 +124,20 @@ async function logIn(req: Request, res: Response) {
 //   }
 // }
 
+async function logOut(req: Request, res: Response) {
+  // try {
+  //   const user: any = req.user;
+  //   console.log(user);
+  //   await db.none(`UPDATE patient SET token=$2 WHERE id_patient=$1`, [
+  //     user?.id,
+  //     null,
+  //   ]);
+  //   res.status(200).json({ msg: "Logout successful." });
+  // } catch (error) {
+  //   console.log(error);
+  // }
+}
+
 export {
   getAllPatients,
   getPatientByID,
@@ -131,4 +145,5 @@ export {
   updatePatientByID,
   deletePatientByID,
   logIn,
+  logOut,
 };
