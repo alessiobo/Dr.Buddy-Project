@@ -1,20 +1,25 @@
 import { useState } from "react"
 import "./register_card.css"
-import {createObj} from "../../Hooks/useServer"
-function Register_Card() {
+// import createPatient from "../../Hooks/useServer"
+function Register_Card({createPatient}) {
     const [password, setpassword] = useState("")
     const [email, setemail] = useState("")
     const [firstname, setfirstname] = useState("")
     const [lastname, setlastname] = useState("")
     const [telephoneNumber, settelephoneNumber] = useState("")
-    const patientinfo = {
-        firstname: firstname,
-        lastname: lastname,
-        tel_num: telephoneNumber,
-        email: email,
-        password: password,
-    }   
-    createObj(patientinfo)
+    async function createPatientHandler(event)  {
+        event.preventDefault()
+        const patientinfo = {
+            firstname: firstname,
+            lastname: lastname,
+            tel_num: telephoneNumber,
+            email: email,
+            password: password,
+        };
+        console.log(patientinfo)
+        console.log(createPatient(patientinfo));  
+    }
+    
     return (
         <div className="register_card">
             <div className="register_card_header">
@@ -32,7 +37,7 @@ function Register_Card() {
                 <h2>Password</h2>
                 <input type="password" placeholder="Password" value={password} onChange={(event) => setpassword(event.target.value)} />
                 <div className="register_button_wrapper">
-                    <button className="register_button" onClick={Register_fetcher}>Register</button>
+                    <button className="register_button" onClick={createPatientHandler}>Register</button>
                 </div>
             </div>
         </div>

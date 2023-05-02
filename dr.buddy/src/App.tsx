@@ -43,7 +43,7 @@ function App() {
             />
           }
         />
-        <Route path="/loginpage" element={<LoginPage />} />
+        <Route path="/loginpage" element={<LoginPage createPatient={createPatient} />} />
         <Route
           path="/bookingpage"
           element={

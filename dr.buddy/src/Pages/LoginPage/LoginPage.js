@@ -6,14 +6,14 @@ import Register_Card from "../../Components/Register_Card/Register_Card"
 import "./LoginPage.css"
 
 
-function LoginPage() {
+function LoginPage({createPatient}) {
     return (
         <div className="LoginPage">
         <Navbar/>
         <div className="body" style={{ height: "530px" }}>
             <div className="body_element_container">
                 <Login_card />  
-                <Register_Card />
+                <Register_Card createPatient={createPatient} />
             </div>
         </div>
         <Footer/>
