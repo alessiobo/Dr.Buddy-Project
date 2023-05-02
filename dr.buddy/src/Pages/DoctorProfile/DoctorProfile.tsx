@@ -1,6 +1,7 @@
 import Agenda from "../../Components/Agenda/Agenda";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
+import AppointmentTable from "../../Components/Table/AppointmentTable/AppointmentTable";
 import TableResponsive from "../../Components/Table/TableResponsive";
 import UserLoginPic from "../../Components/UserLoginPic/UserLoginPic";
 
@@ -15,10 +16,10 @@ function DoctorProfile({
 }) {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <section style={{ padding: "40px" }}>
         <div>
-          <UserLoginPic name={"Paperino"} />
+          <UserLoginPic name={"Dr. Paperino"} />
         </div>
         <Agenda />
         <TableResponsive
@@ -27,8 +28,9 @@ function DoctorProfile({
           getAllReservations={getAllReservations}
           updateReservation={updateReservation}
         />
+        <AppointmentTable getAllReservations={getAllReservations} />
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

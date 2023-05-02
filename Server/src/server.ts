@@ -1,6 +1,7 @@
 import express from "express";
 import "express-async-errors";
 import morgan from "morgan";
+import authorize from "./authorize.js";
 import {
   getAllPatients,
   getPatientByID,
@@ -8,6 +9,7 @@ import {
   updatePatientByID,
   deletePatientByID,
   logIn,
+  logOut,
 } from "./controllers/patients.js";
 
 import {
@@ -18,6 +20,8 @@ import {
   deleteReservationByID,
   getAllReservationByID,
 } from "./controllers/reservations.js";
+
+import "./passport.js";
 
 const server = express();
 const port = 5000;
@@ -78,6 +82,7 @@ server.delete("/patients/:id", deletePatientByID);
 
 server.post("/patients/login", logIn);
 // server.post("/patients/signup", signUp);
+server.get("/patients/logout", authorize, logOut);
 
 //Reservations
 
