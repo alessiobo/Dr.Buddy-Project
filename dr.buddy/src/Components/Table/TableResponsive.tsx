@@ -28,7 +28,7 @@ function TableResponsive({
   return (
     <TableContainer>
       <h3>{title}:</h3>
-      <Table responsive="xl">
+      <Table responsive="xl" style={{ backgroundColor: "#fbfaf8" }}>
         <thead>
           <tr>
             <th>ID</th>

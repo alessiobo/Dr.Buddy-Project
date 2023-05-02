@@ -17,7 +17,7 @@ function DoctorProfile({
   return (
     <>
       {/* <Navbar /> */}
-      <section style={{ padding: "40px" }}>
+      <section style={{ padding: "40px", backgroundColor: "#b0c5ff" }}>
         <div>
           <UserLoginPic name={"Dr. Paperino"} />
         </div>
