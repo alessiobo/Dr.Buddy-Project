@@ -61,6 +61,7 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                         <span>
                           {app.firstname} {app.lastname}
                         </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -78,6 +79,7 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                         <span>
                           {app.firstname} {app.lastname}
                         </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -92,7 +94,10 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                   return (
                     <td key={app.id_reservation}>
                       <div className="appTable-tdCont">
-                        {app.firstname} {app.lastname}
+                        <span>
+                          {app.firstname} {app.lastname}
+                        </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -107,7 +112,10 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                   return (
                     <td key={app.id_reservation}>
                       <div className="appTable-tdCont">
-                        {app.firstname} {app.lastname}
+                        <span>
+                          {app.firstname} {app.lastname}
+                        </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -122,7 +130,10 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                   return (
                     <td key={app.id_reservation}>
                       <div className="appTable-tdCont">
-                        {app.firstname} {app.lastname}
+                        <span>
+                          {app.firstname} {app.lastname}
+                        </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -137,7 +148,10 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                   return (
                     <td key={app.id_reservation}>
                       <div className="appTable-tdCont">
-                        {app.firstname} {app.lastname}
+                        <span>
+                          {app.firstname} {app.lastname}
+                        </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -152,7 +166,10 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                   return (
                     <td key={app.id_reservation}>
                       <div className="appTable-tdCont">
-                        {app.firstname} {app.lastname}
+                        <span>
+                          {app.firstname} {app.lastname}
+                        </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -167,7 +184,10 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                   return (
                     <td key={app.id_reservation}>
                       <div className="appTable-tdCont">
-                        {app.firstname} {app.lastname}
+                        <span>
+                          {app.firstname} {app.lastname}
+                        </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -182,7 +202,10 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                   return (
                     <td key={app.id_reservation}>
                       <div className="appTable-tdCont">
-                        {app.firstname} {app.lastname}
+                        <span>
+                          {app.firstname} {app.lastname}
+                        </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -197,7 +220,10 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                   return (
                     <td key={app.id_reservation}>
                       <div className="appTable-tdCont">
-                        {app.firstname} {app.lastname}
+                        <span>
+                          {app.firstname} {app.lastname}
+                        </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
@@ -212,7 +238,10 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                   return (
                     <td key={app.id_reservation}>
                       <div className="appTable-tdCont">
-                        {app.firstname} {app.lastname}
+                        <span>
+                          {app.firstname} {app.lastname}
+                        </span>
+                        <span>☎️: {app.tel_num}</span>
                       </div>
                     </td>
                   );
