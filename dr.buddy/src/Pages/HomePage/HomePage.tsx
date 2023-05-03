@@ -12,7 +12,7 @@ function HomePage() {
       </header>
       <div className="Join">
       </div>
-        <Footer />
+       
     </div>
   );
 }

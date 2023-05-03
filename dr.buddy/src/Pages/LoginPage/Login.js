@@ -9,7 +9,7 @@ function LoginPage() {
     return (
         <div className="LoginPage">
         <Navbar/>
-        <div className="body" style={{ height: "530px" }}>
+        <div className="body" >
             <div className="body_element_container">
                 <Login_card/>
                 <img src={dottore}/>

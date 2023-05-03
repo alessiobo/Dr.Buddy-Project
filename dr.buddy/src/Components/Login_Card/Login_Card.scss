@@ -1,10 +1,5 @@
 // sass --watch Login_Card.scss Login_Card.css
-* {
-    margin: 0px;
-    border: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
+
 
 .login_card {
     background-color: #27B2EC;
@@ -16,7 +11,11 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px rgb(0, 0, 255, 0.5);
-
+    input {
+        padding: 2%;
+        border-radius: 3px;
+        box-shadow: 1px 1px grey;
+    }
     .login_card_content_wrapper {
         height: 100%;
         display: flex;
@@ -50,7 +49,9 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+       
         .login_button {
+
             position: relative;
             transition: 300ms;
             display: flex;
@@ -58,13 +59,13 @@
             align-items: center;
             background-color: #21009D;
             // border: 1px solid #21009D;
-            width: 50%;
+            width: 100%;
             margin: 5px;
             height: 57px;
             border-radius: 20px;
             color: white;
             font-size: 18px;
-
+            padding: 20px;
             &:hover {
                 transition: 300ms;
                 color: invert(white);
@@ -85,5 +86,6 @@
                 filter: brightness(175%);
             }
         }
+    
     }
 }

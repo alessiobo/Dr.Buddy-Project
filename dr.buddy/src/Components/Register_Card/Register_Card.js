@@ -8,6 +8,8 @@ function Register_Card({createPatient}) {
     const [firstname, setfirstname] = useState("")
     const [lastname, setlastname] = useState("")
     const [telephoneNumber, settelephoneNumber] = useState("")
+    const [showtext, setshowtext] = useState(false)
+    
     async function createPatientHandler(event)  {
         event.preventDefault()
         const patientinfo = {
@@ -17,7 +19,8 @@ function Register_Card({createPatient}) {
             email: email,
             password: password,
         };
-        createPatient(patientinfo);  
+        createPatient(patientinfo);
+        setshowtext(true)  
     }
     
     return (
@@ -37,8 +40,9 @@ function Register_Card({createPatient}) {
                 <input type="text" placeholder="Email" value={email} onChange={(event) => setemail(event.target.value)} />
                 <h2>Password</h2>
                 <input type="password" placeholder="Password" value={password} onChange={(event) => setpassword(event.target.value)} />
+                {showtext && <h2 className="Registrazione_Completata">Registrazione Completata</h2>}
                 <div className="register_button_wrapper">
-                    <button className="register_button" onClick={createPatientHandler}>Register</button>
+                    <button className="register_button" onClick={createPatientHandler}>Registrati</button>
                 </div>
             </div>
         </div>
