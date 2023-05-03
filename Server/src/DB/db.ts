@@ -6,6 +6,7 @@ const setupDB = async () => {
   await db.none(`
   DROP TABLE IF EXISTS reservation;
   DROP TABLE IF EXISTS patient;
+  DROP TABLE IF EXISTS doctor;
 
   CREATE TABLE patient (
     id_patient SERIAL NOT NULL PRIMARY KEY,
@@ -22,11 +23,24 @@ const setupDB = async () => {
   CREATE TABLE reservation(
     id_reservation SERIAL NOT NULL PRIMARY KEY,
     id_patient INTEGER NOT NULL,
+    id_doctor INTEGER NOT NULL,
     date_reservation VARCHAR(10),
     ora VARCHAR(20) NOT NULL,
     stato VARCHAR(20) NOT NULL,
     FOREIGN KEY (id_patient) REFERENCES patient (id_patient)
   );
+
+  CREATE TABLE doctor (
+    id_doctor SERIAL NOT NULL PRIMARY KEY,
+    firstname VARCHAR(45) NOT NULL,
+    lastname VARCHAR(45) NOT NULL,
+    email VARCHAR(45) NOT NULL,
+    tel_num VARCHAR(15),
+    password VARCHAR(65) NOT NULL,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    token TEXT
+  );
+
 
 
 `);
