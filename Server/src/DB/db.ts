@@ -27,7 +27,9 @@ const setupDB = async () => {
     date_reservation VARCHAR(10),
     ora VARCHAR(20) NOT NULL,
     stato VARCHAR(20) NOT NULL,
-    FOREIGN KEY (id_patient) REFERENCES patient (id_patient)
+    FOREIGN KEY (id_patient) REFERENCES patient (id_patient),
+    FOREIGN KEY (id_doctor) REFERENCES doctor (id_doctor),
+    UNIQUE (id_patient,id_doctor)
   );
 
   CREATE TABLE doctor (
