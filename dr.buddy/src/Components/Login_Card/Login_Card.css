@@ -1,5 +1,5 @@
 .login_card {
-  background-color: #27B2EC;
+  background-color: rgb(133, 162, 232);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,12 +7,12 @@
   aspect-ratio: 3/4;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 1px 1px rgba(0, 0, 255, 0.5);
+  box-shadow: 2px 2px rgb(133, 162, 232, 0.5);
 }
 .login_card input {
   padding: 2%;
   border-radius: 3px;
-  box-shadow: 1px 1px grey;
+  box-shadow: 1px 1px rgb(128, 128, 128, 0.5);
 }
 .login_card .login_card_content_wrapper {
   height: 100%;
