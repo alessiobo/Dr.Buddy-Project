@@ -1,8 +1,10 @@
 .navbar {
+  padding: 0px, 60px;
   margin: 0px;
   background-color: #85a2e8;
   position: relative;
   z-index: 99;
+  max-width: 100vw;
   max-height: 87px;
   min-height: 87px;
   display: flex;
@@ -12,12 +14,14 @@
   margin-bottom: 0px !important;
 }
 .navbar .logo_wrapper {
-  max-height: 48px;
+  max-height: 52px;
+  overflow: hidden;
 }
 .navbar .logo_wrapper img {
   max-height: inherit;
   max-width: 200px;
   padding-left: 40px;
+  overflow: hidden;
 }
 .navbar .link_container {
   display: none;
@@ -73,12 +77,12 @@
   height: 57px;
   border-radius: 20px;
   font-weight: bold;
-  color: white;
+  color: #FBFAF8;
   font-size: 18px;
 }
 .navbar .button_wrapper button:hover {
   transition: 300ms;
-  color: black;
+  color: #040507;
   background-color: #0056D0;
   transform: translate(-2px, -2px);
   box-shadow: 2px 2px #21009D;

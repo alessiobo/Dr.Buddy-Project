@@ -21,7 +21,7 @@
             text-align: left;
             font-size: 24px;
             margin: 0px;
-            color: white;
+            color: #FBFAF8;
         }
 
         input {
@@ -34,7 +34,7 @@
 
     .register_card_header {
         background-color: #03C988;
-        color: whitesmoke;
+        color: #FBFAF8;
         position: relative;
         top: -50px;
         left: 102px;
@@ -70,12 +70,12 @@
             margin: 5px;
             height: 57px;
             border-radius: 20px;
-            color: white;
+            color: #FBFAF8;
             font-size: 18px;
 
             &:hover {
                 transition: 300ms;
-                color: invert(white);
+                color: invert(#FBFAF8);
                 background-color: #0056D0;
                 transform: translate(-2px, -2px);
                 box-shadow: 2px 2px #21009D;
