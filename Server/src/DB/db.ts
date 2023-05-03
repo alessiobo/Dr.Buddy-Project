@@ -41,19 +41,19 @@ const setupDB = async () => {
   );
 
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'12:00','ok','2023-05-03')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'12:00','✅','2023-05-03')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (2,'08:00','ok','2023-05-03')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (2,'08:00','✅','2023-05-03')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (3,'17:00','ok','2023-05-03')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (3,'17:00','✅','2023-05-03')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'18:00','ok','2023-05-03')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'18:00','❌','2023-05-03')`
   );
   await db.none(
-    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'08:30','ok','2023-05-02')`
+    `INSERT INTO reservation (id_patient,ora,stato,date_reservation) VALUES (1,'08:30','✅','2023-05-02')`
   );
 };
 

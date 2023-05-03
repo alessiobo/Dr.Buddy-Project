@@ -14,7 +14,7 @@ function BookingCard({ createReservation }: { createReservation: any }) {
       id_patient: 1, //per ora solo Mario
       data: date,
       ora: time,
-      stato: "pending",
+      stato: "⏳",
     };
 
     createReservation(reserv);
@@ -43,7 +43,7 @@ function BookingCard({ createReservation }: { createReservation: any }) {
   }
 
   return (
-    <div>
+    <div className="BookingCard">
       <div className="toggle-btn-wrapper">
         <Button
           className="toggle-btn"
@@ -76,7 +76,7 @@ function BookingCard({ createReservation }: { createReservation: any }) {
                     value={time}
                     onChange={(event) => setTime(event.target.value)}
                   /> */}
-                  <select
+                  <select className="HourSelect"
                     value={time}
                     onChange={(event) => setTime(event.target.value)}
                   >

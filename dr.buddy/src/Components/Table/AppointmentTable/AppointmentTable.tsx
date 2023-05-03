@@ -42,9 +42,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -55,9 +55,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -75,9 +75,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -88,9 +88,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -108,9 +108,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -121,9 +121,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -141,9 +141,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -154,9 +154,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -174,9 +174,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -187,9 +187,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -207,9 +207,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -220,9 +220,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -240,9 +240,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -253,9 +253,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -273,9 +273,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -286,9 +286,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -306,9 +306,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -319,9 +319,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -339,9 +339,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -352,9 +352,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -372,9 +372,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>
@@ -385,9 +385,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       return (
                         <td key={app.id_reservation}>
                           <div className="appTable-tdCont">
-                            <span>{app.ora}</span>
+                            <span>🕑{app.ora}</span>
                             <span>
-                              {app.firstname} {app.lastname}
+                              👤{app.firstname} {app.lastname}
                             </span>
                             <span>☎️: {app.tel_num}</span>
                           </div>
@@ -405,9 +405,9 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                     return (
                       <td key={app.id_reservation}>
                         <div className="appTable-tdCont">
-                          <span>{app.ora}</span>
+                          <span>🕑{app.ora}</span>
                           <span>
-                            {app.firstname} {app.lastname}
+                            👤{app.firstname} {app.lastname}
                           </span>
                           <span>☎️: {app.tel_num}</span>
                         </div>

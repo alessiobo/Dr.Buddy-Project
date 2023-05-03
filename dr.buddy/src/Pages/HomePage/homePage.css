@@ -1,7 +1,8 @@
-/*body {
-  font-family: "Merriweather", sans-serif;
-  src: url("/dr.buddy/src/Fonts/Merriweather-Regular.ttf") format("truetype");
-}*/
+body {
+  /* font-family: "Merriweather", sans-serif;
+  src: url("/dr.buddy/src/Fonts/Merriweather-Regular.ttf") format("truetype"); */
+  background-color: #b0c5ff;
+}
 h1 {
   font-size: 2.5rem;
 }
@@ -83,7 +84,7 @@ h4 {
   text-align: center;
   margin: 2rem 3rem 0;
   mix-blend-mode: overlay;
-  color: #fff;
+  color: #FBFAF8;
   font-weight: 100;
 }
 

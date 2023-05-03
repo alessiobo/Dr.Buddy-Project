@@ -1,7 +1,7 @@
 
 import "./Login_Card.css"
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 function Login_card() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -13,7 +13,9 @@ function Login_card() {
                 <h2>Password</h2>
                 <input type="password" placeholder="Password"  value={password} onChange={(event) => setPassword(event.target.value)}/>
                 <div className="login_button_wrapper">
+                <Link to="/bookingpage">
                 <button className="login_button">Accedi</button>
+                </Link>
                 </div>
             </div>
         </div>

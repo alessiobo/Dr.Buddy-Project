@@ -1,20 +1,20 @@
 .booking-card {
-  background-color: white;
+  background-color: #FBFAF8;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
   padding: 50px 20px;
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
+  
 }
 
 .card-header {
   margin-bottom: 15px;
-  background-color: #fff;
+  background-color: #FBFAF8;
   border-radius: 10px;
   text-align: center;
   width: 100%;
@@ -96,7 +96,7 @@
   height: 57px !important;
   height: 57px !important;
   border-radius: 20px !important;
-  color: white !important;
+  color: #FBFAF8 !important;
   font-size: 18px !important;
 }
 
@@ -114,4 +114,15 @@
   transform: translate(2px, 2px) !important;
   box-shadow: 0px 0px !important;
   filter: brightness(175%) !important;
+}
+
+.HourSelect {
+  color : black;
+  border: 1px solid black;
+  margin-left: 10px;
+}
+
+
+body {
+  background-color: #B0C5FF;
 }
