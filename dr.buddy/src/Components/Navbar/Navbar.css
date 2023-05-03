@@ -1,5 +1,5 @@
 .navbar {
-  margin: 0px !important;
+  margin: 0px;
   background-color: #85a2e8;
   position: relative;
   z-index: 99;
@@ -9,7 +9,7 @@
   justify-content: flex-start;
   align-items: center;
   flex: 1 300px;
-  border-radius: 0px !important;
+  margin-bottom: 0px !important;
 }
 .navbar .logo_wrapper {
   max-height: 48px;
@@ -51,18 +51,18 @@
   flex: 1 1 auto;
 }
 .navbar .button_wrapper .navbar_register_button {
-  background-color: #009256;
+  background-color: #21009D;
 }
 .navbar .button_wrapper .navbar_register_button:hover {
-  background-color: #03C988;
-  box-shadow: 2px 2px #009256;
-  filter: brightness(110%);
+  box-shadow: 2px 2px #21009D;
+  filter: brightness(125%);
 }
 .navbar .button_wrapper .navbar_register_button:active {
   box-shadow: 0px 0px;
   filter: brightness(120%);
 }
 .navbar .button_wrapper button {
+  text-decoration: none;
   transition: 300ms;
   display: flex;
   justify-content: center;
@@ -92,6 +92,10 @@
   transform: translate(2px, 2px);
   box-shadow: 0px 0px;
   filter: brightness(175%);
+}
+
+a {
+  text-decoration: none !important;
 }
 
 /*# sourceMappingURL=Navbar.css.map */

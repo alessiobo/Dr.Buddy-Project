@@ -9,7 +9,7 @@ function LoginPage({createPatient}) {
     return (
         <div className="LoginPage">
         <Navbar/>
-        <div className="body" style={{ height: "530px" }}>
+        <div className="body">
             <div className="body_element_container">
                 <Register_Card createPatient={createPatient} />
                 <img src={dottoressa}/>
