@@ -12,7 +12,7 @@ function LoginPage() {
         <div className="body" >
             <div className="body_element_container">
                 <Login_card/>
-                <img src={dottore}/>
+                <img src={dottore} className="dottore"/>
             </div>
         </div>
         <Footer/>

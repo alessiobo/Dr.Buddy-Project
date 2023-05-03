@@ -19,7 +19,7 @@
   text-align: left;
   font-size: 24px;
   margin: 0px;
-  color: white;
+  color: #FBFAF8;
 }
 .register_card .register_card_body input {
   padding: 2%;
@@ -28,7 +28,7 @@
 }
 .register_card .register_card_header {
   background-color: #03C988;
-  color: whitesmoke;
+  color: #FBFAF8;
   position: relative;
   top: -50px;
   left: 102px;
@@ -61,12 +61,12 @@
   margin: 5px;
   height: 57px;
   border-radius: 20px;
-  color: white;
+  color: #FBFAF8;
   font-size: 18px;
 }
 .register_card .register_button_wrapper .register_button:hover {
   transition: 300ms;
-  color: black;
+  color: #040507;
   background-color: #0056D0;
   transform: translate(-2px, -2px);
   box-shadow: 2px 2px #21009D;

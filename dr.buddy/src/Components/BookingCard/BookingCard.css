@@ -1,5 +1,5 @@
 .booking-card {
-  background-color: white;
+  background-color: #FBFAF8;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
 
 .card-header {
   margin-bottom: 15px;
-  background-color: #fff;
+  background-color: #FBFAF8;
   border-radius: 10px;
   text-align: center;
   width: 100%;
@@ -96,7 +96,7 @@
   height: 57px !important;
   height: 57px !important;
   border-radius: 20px !important;
-  color: white !important;
+  color: #FBFAF8 !important;
   font-size: 18px !important;
 }
 
