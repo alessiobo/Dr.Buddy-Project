@@ -55,14 +55,14 @@ function TableResponsive({
                   <td>{el.ora}</td>
                   <td>{el.stato}</td>
 
-                  {buttons && el.stato !== "ok" && el.stato !== "rifiutata" && (
+                  {buttons && el.stato !== "✅" && el.stato !== "❌" && (
                     <div>
                       <td style={{ marginRight: "20px" }}>
                         <Button
                           variant="success"
                           onClick={() =>
                             updateReservation(el.id_reservation, {
-                              stato: "ok",
+                              stato: "✅",
                             })
                           }
                         >
@@ -74,7 +74,7 @@ function TableResponsive({
                           variant="danger"
                           onClick={() =>
                             updateReservation(el.id_reservation, {
-                              stato: "rifiutata",
+                              stato: "❌",
                             })
                           }
                         >

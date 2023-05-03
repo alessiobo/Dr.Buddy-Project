@@ -14,7 +14,7 @@ function BookingCard({ createReservation }: { createReservation: any }) {
       id_patient: 1, //per ora solo Mario
       data: date,
       ora: time,
-      stato: "pending",
+      stato: "⏳",
     };
 
     createReservation(reserv);
