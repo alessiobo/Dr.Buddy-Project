@@ -8,9 +8,19 @@ import {
   createPatient,
   updatePatientByID,
   deletePatientByID,
-  logIn,
-  logOut,
+  logInPatient,
+  logOutPatient,
 } from "./controllers/patients.js";
+
+import {
+  getAllDoctors,
+  getDoctorByID,
+  createDoctor,
+  updateDoctorByID,
+  deleteDoctorByID,
+  logInDoctor,
+  logOutDoctor,
+} from "./controllers/doctors.js";
 
 import {
   getAllReservations,
@@ -18,7 +28,8 @@ import {
   createReservation,
   updateReservationByID,
   deleteReservationByID,
-  getAllReservationByID,
+  getAllReservationByPatientID,
+  getAllReservationByDoctorID,
 } from "./controllers/reservations.js";
 
 import "./passport.js";
@@ -78,11 +89,27 @@ server.put("/patients/:id", updatePatientByID);
 
 server.delete("/patients/:id", deletePatientByID);
 
+//Doctors
+
+server.get("/doctors", getAllDoctors);
+
+server.get("/doctors/:id", getDoctorByID);
+
+server.post("/doctors", createDoctor);
+
+server.put("/doctors/:id", updateDoctorByID);
+
+server.delete("/doctors/:id", deleteDoctorByID);
+
 //LogIN
 
-server.post("/patients/login", logIn);
+server.post("/patients/login", logInPatient);
 // server.post("/patients/signup", signUp);
-server.get("/patients/logout", authorize, logOut);
+server.get("/patients/logout", authorize, logOutPatient);
+
+server.post("/doctors/login", logInDoctor);
+// server.post("/patients/signup", signUp);
+server.get("/doctors/logout", authorize, logOutDoctor);
 
 //Reservations
 
@@ -90,7 +117,9 @@ server.get("/reservations", getAllReservations);
 
 server.get("/reservations/:id", getReservationByID);
 
-server.get("/reservations/patient/:id", getAllReservationByID);
+server.get("/reservations/patient/:id", getAllReservationByPatientID);
+
+server.get("/reservations/doctor/:id", getAllReservationByDoctorID);
 
 server.post("/reservations", createReservation);
 

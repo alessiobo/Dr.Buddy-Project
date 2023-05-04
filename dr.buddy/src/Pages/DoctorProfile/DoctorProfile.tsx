@@ -29,7 +29,7 @@ function DoctorProfile({
           getAllReservations={getAllReservations}
           updateReservation={updateReservation}
         />
-        <AppointmentTable getAllReservations={getAllReservations} />
+        {/* <AppointmentTable getAllReservations={getAllReservations} /> */}
       </section>
       <Footer />
     </>
