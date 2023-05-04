@@ -7,10 +7,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PartClient from "./Pages/PartClient/PartClient";
 // import Navbar from "../src/Components/Navbar/Navbar";
 import RegisterPage from "./Pages/LoginPage/RegisterPage";
-// import Footer from "./Components/Footer/Footer"; 
+// import Footer from "./Components/Footer/Footer";
 import Footer from "./Components/Footer/Footer";
 import useServer from "./Hooks/useServer";
-import LoginPage from "./Pages/LoginPage/Login"
+import LoginPage from "./Pages/LoginPage/Login";
 function App() {
   const {
     data: getAllPatients,
@@ -27,7 +27,8 @@ function App() {
     createObj: createReservation,
     updateObj: updateReservation,
     deleteObj: deleteReservation,
-    getAllReservationByID,
+    getAllReservationByPatientID,
+    getAllReservationByDoctorID,
   } = useServer("reservations");
 
   return (
@@ -38,19 +39,22 @@ function App() {
           path="/doctor/profile"
           element={
             <DoctorProfile
-              getAllReservations={getAllReservations}
+              getAllReservations={getAllReservationByDoctorID}
               updateReservation={updateReservation}
             />
           }
         />
-        <Route path="/login" element={<LoginPage/>}/>
-        <Route path="/register" element={<RegisterPage createPatient={createPatient} />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/register"
+          element={<RegisterPage createPatient={createPatient} />}
+        />
         <Route
           path="/bookingpage"
           element={
             <PartClient
               createReservation={createReservation}
-              getAllReservationByID={getAllReservationByID}
+              getAllReservationByID={getAllReservationByPatientID}
             />
           }
         />
