@@ -17,22 +17,24 @@ function TableCardsReservations({ getAllReservations }) {
   return (
     <TableContainer>
       <h3>Nuove Prenotazioni:</h3>
-      <CardPrenotazione />
-      {data &&
-        data.map((el) => {
-          return (
-            <CardPrenotazione
-              id={el.id_reservation}
-              paziente={el.firstname + " " + el.lastname}
-              data={el.date_reservation
-                .substring(0, 10)
-                .split("-")
-                .reverse()
-                .join("-")}
-              ora={el.date_reservation.substring(11, 16)}
-            />
-          );
-        })}
+      <div style={{ padding: "0 1.2%" }}>
+        <CardPrenotazione />
+        {data &&
+          data.map((el) => {
+            return (
+              <CardPrenotazione
+                id={el.id_reservation}
+                paziente={el.firstname + " " + el.lastname}
+                data={el.date_reservation
+                  .substring(0, 10)
+                  .split("-")
+                  .reverse()
+                  .join("-")}
+                ora={el.date_reservation.substring(11, 16)}
+              />
+            );
+          })}
+      </div>
     </TableContainer>
   );
 }
