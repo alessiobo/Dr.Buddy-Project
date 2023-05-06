@@ -1,24 +1,34 @@
 
-import "./Login_Card.css"
+import "./LoginCard.css"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 function Login_card() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    async function HandleData() {
+        const inputData = {
+            email: email,
+            password: password
+        }
+    }
     return (
-        <div className="login_card">
-            <div className="login_card_content_wrapper">
-                <h2>Email</h2>
-                <input type="text" placeholder="Email"  value={email} onChange={(event) => setEmail(event.target.value)}/>
-                <h2>Password</h2>
-                <input type="password" placeholder="Password"  value={password} onChange={(event) => setPassword(event.target.value)}/>
-                <div className="login_button_wrapper">
-                <Link to="/bookingpage">
-                <button className="login_button">Accedi</button>
-                </Link>
-                </div>
-            </div>
+        <div className="LoginCard">
+            <div class="shape"></div>
+        <form >
+            <h3>Accedi qui</h3>
+
+            <label for="username">Email</label>
+            <input type="text" placeholder="Email" id="username" onChange={(event) => {setEmail(event.target.value)}} />
+
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="password" onChange={(event) => {setPassword(event.target.value)}}/>
+            <label>Prima volta su Dr.Buddy? <Link to="/register"><span className="clicca_qui">Clicca qui</span></Link></label>
+            <button onClick={HandleData}>Accedi</button>
+        </form>
+                <div class="shape"></div>
         </div>
+        
+    
     )
 }
 export default Login_card
