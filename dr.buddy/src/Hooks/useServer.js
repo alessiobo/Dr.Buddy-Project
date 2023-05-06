@@ -21,10 +21,21 @@ function useServer(url) {
   //GetAll
   const { data, error } = useSWR(URL, fetcher);
 
-  //GetAllReservationByID
-  async function getAllReservationByID(id) {
+  //getAllReservationByPatientID
+  async function getAllReservationByPatientID(id) {
     try {
       const res = await fetch(URL + "/patient/" + id);
+      const json = await res.json();
+
+      return json;
+    } catch (error) {
+      console.log("Error: " + error);
+    }
+  }
+  //GetAllReservationByID
+  async function getAllReservationByDoctorID(id) {
+    try {
+      const res = await fetch(URL + "/doctor/" + id);
       const json = await res.json();
 
       return json;
@@ -93,7 +104,8 @@ function useServer(url) {
     createObj,
     updateObj,
     deleteObj,
-    getAllReservationByID,
+    getAllReservationByPatientID,
+    getAllReservationByDoctorID,
   };
 }
 export default useServer;

@@ -1,118 +1,85 @@
-* {
-  overflow-x: hidden;
-}
-
 .register_card {
-  background: #03C988;
-  box-shadow: 2px 2px #03C988;
-  position: relative;
-  z-index: 0;
-}
-
-.card,
-.register_card {
-  height: 400px;
+  background-color: #85a2e8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
   aspect-ratio: 3/4;
+  padding: 15px 40px;
+  border-radius: 20px;
+  box-shadow: 1px 1px rgb(133, 162, 232, 0.5);
+  margin: 20px;
+}
+.register_card .register_card_body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 10px;
+}
+.register_card .register_card_body h2 {
+  text-align: left;
+  font-size: 24px;
+  margin: 0px;
+  color: #FBFAF8;
+}
+.register_card .register_card_body input {
+  padding: 2%;
+  border-radius: 4px;
+  box-shadow: 1px 1px grey;
+}
+.register_card .register_card_header {
+  background-color: #03C988;
+  color: #FBFAF8;
+  position: relative;
+  top: -50px;
+  left: 102px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 60%;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  border-radius: 20px;
-  padding: 50px 20px;
 }
-.card h2,
-.register_card h2 {
-  color: white;
-  width: 100%;
+.register_card .register_card_header button {
+  background-color: #03C988;
 }
-.card input,
-.register_card input {
-  height: 2rem;
-  width: 100%;
-  transition: 300ms;
-}
-.card input:focus,
-.register_card input:focus {
-  transition: 300ms;
-  outline: 1px solid rgb(39, 178, 236);
-}
-.card h3,
-.register_card h3 {
-  width: 100%;
-  font-size: 1rem;
-  color: white;
-}
-.card h3 .link,
-.register_card h3 .link {
-  color: rgb(33, 0, 157);
-  text-decoration: none;
-  transition: 300ms;
-}
-.card h3 .link:hover,
-.register_card h3 .link:hover {
-  transition: 300ms;
-  filter: brightness(125%);
-}
-.card .btn_wrapper,
-.register_card .btn_wrapper {
-  width: 100%;
+.register_card .register_button_wrapper {
   display: flex;
-  flex: 1 1;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: center;
 }
-.card .btn_wrapper .btn,
-.register_card .btn_wrapper .btn {
-  height: 2.5rem;
-  aspect-ratio: 2/1;
-  border-radius: 20px;
-  background-color: rgb(33, 0, 157);
-  color: white;
+.register_card .register_button_wrapper .register_button {
+  position: relative;
+  top: 20px;
   transition: 300ms;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #21009D;
+  width: 50%;
+  margin: 5px;
+  height: 57px;
+  border-radius: 20px;
+  color: #FBFAF8;
   font-size: 18px;
 }
-.card .btn_wrapper .btn:hover,
-.register_card .btn_wrapper .btn:hover {
+.register_card .register_button_wrapper .register_button:hover {
   transition: 300ms;
-  color: black;
+  color: #040507;
   background-color: #0056D0;
   transform: translate(-2px, -2px);
   box-shadow: 2px 2px #21009D;
   filter: brightness(125%);
 }
-.card .btn_wrapper .btn:active,
-.register_card .btn_wrapper .btn:active {
+.register_card .register_button_wrapper .register_button:hover img {
+  transition: 300ms;
+  filter: invert(100%);
+}
+.register_card .register_button_wrapper .register_button:active {
   transform: translate(2px, 2px);
   box-shadow: 0px 0px;
   filter: brightness(175%);
-}
-
-#register_top_button {
-  background-color: #03C988;
-  border-radius: 20px 20px 0px 0px;
-  height: 4rem;
-  width: 50%;
-  color: white;
-  font-size: 2rem;
-  transition: 300ms;
-  position: relative;
-  z-index: 100;
-  top: 20px;
-  left: calc(50% + 2px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#register_top_button:hover {
-  transition: 300ms;
-  filter: brightness(115%);
-  cursor: pointer;
 }
 
 /*# sourceMappingURL=Register_Card.css.map */

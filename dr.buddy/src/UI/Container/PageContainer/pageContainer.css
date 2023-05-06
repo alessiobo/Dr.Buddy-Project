@@ -1,0 +1,14 @@
+.pageConteiner-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+@media (max-width: 1000px) {
+  .pageConteiner-cont {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+/*# sourceMappingURL=pageContainer.css.map */

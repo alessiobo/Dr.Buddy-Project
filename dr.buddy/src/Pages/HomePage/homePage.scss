@@ -1,8 +1,14 @@
+<<<<<<< HEAD
+=======
+// sass --watch homePage.scss homePage.css
+>>>>>>> develope
 @import "../../GlobalVariables/Variables.scss";
+
 * {
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 body {
   margin: 0;
   background-size: cover;
@@ -21,13 +27,88 @@ video {
 
 .Join {
   min-height: 100vh;
+=======
+.homepage {
+>>>>>>> develope
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: 23vh;
+  flex-direction: column;
+  .homeContainer {
+    max-height: 600px;
+    aspect-ratio: 16 / 9;
+  }
+  video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+  }
+
+  .Join {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0px;
+    margin-bottom: 119px;
+  }
+
+  .Join button {
+    width: 27vh;
+    height: 6vh;
+    border-radius: 2vh;
+    box-shadow: 0 3px 3px 0 $secondary-color-light;
+    background-color: transparent;
+    color: $secondary-color-light;
+    border-color: $secondary-color-light(145, 95%, 64%, 0.6);
+    font-size: 1.5rem;
+   
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+
+    transition: 0.4s;
+  }
+
+  h1 {
+
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    letter-spacing: 0.5rem;
+    color: $primary-color;
+  }
+
+  .homeNav a {
+    text-decoration: none;
+    color: inherit;
+    padding: 6rem;
+    color: $secondary-color-light;
+    font-size: 2vh;
+    letter-spacing: 0.2rem;
+    position: relative;
+    top: 3.5vh;
+  }
+
+  h2 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 8vmin;
+    text-align: center;
+    margin: 2rem 3rem 0;
+    mix-blend-mode: overlay;
+    color: #FBFAF8;
+    font-weight: 100;
+  }
 }
 
+<<<<<<< HEAD
 .Join button {
   width: 27vh;
   height: 6vh;
@@ -77,3 +158,6 @@ h2 {
 }
 
 /*# sourceMappingURL=homePage.scss.map */
+=======
+/*# sourceMappingURL=homePage.scss.map */
+>>>>>>> develope

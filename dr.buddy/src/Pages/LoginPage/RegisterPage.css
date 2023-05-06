@@ -1,0 +1,34 @@
+.LoginPage {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  overflow: hidden !important;
+}
+
+.body {
+  height: 800px;
+  max-width: 99vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #B0C5FF;
+}
+.body .body_element_container {
+  height: 500px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body .body_element_container .dottoressa {
+  max-height: 400px;
+  aspect-ratio: 1/1;
+  background-color: #85a2e8;
+  border-radius: 100%;
+}
+.body .body_element_container .dottore {
+  max-height: 400px;
+  aspect-ratio: 1/1;
+}
+
+/*# sourceMappingURL=RegisterPage.css.map */

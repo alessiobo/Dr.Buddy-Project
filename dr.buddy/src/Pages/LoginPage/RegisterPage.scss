@@ -1,0 +1,34 @@
+// sass --watch RegisterPage.scss RegisterPage.css
+
+.LoginPage {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    overflow: hidden !important;    
+}
+.body {
+    height: 800px;
+    max-width: 99vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B0C5FF;
+
+.body_element_container {
+    height: 500px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .dottoressa {
+        max-height: 400px;
+        aspect-ratio: 1 / 1;
+        background-color: #85a2e8;
+        border-radius: 100%;
+    }
+    .dottore {
+        max-height: 400px;
+        aspect-ratio: 1 / 1;
+    }
+}
+}

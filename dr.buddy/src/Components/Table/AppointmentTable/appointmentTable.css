@@ -8,6 +8,7 @@
 .appTable-table {
   border: 1px solid rgba(0, 0, 0, 0.146);
   width: 100%;
+  background-color: #fbfaf8;
 }
 .appTable-table tr {
   border: 0.5px solid rgba(0, 0, 0, 0.146);
@@ -23,9 +24,9 @@
   }
 }
 .appTable-table .appTable-tdCont {
-  background-color: rgba(2, 140, 105, 0.2745098039);
+  background-color: #b0c5ff;
   height: 100%;
-  color: #013528;
+  color: #181a22;
   border-radius: 8px;
   display: flex;
   align-items: center;

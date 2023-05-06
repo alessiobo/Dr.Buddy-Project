@@ -1,27 +1,34 @@
 import React from "react";
 import "./Navbar.css"
 import logo_white from "./img/logo_white.png"
-import calendar from "./img/calendar.svg"
+import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <div className="navbar">
             <div className="logo_wrapper">
+                <Link to="/">
                 <img src={logo_white} alt="logo_white" className="logo_white"/>
+                </Link>
             </div>
             <div className="link_container">
                 <div>
-                Prices
+                Prezzi
                 </div>
                 <div>
-                    How it works
+                    Come funziona
                 </div>
                 <div>
-                    Contacts
+                    Contatti
                 </div>
             </div>
             <div className="button_wrapper">
-                <button><img src={calendar} alt="calendar"></img>Book an appointment</button>
-            </div>
+                <Link to="/login">
+                <button type="button" className="navbar_login_button">Accedi</button>
+                </Link>
+                <Link to="/register">
+                <button type="button" className="navbar_register_button">Registrati</button>
+                </Link>
+            </div> 
         </div>
     )
 }

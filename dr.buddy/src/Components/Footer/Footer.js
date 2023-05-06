@@ -3,11 +3,14 @@ import logo_white from "./img/logo_white.png"
 import facebook_img from "./img/facebook.svg"
 import instagram_img from "./img/instagram.svg"
 import twitter_img from "./img/twitter.svg"
+import { Link } from "react-router-dom"
 function Footer() {
     return (
         <div className="Footer">
             <div className="logo_wrapper">
+            <Link to="/">
                 <img src={logo_white}/>
+                </Link>
             </div>
             <div>
                 <p>© 2023 Team 1 All Rights Reserved.</p>

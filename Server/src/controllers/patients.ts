@@ -55,12 +55,12 @@ async function createPatient(req: Request, res: Response) {
 
 async function updatePatientByID(req: Request, res: Response) {
   const { id } = req.params;
-  const { firstname } = req.body;
+  const { firstname, lastname, email, tel_num, password } = req.body;
 
-  await db.none(`UPDATE patient SET firstname=$2 WHERE id_patient=$1`, [
-    id,
-    firstname,
-  ]);
+  await db.none(
+    `UPDATE patient SET firstname=$2,lastname=$3,email=$4,tel_num=$5,password=$6 WHERE id_patient=$1`,
+    [id, firstname, lastname, email, tel_num, password]
+  );
 
   res.status(200).json({ msg: "updato" });
 }
@@ -72,7 +72,7 @@ async function deletePatientByID(req: Request, res: Response) {
   res.status(200).json({ msg: "The patient was deleted." });
 }
 
-async function logIn(req: Request, res: Response) {
+async function logInPatient(req: Request, res: Response) {
   const { firstname, password } = req.body;
 
   try {
@@ -124,7 +124,7 @@ async function logIn(req: Request, res: Response) {
 //   }
 // }
 
-async function logOut(req: Request, res: Response) {
+async function logOutPatient(req: Request, res: Response) {
   // try {
   //   const user: any = req.user;
   //   console.log(user);
@@ -144,6 +144,6 @@ export {
   createPatient,
   updatePatientByID,
   deletePatientByID,
-  logIn,
-  logOut,
+  logInPatient,
+  logOutPatient,
 };

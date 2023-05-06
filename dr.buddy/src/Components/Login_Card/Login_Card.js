@@ -1,22 +1,22 @@
 
 import "./Login_Card.css"
-import { Link } from "react-router-dom"
-import {useState} from "react"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 function Login_card() {
-    const [index, setIndex] = useState(0)
-    function changeIndex() {
-        setIndex((index) => index + 1)
-    }
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     return (
-        <div className={index ? "card_button_wrapper animate_left" : "card_button_wrapper"}>
-                <button id="login_top_button" onClick={changeIndex} >Login</button>
-            <div className="card login_card" >
-                <h2>Username</h2>
-                <input type="text"></input>
+        <div className="login_card">
+            <div className="login_card_content_wrapper">
+                <h2>Email</h2>
+                <input type="text" placeholder="Email"  value={email} onChange={(event) => setEmail(event.target.value)}/>
                 <h2>Password</h2>
-                <input type="password"></input>
-                <h3>Prima volta su DrBuddy? <Link className="link">Registrati</Link></h3>
-                <div className="btn_wrapper"><button className="btn">Accedi</button></div>
+                <input type="password" placeholder="Password"  value={password} onChange={(event) => setPassword(event.target.value)}/>
+                <div className="login_button_wrapper">
+                <Link to="/bookingpage">
+                <button className="login_button">Accedi</button>
+                </Link>
+                </div>
             </div>
         </div>
     )
