@@ -1,0 +1,10 @@
+.tb_calendar-cont {
+  width: 100%;
+  background-color: #fafbf8;
+}
+.tb_calendar-cont th,
+.tb_calendar-cont td {
+  padding: 2%;
+}
+
+/*# sourceMappingURL=tableCalendar.css.map */

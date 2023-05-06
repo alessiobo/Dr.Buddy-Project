@@ -9,9 +9,10 @@ function TablePatients({ getAllPatients }) {
       <div style={{ padding: "0 1.2%" }}>
         <CardPazienti />
         {getAllPatients &&
-          getAllPatients.map((el) => {
+          getAllPatients.map((el, k) => {
             return (
               <CardPazienti
+                key={k}
                 id={el.id_patient}
                 paziente={el.firstname + " " + el.lastname}
                 email={el.email}
