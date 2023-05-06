@@ -13,20 +13,18 @@ type appuntamento = {
 };
 
 function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
-  const today = new Date();
-  const todayString = today.toISOString().substring(0, 10);
+  // const today = new Date();
+  // const todayString = today.toISOString().substring(0, 10);
 
-  const todayApp =
-    getAllReservations &&
-    getAllReservations.filter((app: appuntamento) => {
-      return app.date_reservation === todayString;
-    });
+  // const todayApp =
+  //   getAllReservations &&
+  //   getAllReservations.filter((app: appuntamento) => {
+  //     return app.date_reservation === todayString;
+  //   });
 
   return (
     <TableContainer>
-      <h3>
-        Appuntamenti di oggi: {todayString.split("-").reverse().join("-")}
-      </h3>
+      <h3>Appuntamenti di oggi:</h3>
       <section className="appTable-cont">
         <table className="appTable-table">
           <thead>
@@ -35,7 +33,7 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
           </thead>
           <tbody>
             <tr>
-              <td>8 AM</td>
+              {/* <td>8 AM</td>
               {todayApp &&
                 todayApp.map((app: appuntamento) => {
                   if (app.ora === "08:00") {
@@ -414,7 +412,7 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
                       </td>
                     );
                   }
-                })}
+                })} */}
             </tr>
           </tbody>
         </table>

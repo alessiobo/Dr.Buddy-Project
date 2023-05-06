@@ -1,0 +1,18 @@
+.cardPrenotazione-cont {
+  height: 80px;
+  background-color: rgb(204, 229, 250);
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+.cardPrenotazione-cont h4 {
+  width: 20%;
+}
+.cardPrenotazione-cont h4:first-child {
+  width: 5%;
+}
+
+/*# sourceMappingURL=cardPrenotazione.css.map */
