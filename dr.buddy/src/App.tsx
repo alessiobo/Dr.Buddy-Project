@@ -41,6 +41,7 @@ function App() {
             <DoctorProfile
               getAllReservations={getAllReservationByDoctorID}
               updateReservation={updateReservation}
+              getAllPatients={getAllPatients}
             />
           }
         />

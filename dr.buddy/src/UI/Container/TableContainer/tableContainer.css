@@ -5,9 +5,13 @@
   border-radius: 15px 15px 0 0;
 }
 
+.tableContainer *:not(h3) {
+  padding: 1%;
+}
+
 .tableContainer h3 {
   border-radius: 10px 10px 0 0;
-  padding: 5%;
+  padding: 3%;
   margin: 0;
   background-color: #3a76e4;
   color: #fbfaf8;

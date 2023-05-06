@@ -6,6 +6,7 @@ import AppointmentTable from "../../Components/Table/AppointmentTable/Appointmen
 import TableResponsive from "../../Components/Table/TableResponsive";
 import UserLoginPic from "../../Components/UserLoginPic/UserLoginPic";
 import PageConteiner from "../../UI/Container/PageContainer/PageConteiner";
+import { useEffect, useState } from "react";
 
 //@ts-ignore
 import pap from "./paperino.png";
@@ -13,24 +14,32 @@ import pap from "./paperino.png";
 function DoctorProfile({
   getAllReservations,
   updateReservation,
+  getAllPatients,
 }: {
   getAllReservations: any;
   updateReservation: any;
+  getAllPatients: any;
 }) {
+  const [showMainComp, setMainComp] = useState({
+    reservations: true,
+    patients: false,
+    calendar: false,
+    settings: false,
+  });
   return (
     <div>
       <Navbar />
       <PageConteiner>
-        <DoctorNavbar />
+        <DoctorNavbar setMainComp={setMainComp} />
 
         <DoctorMainSection
           getAllReservations={getAllReservations}
           updateReservation={updateReservation}
+          getAllPatients={getAllPatients}
+          showMainComp={showMainComp}
         />
 
-        <aside>
-          <UserLoginPic name={"Dr. Paperino"} personalImg={pap} />
-        </aside>
+        <UserLoginPic name={"Dr. Paperino"} personalImg={pap} />
       </PageConteiner>
       {/* <Footer /> */}
     </div>

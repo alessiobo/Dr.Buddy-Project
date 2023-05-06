@@ -1,12 +1,47 @@
 .doc_nav-cont {
-  background-color: rgb(226, 205, 205);
+  background-color: #3a76e4;
 
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 200px;
-  @media (max-width: 700px) {
-    width: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6%;
+  align-items: center;
+
+  @media (max-width: 1000px) {
+    width: 80px;
+  }
+
+  button {
+    // margin: 20px 0;
+    height: 50px;
+    width: 80%;
+
+    background-color: #fafaf8;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1000px) {
+      span {
+        display: none;
+      }
+    }
+
+    .navDoctor-icon {
+      height: 20px;
+      margin-right: 10px;
+      @media (max-width: 1000px) {
+        margin: 0;
+      }
+    }
   }
 }

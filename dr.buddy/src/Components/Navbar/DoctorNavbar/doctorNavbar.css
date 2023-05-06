@@ -1,14 +1,42 @@
 .doc_nav-cont {
-  background-color: rgb(226, 205, 205);
+  background-color: #3a76e4;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6%;
+  align-items: center;
 }
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .doc_nav-cont {
-    width: 50px;
+    width: 80px;
+  }
+}
+.doc_nav-cont button {
+  height: 50px;
+  width: 80%;
+  background-color: #fafaf8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  .doc_nav-cont button span {
+    display: none;
+  }
+}
+.doc_nav-cont button .navDoctor-icon {
+  height: 20px;
+  margin-right: 10px;
+}
+@media (max-width: 1000px) {
+  .doc_nav-cont button .navDoctor-icon {
+    margin: 0;
   }
 }
 

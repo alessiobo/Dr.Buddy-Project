@@ -1,11 +1,12 @@
 .doctorMainSection-cont {
   margin: 50px 0 0 220px;
   background-color: #b0c5ff;
-  width: 50%;
+  width: 55%;
 }
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .doctorMainSection-cont {
     margin-left: 100px;
+    width: 80%;
   }
 }
 
