@@ -15,10 +15,12 @@ function DoctorProfile({
   getAllReservations,
   updateReservation,
   getAllPatients,
+  getAllReservationByDoctorID,
 }: {
   getAllReservations: any;
   updateReservation: any;
   getAllPatients: any;
+  getAllReservationByDoctorID: any;
 }) {
   const [showMainComp, setMainComp] = useState({
     reservations: true,
@@ -37,6 +39,7 @@ function DoctorProfile({
           updateReservation={updateReservation}
           getAllPatients={getAllPatients}
           showMainComp={showMainComp}
+          getAllReservationByDoctorID={getAllReservationByDoctorID}
         />
 
         <UserLoginPic name={"Dr. Paperino"} personalImg={pap} />
