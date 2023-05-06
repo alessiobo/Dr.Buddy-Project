@@ -1,9 +1,12 @@
-import Agenda from "../../Components/Agenda/Agenda";
+import DoctorMainSection from "../../Components/DoctorMainSection/DoctorMainSection";
 import Footer from "../../Components/Footer/Footer";
+import DoctorNavbar from "../../Components/Navbar/DoctorNavbar/DoctorNavbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import AppointmentTable from "../../Components/Table/AppointmentTable/AppointmentTable";
 import TableResponsive from "../../Components/Table/TableResponsive";
 import UserLoginPic from "../../Components/UserLoginPic/UserLoginPic";
+import PageConteiner from "../../UI/Container/PageContainer/PageConteiner";
+import { useEffect, useState } from "react";
 
 //@ts-ignore
 import pap from "./paperino.png";
@@ -11,28 +14,35 @@ import pap from "./paperino.png";
 function DoctorProfile({
   getAllReservations,
   updateReservation,
+  getAllPatients,
 }: {
   getAllReservations: any;
   updateReservation: any;
+  getAllPatients: any;
 }) {
+  const [showMainComp, setMainComp] = useState({
+    reservations: true,
+    patients: false,
+    calendar: false,
+    settings: false,
+  });
   return (
-    <>
+    <div>
       <Navbar />
-      <section style={{ padding: "40px", backgroundColor: "#b0c5ff" }}>
-        <div>
-          <UserLoginPic name={"Dr. Paperino"} personalImg={pap} />
-        </div>
-        <Agenda />
-        <TableResponsive
-          title="Nuove Prenotazioni"
-          buttons={true}
+      <PageConteiner>
+        <DoctorNavbar setMainComp={setMainComp} />
+
+        <DoctorMainSection
           getAllReservations={getAllReservations}
           updateReservation={updateReservation}
+          getAllPatients={getAllPatients}
+          showMainComp={showMainComp}
         />
-        {/* <AppointmentTable getAllReservations={getAllReservations} /> */}
-      </section>
-      <Footer />
-    </>
+
+        <UserLoginPic name={"Dr. Paperino"} personalImg={pap} />
+      </PageConteiner>
+      {/* <Footer /> */}
+    </div>
   );
 }
 

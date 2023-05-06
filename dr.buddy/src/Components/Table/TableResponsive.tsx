@@ -1,5 +1,5 @@
-import Table from "react-bootstrap/esm/Table";
-import Button from "react-bootstrap/esm/Button";
+// import Table from "react-bootstrap/esm/Table";
+// import Button from "react-bootstrap/esm/Button";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 import { useEffect, useState } from "react";
 
@@ -35,7 +35,10 @@ function TableResponsive({
   return (
     <TableContainer>
       <h3>{title}:</h3>
-      <Table responsive="xl" style={{ backgroundColor: "#fbfaf8" }}>
+      <table
+        style={{ backgroundColor: "#fbfaf8" }}
+        className="table_responsive-cont"
+      >
         <thead>
           <tr>
             <th>ID</th>
@@ -94,7 +97,7 @@ function TableResponsive({
               );
             })}
         </tbody>
-      </Table>
+      </table>
     </TableContainer>
   );
 }
