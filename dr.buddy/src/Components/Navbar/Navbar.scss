@@ -1,8 +1,8 @@
 //sass --watch Navbar.scss Navbar.css
 .navbar {
+    color :#FBFAF8;
     padding: 0px, 60px;
     margin: 0px;
-    background-color: #85a2e8;
     position: relative;
     z-index: 99;
     max-width: 100vw;
@@ -12,8 +12,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex: 1 300px;  
+    flex: 1 300px;
     margin-bottom: 0px !important;
+    // top: 10%;
+    // border-radius: 10px;    
+    background-color: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+
+    // padding: 50px 35px;
     .logo_wrapper {
         max-height: 52px;
         overflow: hidden;
@@ -28,71 +36,77 @@
     .link_container {
         display: none;
         @media (min-width: 400px) {
-        padding-left: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        div {
-        font-size: 16px;
-        font-weight: 600;
-        &:hover {
-            transition: 300ms;
-            color: #21009D;
-            cursor: pointer;
-        }
-        &:active {
-            transition: 300ms;
-            color: aquamarine;
-        }
-        }
+            padding-left: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+
+            div {
+                font-size: 16px;
+                font-weight: 600;
+
+                &:hover {
+                    transition: 300ms;
+                    color: #21009D;
+                    cursor: pointer;
+                }
+            }
         }
     }
-     
+
     .button_wrapper {
         display: flex;
         justify-content: flex-end;
-        align-items:  center;
+        align-items: center;
         flex: 1 1 auto;
+
         .navbar_register_button {
-            background-color: #21009D;
+            border-color: none !important;
+            background-color: #5A8CF2;
+
             &:hover {
-                
+
                 box-shadow: 2px 2px #21009D;
                 filter: brightness(125%);
             }
+
             &:active {
                 box-shadow: 0px 0px;
                 filter: brightness(120%);
             }
         }
+
         button {
             text-decoration: none;
             transition: 300ms;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #21009D;
+            background-color: #5A8CF2;
             // border: 1px solid #21009D;
-                width: 8em;
-                margin: 5px;
+            width: 8em;
+            margin: 5px;
             height: 57px;
             border-radius: 20px;
             font-weight: bold;
             color: #FBFAF8;
             font-size: 18px;
+
             &:hover {
                 transition: 300ms;
                 color: invert(#FBFAF8);
-                background-color: #0056D0;  
+                background-color: #0056D0;
                 transform: translate(-2px, -2px);
                 box-shadow: 2px 2px #21009D;
                 filter: brightness(125%);
+
                 img {
                     transition: 300ms;
                     filter: invert(100%)
                 }
             }
+
             &:active {
                 transform: translate(2px, 2px);
                 box-shadow: 0px 0px;
