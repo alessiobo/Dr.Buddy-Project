@@ -10,7 +10,7 @@ function TableCalendar({ getAllReservations }) {
   // Filtra le prenotazioni in base alle date
   const weekReservations = getAllReservations.filter((reservation) => {
     if (reservation.id_doctor === 1) {
-      //************************************Per ora mario
+      //************************************Per ora solo mario id=1
 
       const date = getDateRes(reservation.date_reservation);
 
@@ -28,7 +28,11 @@ function TableCalendar({ getAllReservations }) {
     return ora + ":" + min;
   }
 
-  //   console.log(weekReservations);
+  console.log(
+    weekReservations.sort(
+      (a, b) => getDateRes(a.date_reservation) - getDateRes(b.date_reservation)
+    )
+  );
 
   function getDateRes(dataPlusOra) {
     return dataPlusOra.substring(0, 10);
