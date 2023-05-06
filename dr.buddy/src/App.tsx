@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router";
 import HomePage from "./Pages/HomePage/HomePage";
 import DoctorProfile from "./Pages/DoctorProfile/DoctorProfile";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import PartClient from "./Pages/PartClient/PartClient";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import useServer from "./Hooks/useServer";
@@ -37,7 +37,6 @@ function App() {
               getAllReservations={getAllReservations}
               updateReservation={updateReservation}
               getAllPatients={getAllPatients}
-
               getAllReservationByDoctorID={getAllReservationByDoctorID}
             />
           }
