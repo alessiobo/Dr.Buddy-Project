@@ -1,3 +1,4 @@
+import TableCalendar from "../DoctorPageComponents/TableCalendar/TableCalendar";
 import TablePatients from "../DoctorPageComponents/TablePatients/TablePatients";
 import AppointmentTable from "../Table/AppointmentTable/AppointmentTable";
 import TableCardsReservations from "../Table/TableCardsReservations/TableCardsReservations";
@@ -9,14 +10,20 @@ function DoctorMainSection({
   getAllReservations,
   getAllPatients,
   showMainComp,
+  getAllReservationByDoctorID,
 }) {
   return (
     <section className="doctorMainSection-cont">
       {showMainComp.reservations === true && (
-        <TableCardsReservations getAllReservations={getAllReservations} />
+        <TableCardsReservations
+          getAllReservationByDoctorID={getAllReservationByDoctorID}
+        />
       )}
       {showMainComp.patients === true && (
         <TablePatients getAllPatients={getAllPatients} />
+      )}
+      {showMainComp.calendar === true && (
+        <TableCalendar getAllReservations={getAllReservations} />
       )}
 
       {/* <TableCardsReservations getAllReservations={getAllReservations} /> */}

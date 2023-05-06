@@ -39,9 +39,10 @@ function App() {
           path="/doctor/profile"
           element={
             <DoctorProfile
-              getAllReservations={getAllReservationByDoctorID}
+              getAllReservations={getAllReservations}
               updateReservation={updateReservation}
               getAllPatients={getAllPatients}
+              getAllReservationByDoctorID={getAllReservationByDoctorID}
             />
           }
         />
