@@ -1,0 +1,112 @@
+.RegisterCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px 0px;
+  height: 80vh;
+}
+.RegisterCard .shape {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  border-radius: 50%;
+}
+.RegisterCard .shape:first-child {
+  background: linear-gradient(to right, #ff512f, #f09819);
+  top: -250px;
+  animation: float 5s infinite ease-in-out;
+  animation-delay: -2;
+}
+.RegisterCard .shape:last-child {
+  background: linear-gradient(#1845ad, #23a2f6);
+  top: 250px;
+  left: -5%;
+  animation: float 5s infinite backwards ease-in-out;
+  animation-delay: -2s;
+}
+.RegisterCard form {
+  z-index: 99;
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.13);
+  top: 10%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+}
+.RegisterCard form * {
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+.RegisterCard form h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
+.RegisterCard label {
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.RegisterCard label .clicca_qui {
+  color: #85a2e8;
+  transition: 300ms;
+}
+.RegisterCard label .clicca_qui:hover {
+  transition: 300ms;
+  filter: brightness(150%);
+}
+.RegisterCard input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.RegisterCard ::placeholder {
+  color: #e5e5e5;
+}
+.RegisterCard button {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #5A8CF2;
+  color: #e5e5e5;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 300ms;
+}
+.RegisterCard button:hover {
+  transition: 300ms;
+  filter: brightness(110%);
+}
+.RegisterCard button:active {
+  transition: 300ms;
+  filter: brightness(120%);
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, 20px) scale(1.1);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/*# sourceMappingURL=RegisterCard.css.map */
