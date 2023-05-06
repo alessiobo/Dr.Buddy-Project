@@ -1,10 +1,11 @@
-function labeltextinput(props) {
+
+function LabelTextInput(props) {
     return (
         <div>
         <h2>{props.label}</h2>
-        <input type="text" placeholder={props.label} onChange={(event) => {props.hooksetter(event.target.value)}}/> 
+        <input type={props.type} placeholder={props.label}/> 
         </div>
     )
 }
 
-export default labeltextinput
+export default LabelTextInput
