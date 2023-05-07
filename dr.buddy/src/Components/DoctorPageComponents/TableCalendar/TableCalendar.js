@@ -1,77 +1,32 @@
+import useReservation from "../../../Hooks/useReservation";
 import CalendarBtn from "../../../UI/Buttons/CalendarButtons/CalendarBtn";
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./tableCalendar.css";
 
 function TableCalendar({ getAllReservations }) {
-  const startDate = new Date("2023-05-08");
-  const endDate = new Date("2023-05-13");
-
-  const startDay = startDate.getDate();
-  const endDay = endDate.getDate();
-
-  //   console.log(getAllReservations);
-
-  // Filtra le prenotazioni in base alle date
-  const weekReservations = getAllReservations.filter((reservation) => {
-    if (reservation.id_doctor === 1) {
-      //************************************Per ora solo mario id=1
-
-      const date = getDateRes(reservation.date_reservation);
-
-      return startDate >= date <= endDate;
-    } else {
-      return false;
-    }
+  const { startDay, endDay, weekReservations, getArrayWeek } = useReservation({
+    startD: "2023-05-08",
+    endD: "2023-05-13",
+    getAllReservations,
+    id: 1,
   });
 
-  function getHour(dataPlusOra) {
-    const ora = Number(dataPlusOra.substring(11, 13)) + 2;
-    let min = Number(dataPlusOra.substring(14, 16));
-    if (min === 0) {
-      min += "0";
-    }
-
-    return ora + ":" + min;
-  }
-
-  function getDateRes(dataPlusOra) {
-    return dataPlusOra.substring(0, 10);
-  }
-
-  function getArrayWeek(ora, startDay, endDay, reservations) {
-    const arrWeek = [];
-    for (let i = startDay; i < endDay; i++) {
-      let day = i < 10 ? "0" + i : i;
-      const foundDay = reservations.find(
-        (el) =>
-          getHour(el.date_reservation) === ora &&
-          getDateRes(el.date_reservation) === "2023-05-" + day + ""
-      );
-
-      arrWeek[i] = foundDay || null;
-    }
-
-    return arrWeek;
-  }
-
-  // console.log(getArrayWeek("9:30", 8, 13, weekReservations));
-
-  const orari = [
-    "8,30",
-    "9,00",
-    "9,30",
-    "10,00",
-    "10,30",
-    "11,00",
-    "11,30",
-    "14,00",
-    "14,30",
-    "15,00",
-    "15,30",
-    "16,00",
-    "16,30",
-    "17,00",
-  ];
+  // const orari = [
+  //   "8,30",
+  //   "9,00",
+  //   "9,30",
+  //   "10,00",
+  //   "10,30",
+  //   "11,00",
+  //   "11,30",
+  //   "14,00",
+  //   "14,30",
+  //   "15,00",
+  //   "15,30",
+  //   "16,00",
+  //   "16,30",
+  //   "17,00",
+  // ];
 
   // function getTabella(orari, startDay, endDay, weekReservations) {
   //   let tabella = [];

@@ -81,16 +81,19 @@ CREATE TABLE reservation(
     `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-09 09:00:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,2,'2023-05-11 09:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-07 09:30:00')`
   );
   await db.none(
     `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-10 10:00:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (2,null,'2023-05-11 10:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (2,null,'2023-05-07 10:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,1,'2023-05-12 17:00:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,1,'2023-05-07 17:00:00')`
+  );
+  await db.none(
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,2,'2023-05-09 08:30:00')`
   );
 };
 
