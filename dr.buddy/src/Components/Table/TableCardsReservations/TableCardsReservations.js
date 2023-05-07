@@ -11,7 +11,7 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
       setData(await getAllReservationByDoctorID(1));
     }
     fetchData();
-    console.log(data);
+    // console.log(data);
   }, [getAllReservationByDoctorID]);
 
   return (

@@ -28,8 +28,7 @@ function AppointmentTable({ getAllReservations }: { getAllReservations: any }) {
       <section className="appTable-cont">
         <table className="appTable-table">
           <thead>
-            <th style={{ width: "20%" }}></th>
-            <th></th>
+            <tr style={{ width: "20%" }}></tr>
           </thead>
           <tbody>
             <tr>
