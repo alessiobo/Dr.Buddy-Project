@@ -66,7 +66,7 @@ CREATE TABLE reservation(
 
   //RESERVATIONS
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-11 10:00:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-12 10:00:00')`
   );
   await db.none(
     `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (2,null,'2023-05-11 15:30:00')`

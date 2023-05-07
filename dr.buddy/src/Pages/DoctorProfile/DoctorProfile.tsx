@@ -24,9 +24,6 @@ function DoctorProfile({
 }) {
   const [showMainComp, setMainComp] = useState({
     reservations: true,
-    patients: false,
-    calendar: false,
-    settings: false,
   });
   return (
     <div>
