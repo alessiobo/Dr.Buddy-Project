@@ -34,12 +34,6 @@ function TableCalendar({ getAllReservations }) {
     return ora + ":" + min;
   }
 
-  console.log(
-    weekReservations.sort(
-      (a, b) => getDateRes(a.date_reservation) - getDateRes(b.date_reservation)
-    )
-  );
-
   function getDateRes(dataPlusOra) {
     return dataPlusOra.substring(0, 10);
   }
@@ -61,7 +55,54 @@ function TableCalendar({ getAllReservations }) {
   }
 
   // console.log(getArrayWeek("9:30", 8, 13, weekReservations));
-  <CalendarBtn take={true} />;
+
+  const orari = [
+    "8,30",
+    "9,00",
+    "9,30",
+    "10,00",
+    "10,30",
+    "11,00",
+    "11,30",
+    "14,00",
+    "14,30",
+    "15,00",
+    "15,30",
+    "16,00",
+    "16,30",
+    "17,00",
+  ];
+
+  // function getTabella(orari, startDay, endDay, weekReservations) {
+  //   let tabella = [];
+
+  //   for (const ora of orari) {
+  //     tabella.push(
+  //       <tr>
+  //         <td>{ora}</td>
+  //         {getArrayWeek({ ora }, startDay, endDay, weekReservations).map(
+  //           (el, k) => {
+  //             return (
+  //               <td key={k}>
+  //                 {el === null ? (
+  //                   "-"
+  //                 ) : el.id_patient === null ? (
+  //                   <CalendarBtn />
+  //                 ) : (
+  //                   <CalendarBtn take={true} />
+  //                 )}
+  //               </td>
+  //             );
+  //           }
+  //         )}
+  //       </tr>
+  //     );
+  //   }
+
+  //   return tabella;
+  // }
+
+  // const tabella = getTabella(orari, startDay, endDay, weekReservations);
 
   return (
     <TableContainer>
@@ -79,6 +120,9 @@ function TableCalendar({ getAllReservations }) {
           </tr>
         </thead>
         <tbody>
+          {/* {tabella.map((el, k) => {
+            return el;
+          })} */}
           <tr>
             <td>8:30</td>
             {getArrayWeek("8:30", startDay, endDay, weekReservations).map(
