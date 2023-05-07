@@ -1,9 +1,13 @@
+import CalendarBtn from "../../../UI/Buttons/CalendarButtons/CalendarBtn";
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./tableCalendar.css";
 
 function TableCalendar({ getAllReservations }) {
   const startDate = new Date("2023-05-08");
   const endDate = new Date("2023-05-13");
+
+  const startDay = startDate.getDate();
+  const endDay = endDate.getDate();
 
   //   console.log(getAllReservations);
 
@@ -15,6 +19,8 @@ function TableCalendar({ getAllReservations }) {
       const date = getDateRes(reservation.date_reservation);
 
       return startDate >= date <= endDate;
+    } else {
+      return false;
     }
   });
 
@@ -34,6 +40,25 @@ function TableCalendar({ getAllReservations }) {
     return dataPlusOra.substring(0, 10);
   }
 
+  function getArrayWeek(ora, startDay, endDay, reservations) {
+    const arrWeek = [];
+    for (let i = startDay; i <= endDay; i++) {
+      let day = i < 10 ? "0" + i : i;
+      const foundDay = reservations.find(
+        (el) =>
+          getHour(el.date_reservation) === ora &&
+          getDateRes(el.date_reservation) === "2023-05-" + day + ""
+      );
+
+      arrWeek[i] = foundDay || null;
+    }
+
+    return arrWeek;
+  }
+
+  // console.log(getArrayWeek("9:30", 8, 13, weekReservations));
+  <CalendarBtn take={true} />;
+
   return (
     <TableContainer>
       <h3>Calendario settimanale: da 08 a 12</h3>
@@ -52,121 +77,255 @@ function TableCalendar({ getAllReservations }) {
         <tbody>
           <tr>
             <td>8:30</td>
-            {weekReservations.map((res) => {
-              return (
-                <td key={res.id_reservation}>
-                  {getHour(res.date_reservation) === "8:30" ? (
-                    <span>ok</span>
-                  ) : (
-                    <span>-</span>
-                  )}
-                </td>
-              );
-            })}
+            {getArrayWeek("8:30", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>9:00</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("9:00", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>9:30</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("9:30", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>10:00</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("10:00", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>10:30</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("10:30", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>11:00</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("11:00", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>11:30</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("11:30", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>14:00</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("14:00", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>14:30</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("14:30", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>15:00</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("15:00", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>15:30</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("15:30", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>16:00</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("16:00", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>16:30</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("16:30", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
           <tr>
             <td>17:00</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            {getArrayWeek("17:00", startDay, endDay, weekReservations).map(
+              (el, k) => {
+                return (
+                  <td key={k}>
+                    {el === null ? (
+                      "-"
+                    ) : el.id_patient === null ? (
+                      <CalendarBtn />
+                    ) : (
+                      <CalendarBtn take={true} />
+                    )}
+                  </td>
+                );
+              }
+            )}
           </tr>
         </tbody>
       </table>
