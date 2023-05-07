@@ -4,7 +4,8 @@
 }
 .tb_calendar-cont th,
 .tb_calendar-cont td {
-  padding: 2%;
+  height: 40px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=tableCalendar.css.map */
