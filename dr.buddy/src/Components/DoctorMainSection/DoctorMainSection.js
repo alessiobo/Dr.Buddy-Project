@@ -15,9 +15,12 @@ function DoctorMainSection({
   return (
     <section className="doctorMainSection-cont">
       {showMainComp.reservations === true && (
-        <TableCardsReservations
-          getAllReservationByDoctorID={getAllReservationByDoctorID}
-        />
+        <>
+          <TableCardsReservations
+            getAllReservationByDoctorID={getAllReservationByDoctorID}
+          />
+          <AppointmentTable getAllReservations={getAllReservations} />
+        </>
       )}
       {showMainComp.patients === true && (
         <TablePatients getAllPatients={getAllPatients} />
@@ -28,8 +31,6 @@ function DoctorMainSection({
 
       {/* <TableCardsReservations getAllReservations={getAllReservations} /> */}
       {/* <TablePatients getAllPatients={getAllPatients} /> */}
-
-      <AppointmentTable getAllReservations={getAllReservations} />
     </section>
   );
 }

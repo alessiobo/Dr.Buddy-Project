@@ -46,7 +46,7 @@ function TableCalendar({ getAllReservations }) {
 
   function getArrayWeek(ora, startDay, endDay, reservations) {
     const arrWeek = [];
-    for (let i = startDay; i <= endDay; i++) {
+    for (let i = startDay; i < endDay; i++) {
       let day = i < 10 ? "0" + i : i;
       const foundDay = reservations.find(
         (el) =>
