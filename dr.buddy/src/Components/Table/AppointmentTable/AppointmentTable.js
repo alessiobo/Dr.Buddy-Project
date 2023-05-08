@@ -17,16 +17,34 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
   const today = new Date();
   const todayString = today.toISOString().substring(0, 10);
 
-  console.log(today);
-  console.log(todayString);
+  // console.log(today);
+  // console.log(todayString);
 
   const todayApp =
     data &&
-    data.filter((app) => {
-      if (app.id_doctor === 1) {
-        return app.date_reservation.substring(0, 10) === todayString;
-      }
-    });
+    data
+      .filter((app) => {
+        if (app.id_doctor === 1) {
+          return app.date_reservation.substring(0, 10) === todayString;
+        }
+      })
+      .sort((a, b) => {
+        const timeA = new Date(
+          `2023-05-08T${a.date_reservation.substring(11, 16)}:00.000Z`
+        );
+        const timeB = new Date(
+          `2023-05-08T${b.date_reservation.substring(11, 16)}:00.000Z`
+        );
+        // console.log(timeB, timeA);
+
+        return timeA - timeB;
+      });
+
+  // myArray.sort((a, b) => {
+  //   const timeA = new Date(`1970-01-01T${a.time}:00`);
+  //   const timeB = new Date(`1970-01-01T${b.time}:00`);
+  //   return timeA - timeB;
+  // });
 
   console.log(todayApp);
 
@@ -42,7 +60,7 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
 
   return (
     <TableContainer>
-      <h3>Appuntamenti di oggi:</h3>
+      <h3>Appuntamenti di oggi: </h3>
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
         {todayApp &&
