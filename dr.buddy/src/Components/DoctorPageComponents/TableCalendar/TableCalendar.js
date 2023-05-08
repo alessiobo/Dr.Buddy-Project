@@ -42,9 +42,9 @@ function TableCalendar({ getAllReservations }) {
   //                 {el === null ? (
   //                   "-"
   //                 ) : el.id_patient === null ? (
-  //                   <CalendarBtn />
+  //                   <CalendarBtn ora={} />
   //                 ) : (
-  //                   <CalendarBtn take={true} />
+  //                   <CalendarBtn ora={} take={true} />
   //                 )}
   //               </td>
   //             );
@@ -66,7 +66,6 @@ function TableCalendar({ getAllReservations }) {
       <table className="tb_calendar-cont">
         <thead>
           <tr>
-            <th></th>
             <th>Lunedì</th>
             <th>Martedì</th>
             <th>Mercoledì</th>
@@ -79,7 +78,6 @@ function TableCalendar({ getAllReservations }) {
             return el;
           })} */}
           <tr>
-            <td>8:30</td>
             {getArrayWeek("8:30", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -87,9 +85,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"8:30"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"8:30"} take={true} />
                     )}
                   </td>
                 );
@@ -97,7 +95,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>9:00</td>
             {getArrayWeek("9:00", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -105,9 +102,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"9:00"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"9:00"} take={true} />
                     )}
                   </td>
                 );
@@ -115,7 +112,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>9:30</td>
             {getArrayWeek("9:30", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -123,9 +119,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"9:30"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"9:30"} take={true} />
                     )}
                   </td>
                 );
@@ -133,7 +129,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>10:00</td>
             {getArrayWeek("10:00", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -141,9 +136,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"10:00"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"10:00"} take={true} />
                     )}
                   </td>
                 );
@@ -151,7 +146,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>10:30</td>
             {getArrayWeek("10:30", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -159,9 +153,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"10:30"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"10:30"} take={true} />
                     )}
                   </td>
                 );
@@ -169,7 +163,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>11:00</td>
             {getArrayWeek("11:00", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -177,9 +170,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"11:00"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"11:00"} take={true} />
                     )}
                   </td>
                 );
@@ -187,7 +180,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>11:30</td>
             {getArrayWeek("11:30", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -195,9 +187,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"11:30"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"11:30"} take={true} />
                     )}
                   </td>
                 );
@@ -205,7 +197,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>14:00</td>
             {getArrayWeek("14:00", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -213,9 +204,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"14:00"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"14:00"} take={true} />
                     )}
                   </td>
                 );
@@ -223,7 +214,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>14:30</td>
             {getArrayWeek("14:30", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -231,9 +221,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"14:30"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"14:30"} take={true} />
                     )}
                   </td>
                 );
@@ -241,7 +231,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>15:00</td>
             {getArrayWeek("15:00", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -249,9 +238,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"15:00"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"15:00"} take={true} />
                     )}
                   </td>
                 );
@@ -259,7 +248,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>15:30</td>
             {getArrayWeek("15:30", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -267,9 +255,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"15:30"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"15:30"} take={true} />
                     )}
                   </td>
                 );
@@ -277,7 +265,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>16:00</td>
             {getArrayWeek("16:00", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -285,9 +272,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"16:00"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"16:00"} take={true} />
                     )}
                   </td>
                 );
@@ -295,7 +282,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>16:30</td>
             {getArrayWeek("16:30", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -303,9 +289,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"16:30"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"16:30"} take={true} />
                     )}
                   </td>
                 );
@@ -313,7 +299,6 @@ function TableCalendar({ getAllReservations }) {
             )}
           </tr>
           <tr>
-            <td>17:00</td>
             {getArrayWeek("17:00", startDay, endDay, weekReservations).map(
               (el, k) => {
                 return (
@@ -321,9 +306,9 @@ function TableCalendar({ getAllReservations }) {
                     {el === null ? (
                       "-"
                     ) : el.id_patient === null ? (
-                      <CalendarBtn />
+                      <CalendarBtn ora={"17:00"} />
                     ) : (
-                      <CalendarBtn take={true} />
+                      <CalendarBtn ora={"17:00"} take={true} />
                     )}
                   </td>
                 );

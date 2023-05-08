@@ -19,7 +19,6 @@
 .doc_nav-cont button {
   height: 50px;
   width: 80%;
-  background-color: #fafaf8;
   background-color: #5a8cf2;
   color: #e5e5e5;
   font-size: 16px;
@@ -30,7 +29,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 @media (max-width: 1000px) {
   .doc_nav-cont button span {
