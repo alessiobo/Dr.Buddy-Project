@@ -16,10 +16,12 @@ function DoctorMainSection({
     <section className="doctorMainSection-cont">
       {showMainComp.reservations === true && (
         <>
+          <AppointmentTable
+            getAllReservationByDoctorID={getAllReservationByDoctorID}
+          />
           <TableCardsReservations
             getAllReservationByDoctorID={getAllReservationByDoctorID}
           />
-          <AppointmentTable getAllReservations={getAllReservations} />
         </>
       )}
       {showMainComp.patients === true && (
