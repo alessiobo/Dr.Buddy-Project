@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import CardPrenotazione from "../../../UI/Cards/CardPrenotazione/CardPrenotazione";
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
-import "./tableCardsReservations.css";
+import "./appointmentTable.css";
 
-function TableCardsReservations({ getAllReservationByDoctorID }) {
+function AppointmentTable({ getAllReservationByDoctorID }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -13,6 +13,22 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
     fetchData();
     // console.log(data);
   }, [getAllReservationByDoctorID]);
+
+  const today = new Date();
+  const todayString = today.toISOString().substring(0, 10);
+
+  console.log(today);
+  console.log(todayString);
+
+  const todayApp =
+    data &&
+    data.filter((app) => {
+      if (app.id_doctor === 1) {
+        return app.date_reservation.substring(0, 10) === todayString;
+      }
+    });
+
+  console.log(todayApp);
 
   function getHour(dataPlusOra) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;
@@ -26,11 +42,11 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
 
   return (
     <TableContainer>
-      <h3>Nuove Prenotazioni:</h3>
+      <h3>Appuntamenti di oggi:</h3>
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
-        {data &&
-          data.map((el, k) => {
+        {todayApp &&
+          todayApp.map((el, k) => {
             return (
               <CardPrenotazione
                 key={k}
@@ -50,4 +66,4 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
   );
 }
 
-export default TableCardsReservations;
+export default AppointmentTable;
