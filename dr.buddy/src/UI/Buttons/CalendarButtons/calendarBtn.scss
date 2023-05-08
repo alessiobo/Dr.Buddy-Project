@@ -3,6 +3,7 @@
   width: 60px;
   // border-radius: 25px;
 
+  border: none;
   background-color: #d4f4fe;
   border-radius: 4px;
   cursor: pointer;
@@ -13,5 +14,5 @@
   margin: 10px 0;
   position: relative;
   text-align: center;
-  transition: background-color 0.2s, color 0.2s;
+  // transition: background-color 0.2s, color 0.2s;
 }

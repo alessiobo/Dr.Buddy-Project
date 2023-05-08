@@ -1,6 +1,7 @@
 .cal-btn-color {
   height: 60%;
   width: 60px;
+  border: none;
   background-color: #d4f4fe;
   border-radius: 4px;
   cursor: pointer;
@@ -10,7 +11,6 @@
   margin: 10px 0;
   position: relative;
   text-align: center;
-  transition: background-color 0.2s, color 0.2s;
 }
 
 /*# sourceMappingURL=calendarBtn.css.map */
