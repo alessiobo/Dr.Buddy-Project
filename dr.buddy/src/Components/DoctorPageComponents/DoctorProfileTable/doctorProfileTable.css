@@ -1,5 +1,5 @@
 .doctorProfileTable-cont {
-  width: 20%;
+  width: 25%;
   margin-top: 50px;
 }
 @media (max-width: 1400px) {
@@ -13,6 +13,24 @@
     margin-left: 100px;
     width: 80%;
   }
+}
+
+.card-container {
+  color: #e5e5e5;
+  padding-top: 30px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.card-container img {
+  height: 100%;
+}
+
+.card-container .round {
+  border: 3px solid #03bfcb;
+  border-radius: 50%;
+  padding: 7px;
+  height: 140px;
 }
 
 /*# sourceMappingURL=doctorProfileTable.css.map */
