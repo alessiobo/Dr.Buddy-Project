@@ -11,11 +11,9 @@ function DoctorProfileTable() {
 
         <div class="card-container">
           <img class="round" src={paperino} alt="user" />
-          <h4>Ricky Park</h4>
+          <h4>Paolino Paperino</h4>
           <h4>New York</h4>
-          <p>
-            User interface designer and <br /> front-end developer
-          </p>
+          <p>Dottore</p>
         </div>
         <span></span>
       </TableContainer>
