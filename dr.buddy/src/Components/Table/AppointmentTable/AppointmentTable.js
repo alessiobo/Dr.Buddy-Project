@@ -16,9 +16,7 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
 
   const today = new Date();
   const todayString = today.toISOString().substring(0, 10);
-
-  // console.log(today);
-  // console.log(todayString);
+  const todayIT = todayString.split("-").reverse().join("-");
 
   const todayApp =
     data &&
@@ -60,7 +58,7 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
 
   return (
     <TableContainer>
-      <h3>Appuntamenti di oggi: </h3>
+      <h3>Appuntamenti di oggi: {todayIT}</h3>
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
         {todayApp &&
