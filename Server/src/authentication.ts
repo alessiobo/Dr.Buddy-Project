@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import * as dotenv from "dotenv";
 dotenv.config();
-import passport from "passport";
+// import passport from "passport";
 
 // const authorize = (req: Request, res: Response, next: NextFunction) => {
 //   passport.authenticate("jwt", { session: false }, (err: Error, user: any) => {

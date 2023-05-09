@@ -4,11 +4,11 @@ import * as dotenv from "dotenv";
 import { db } from "./DB/db.js";
 dotenv.config();
 
-interface User {
-  id_doctor: number;
-  id_patient: number;
-  firstname: string;
-}
+// interface User {
+//   id_doctor: number;
+//   id_patient: number;
+//   firstname: string;
+// }
 
 function authRole(roles: string[]) {
   return async (req: Request, res: Response, next: NextFunction) => {
