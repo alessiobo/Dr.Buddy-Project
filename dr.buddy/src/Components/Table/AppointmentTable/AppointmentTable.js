@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import CardPrenotazione from "../../../UI/Cards/CardPrenotazione/CardPrenotazione";
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
-import "./tableCardsReservations.css";
+import "./appointmentTable.css";
 
-function TableCardsReservations({ getAllReservationByDoctorID }) {
+function AppointmentTable({ getAllReservationByDoctorID }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -13,6 +13,38 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
     fetchData();
     // console.log(data);
   }, [getAllReservationByDoctorID]);
+
+  const today = new Date();
+  const todayString = today.toISOString().substring(0, 10);
+  const todayIT = todayString.split("-").reverse().join("-");
+
+  const todayApp =
+    data &&
+    data
+      .filter((app) => {
+        if (app.id_doctor === 1) {
+          return app.date_reservation.substring(0, 10) === todayString;
+        }
+      })
+      .sort((a, b) => {
+        const timeA = new Date(
+          `2023-05-08T${a.date_reservation.substring(11, 16)}:00.000Z`
+        );
+        const timeB = new Date(
+          `2023-05-08T${b.date_reservation.substring(11, 16)}:00.000Z`
+        );
+        // console.log(timeB, timeA);
+
+        return timeA - timeB;
+      });
+
+  // myArray.sort((a, b) => {
+  //   const timeA = new Date(`1970-01-01T${a.time}:00`);
+  //   const timeB = new Date(`1970-01-01T${b.time}:00`);
+  //   return timeA - timeB;
+  // });
+
+  console.log(todayApp);
 
   function getHour(dataPlusOra) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;
@@ -26,11 +58,11 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
 
   return (
     <TableContainer>
-      <h3>Nuove Prenotazioni:</h3>
+      <h3>Appuntamenti di oggi: {todayIT}</h3>
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
-        {data &&
-          data.map((el, k) => {
+        {todayApp &&
+          todayApp.map((el, k) => {
             return (
               <CardPrenotazione
                 key={k}
@@ -50,4 +82,4 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
   );
 }
 
-export default TableCardsReservations;
+export default AppointmentTable;
