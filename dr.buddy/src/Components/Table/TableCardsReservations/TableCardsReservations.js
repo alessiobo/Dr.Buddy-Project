@@ -3,16 +3,16 @@ import CardPrenotazione from "../../../UI/Cards/CardPrenotazione/CardPrenotazion
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./tableCardsReservations.css";
 
-function TableCardsReservations({ getAllReservations }) {
+function TableCardsReservations({ getAllReservationByDoctorID }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      setData(await getAllReservations(1));
+      setData(await getAllReservationByDoctorID(1));
     }
     fetchData();
-    console.log(data);
-  }, [getAllReservations]);
+    // console.log(data);
+  }, [getAllReservationByDoctorID]);
 
   return (
     <TableContainer>
@@ -20,9 +20,10 @@ function TableCardsReservations({ getAllReservations }) {
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
         {data &&
-          data.map((el) => {
+          data.map((el, k) => {
             return (
               <CardPrenotazione
+                key={k}
                 id={el.id_reservation}
                 paziente={el.firstname + " " + el.lastname}
                 data={el.date_reservation

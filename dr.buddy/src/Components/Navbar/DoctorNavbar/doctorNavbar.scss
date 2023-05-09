@@ -30,6 +30,8 @@
     align-items: center;
     justify-content: center;
 
+    cursor: pointer;
+
     @media (max-width: 1000px) {
       span {
         display: none;
