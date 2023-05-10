@@ -1,5 +1,5 @@
 .navbar {
-  color: #FBFAF8;
+  color: #fbfaf8;
   padding: 0px, 60px;
   margin: 0px;
   position: relative;
@@ -44,7 +44,7 @@
   }
   .navbar .link_container div:hover {
     transition: 300ms;
-    color: #21009D;
+    color: #21009d;
     cursor: pointer;
   }
 }
@@ -56,10 +56,10 @@
 }
 .navbar .button_wrapper .navbar_register_button {
   border-color: none !important;
-  background-color: #5A8CF2;
+  background-color: #5a8cf2;
 }
 .navbar .button_wrapper .navbar_register_button:hover {
-  box-shadow: 2px 2px #21009D;
+  box-shadow: 2px 2px #21009d;
   filter: brightness(125%);
 }
 .navbar .button_wrapper .navbar_register_button:active {
@@ -67,26 +67,27 @@
   filter: brightness(120%);
 }
 .navbar .button_wrapper button {
+  border: none;
   text-decoration: none;
   transition: 300ms;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #5A8CF2;
+  background-color: #5a8cf2;
   width: 8em;
   margin: 5px;
   height: 57px;
   border-radius: 20px;
   font-weight: bold;
-  color: #FBFAF8;
+  color: #fbfaf8;
   font-size: 18px;
 }
 .navbar .button_wrapper button:hover {
   transition: 300ms;
   color: #040507;
-  background-color: #0056D0;
+  background-color: #0056d0;
   transform: translate(-2px, -2px);
-  box-shadow: 2px 2px #21009D;
+  box-shadow: 2px 2px #21009d;
   filter: brightness(125%);
 }
 .navbar .button_wrapper button:hover img {
