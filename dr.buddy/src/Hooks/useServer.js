@@ -97,6 +97,9 @@ function useServer(url) {
     }
   }
 
+  //Login, SALVARE TOKEN NEI COOKIES
+  async function login() {}
+
   return {
     data,
     error,
