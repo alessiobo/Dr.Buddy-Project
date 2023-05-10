@@ -3,16 +3,26 @@ import CardPrenotazione from "../../../UI/Cards/CardPrenotazione/CardPrenotazion
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./tableCardsReservations.css";
 
-function TableCardsReservations({ getAllReservations }) {
+function TableCardsReservations({ getAllReservationByDoctorID }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      setData(await getAllReservations(1));
+      setData(await getAllReservationByDoctorID(1));
     }
     fetchData();
-    console.log(data);
-  }, [getAllReservations]);
+    // console.log(data);
+  }, [getAllReservationByDoctorID]);
+
+  function getHour(dataPlusOra) {
+    const ora = Number(dataPlusOra.substring(11, 13)) + 2;
+    let min = Number(dataPlusOra.substring(14, 16));
+    if (min === 0) {
+      min += "0";
+    }
+
+    return ora + ":" + min;
+  }
 
   return (
     <TableContainer>
@@ -20,9 +30,10 @@ function TableCardsReservations({ getAllReservations }) {
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
         {data &&
-          data.map((el) => {
+          data.map((el, k) => {
             return (
               <CardPrenotazione
+                key={k}
                 id={el.id_reservation}
                 paziente={el.firstname + " " + el.lastname}
                 data={el.date_reservation
@@ -30,7 +41,7 @@ function TableCardsReservations({ getAllReservations }) {
                   .split("-")
                   .reverse()
                   .join("-")}
-                ora={el.date_reservation.substring(11, 16)}
+                ora={getHour(el.date_reservation)}
               />
             );
           })}

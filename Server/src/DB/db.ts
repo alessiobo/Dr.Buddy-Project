@@ -15,6 +15,7 @@ CREATE TABLE patient (
   tel_num VARCHAR(15),
   password VARCHAR(65) NOT NULL,
   created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  role VARCHAR(15),
   token TEXT
 );
 
@@ -28,6 +29,7 @@ CREATE TABLE doctor (
   tel_num VARCHAR(15),
   password VARCHAR(65) NOT NULL,
   created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  role VARCHAR(15),
   token TEXT
 );
 
@@ -47,44 +49,56 @@ CREATE TABLE reservation(
 `);
   //PATIENTS
   await db.none(
-    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Mario','Rossi', 'email@email.com','12345','password')`
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password,role) VALUES ('Mario','Rossi', 'email@email.com','12345','password','client')`
   );
   await db.none(
-    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Luigi','Bianchi', 'email@email.com','12345','password')`
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password,role) VALUES ('Luigi','Bianchi', 'email@email.com','12345','password','client')`
   );
   await db.none(
-    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Pippo','Verdi', 'email@email.com','12345','password')`
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password,role) VALUES ('Pippo','Verdi', 'email@email.com','12345','password','client')`
   );
 
   //DOCTORS
   await db.none(
-    `INSERT INTO doctor (firstname,lastname,email,tel_num,password) VALUES ('Paperino','Paolino', 'email@email.com','12345','password')`
+    `INSERT INTO doctor (firstname,lastname,email,tel_num,password,role) VALUES ('Paperino','Paolino', 'email@email.com','12345','password','admin')`
   );
   await db.none(
-    `INSERT INTO doctor (firstname,lastname,email,tel_num,password) VALUES ('Pluto','Dogo', 'email@email.com','12345','password')`
+    `INSERT INTO doctor (firstname,lastname,email,tel_num,password,role) VALUES ('Pluto','Dogo', 'email@email.com','12345','password','doctor')`
   );
 
   //RESERVATIONS
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-04 08:00:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-12 10:00:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-04 08:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (2,null,'2023-05-11 15:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-04 09:00:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-12 08:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,2,'2023-05-04 09:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-10 08:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-05 10:00:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-09 09:00:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-05 10:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-07 09:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,1,'2023-05-05 18:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-10 10:00:00')`
+  );
+  await db.none(
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (2,null,'2023-05-07 10:30:00')`
+  );
+  await db.none(
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,1,'2023-05-08 17:00:00')`
+  );
+  await db.none(
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,2,'2023-05-08 08:30:00')`
+  );
+  await db.none(
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,3,'2023-05-08 10:30:00')`
   );
 };
 

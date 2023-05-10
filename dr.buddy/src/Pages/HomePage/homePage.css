@@ -1,41 +1,7 @@
-<<<<<<< HEAD
-/*body {
-  font-family: "Merriweather", sans-serif;
-  src: url("/dr.buddy/src/Fonts/Merriweather-Regular.ttf") format("truetype");
-}*/
-=======
-body {
-  /* font-family: "Merriweather", sans-serif;
-  src: url("/dr.buddy/src/Fonts/Merriweather-Regular.ttf") format("truetype"); */
-  background-color: #b0c5ff;
-}
->>>>>>> develope
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 1.625rem;
-}
-
-h4 {
-  font-size: 1.438rem;
-}
-
 * {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-body {
-  margin: 0;
-  background-size: cover;
-  background-color: #b0c5ff;
-}
-
-video {
-  position: absolute;
-=======
 .homepage {
   display: flex;
   flex-direction: column;
@@ -46,7 +12,6 @@ video {
 }
 .homepage video {
   position: relative;
->>>>>>> develope
   top: 0;
   left: 0;
   width: 100%;
@@ -54,29 +19,16 @@ video {
   object-fit: cover;
   object-position: center;
 }
-<<<<<<< HEAD
-
-.Join {
-  min-height: 100vh;
-=======
 .homepage .Join {
   min-height: 400px;
->>>>>>> develope
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-<<<<<<< HEAD
-  top: 23vh;
-}
-
-.Join button {
-=======
   top: 0px;
   margin-bottom: 119px;
 }
 .homepage .Join button {
->>>>>>> develope
   width: 27vh;
   height: 6vh;
   border-radius: 2vh;
@@ -86,12 +38,7 @@ video {
   border-color: #12fcc0 145, 95%, 64%, 0.6;
   font-size: 1.5rem;
 }
-<<<<<<< HEAD
-
-header {
-=======
 .homepage header {
->>>>>>> develope
   position: fixed;
   width: 100%;
   text-align: center;
@@ -120,7 +67,7 @@ header {
   text-align: center;
   margin: 2rem 3rem 0;
   mix-blend-mode: overlay;
-  color: #FBFAF8;
+  color: #fbfaf8;
   font-weight: 100;
 }
 
