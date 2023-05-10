@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 //@ts-ignore
 import pap from "./paperino.png";
+import DoctorProfileTable from "../../Components/DoctorPageComponents/DoctorProfileTable/DoctorProfileTable";
 
 function DoctorProfile({
   getAllReservations,
@@ -39,7 +40,7 @@ function DoctorProfile({
           getAllReservationByDoctorID={getAllReservationByDoctorID}
         />
 
-        <UserLoginPic name={"Dr. Paperino"} personalImg={pap} />
+        <DoctorProfileTable />
       </PageConteiner>
       {/* <Footer /> */}
     </div>

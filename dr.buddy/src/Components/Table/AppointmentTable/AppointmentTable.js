@@ -38,13 +38,7 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
         return timeA - timeB;
       });
 
-  // myArray.sort((a, b) => {
-  //   const timeA = new Date(`1970-01-01T${a.time}:00`);
-  //   const timeB = new Date(`1970-01-01T${b.time}:00`);
-  //   return timeA - timeB;
-  // });
-
-  console.log(todayApp);
+  // console.log(todayApp);
 
   function getHour(dataPlusOra) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;
