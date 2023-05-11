@@ -1,20 +1,39 @@
-.ulp-container {
+.doctorProfileTable-cont {
+  width: 25%;
+  margin-top: 50px;
+}
+@media (max-width: 1400px) {
+  .doctorProfileTable-cont {
+    margin-left: 220px;
+    width: 55%;
+  }
+}
+@media (max-width: 1000px) {
+  .doctorProfileTable-cont {
+    margin-left: 100px;
+    width: 80%;
+  }
+}
+
+.card-container {
+  color: #e5e5e5;
+  padding: 30px 0px;
+  width: 100%;
   display: flex;
-  justify-content: end;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  gap: 50px;
 }
-.ulp-container img {
-  height: 50px;
+.card-container img {
+  height: 100%;
 }
-.ulp-container .ulp-online {
-  background-color: rgb(4, 128, 41);
-  position: relative;
-  top: 15px;
-  right: 15px;
-  height: 20px;
-  width: 20px;
+
+.card-container .round {
+  border: 3px solid #03bfcb;
   border-radius: 50%;
-  border: 3px solid white;
+  padding: 7px;
+  height: 140px;
 }
 
 /*# sourceMappingURL=userLoginPic.css.map */
