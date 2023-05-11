@@ -1,5 +1,5 @@
-.user-logo{
-  position: relative;
-  right: 10px;
-  top: 20px;
+.patient-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

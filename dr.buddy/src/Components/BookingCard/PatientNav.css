@@ -1,0 +1,52 @@
+.doc_nav-cont {
+  background-color: #3a76e4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6%;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  .doc_nav-cont {
+    width: 80px;
+  }
+}
+.doc_nav-cont button {
+  height: 50px;
+  width: 80%;
+  background-color: #5a8cf2;
+  color: #e5e5e5;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doc_nav-cont button:hover {
+  transition: 300ms;
+  filter: brightness(110%);
+}
+@media (max-width: 1000px) {
+  .doc_nav-cont button span {
+    display: none;
+  }
+}
+.doc_nav-cont button .navDoctor-icon {
+  height: 20px;
+  margin-right: 10px;
+}
+@media (max-width: 1000px) {
+  .doc_nav-cont button .navDoctor-icon {
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=doctorNavbar.css.map */
