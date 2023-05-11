@@ -1,5 +1,13 @@
 .patient-page {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media (max-width: 1400px) {
+  .patient-page {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-content: center;
+  }
 }
