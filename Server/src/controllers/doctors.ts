@@ -86,7 +86,7 @@ async function logInDoctor(req: Request, res: Response) {
         id_doctor: doctor.id_doctor,
         firstname,
       };
-      const { SECRET = "" } = process.env;
+      const { SECRET = ""  } = process.env;
       const token = jwt.sign(payload, SECRET);
 
       await db.none(`UPDATE doctor SET token=$2 WHERE id_doctor=$1`, [

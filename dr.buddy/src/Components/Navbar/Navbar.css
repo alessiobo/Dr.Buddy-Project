@@ -80,6 +80,7 @@
   font-weight: bold;
   color: #FBFAF8;
   font-size: 18px;
+  border: none;
 }
 .navbar .button_wrapper button:hover {
   transition: 300ms;
