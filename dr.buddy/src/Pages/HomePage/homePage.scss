@@ -20,7 +20,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-
   }
 
   .Join {
@@ -42,7 +41,6 @@
     color: $secondary-color-light;
     border-color: $secondary-color-light(145, 95%, 64%, 0.6);
     font-size: 1.5rem;
-   
   }
 
   header {
@@ -54,7 +52,6 @@
   }
 
   h1 {
-
     text-align: center;
     font-size: 2rem;
     width: 100%;
@@ -79,7 +76,7 @@
     text-align: center;
     margin: 2rem 3rem 0;
     mix-blend-mode: overlay;
-    color: #FBFAF8;
+    color: #fbfaf8;
     font-weight: 100;
   }
 }

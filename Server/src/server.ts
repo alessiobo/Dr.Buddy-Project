@@ -1,7 +1,7 @@
 import express from "express";
 import "express-async-errors";
 import morgan from "morgan";
-import authorize from "./authorize.js";
+
 import {
   getAllPatients,
   getPatientByID,
@@ -33,6 +33,9 @@ import {
 } from "./controllers/reservations.js";
 
 import "./passport.js";
+
+import checkToken from "./authentication.js";
+import authRole from "./authorization.js";
 
 const server = express();
 const port = 5000;
@@ -79,53 +82,67 @@ server.get("/", (req, res) => {
 
 //Patients
 
-server.get("/patients", getAllPatients);
+server.get(
+  "/patients",
+  checkToken,
+  authRole(["doctor", "admin"]),
+  getAllPatients
+);
 
-server.get("/patients/:id", getPatientByID);
+server.get("/patients/:id", checkToken, authRole(["doctor"]), getPatientByID);
 
-server.post("/patients", createPatient);
+server.post("/patients", checkToken, createPatient);
 
-server.put("/patients/:id", updatePatientByID);
+server.put("/patients/:id", checkToken, updatePatientByID);
 
-server.delete("/patients/:id", deletePatientByID);
+server.delete("/patients/:id", checkToken, deletePatientByID);
 
 //Doctors
 
-server.get("/doctors", getAllDoctors);
+server.get("/doctors", checkToken, getAllDoctors);
 
-server.get("/doctors/:id", getDoctorByID);
+server.get("/doctors/:id", checkToken, getDoctorByID);
 
-server.post("/doctors", createDoctor);
+server.post("/doctors", checkToken, authRole(["doctor"]), createDoctor);
 
-server.put("/doctors/:id", updateDoctorByID);
+server.put("/doctors/:id", checkToken, authRole(["doctor"]), updateDoctorByID);
 
-server.delete("/doctors/:id", deleteDoctorByID);
+server.delete(
+  "/doctors/:id",
+  checkToken,
+  authRole(["doctor"]),
+  deleteDoctorByID
+);
 
 //LogIN
 
 server.post("/patients/login", logInPatient);
 // server.post("/patients/signup", signUp);
-server.get("/patients/logout", authorize, logOutPatient);
+// server.get("/patients/logout", authorize, logOutPatient);
 
 server.post("/doctors/login", logInDoctor);
 // server.post("/patients/signup", signUp);
-server.get("/doctors/logout", authorize, logOutDoctor);
+// server.get("/doctors/logout", authorize, logOutDoctor);
 
 //Reservations
 
-server.get("/reservations", getAllReservations);
+server.get("/reservations", checkToken, getAllReservations);
 
-server.get("/reservations/:id", getReservationByID);
+server.get("/reservations/:id", checkToken, getReservationByID);
 
-server.get("/reservations/patient/:id", getAllReservationByPatientID);
+server.get(
+  "/reservations/patient/:id",
+  checkToken,
+  getAllReservationByPatientID
+);
 
-server.get("/reservations/doctor/:id", getAllReservationByDoctorID);
+server.get("/reservations/doctor/:id", checkToken, getAllReservationByDoctorID);
 
-server.post("/reservations", createReservation);
+server.post("/reservations", checkToken, createReservation);
 
-server.put("/reservations/:id", updateReservationByID);
+server.put("/reservations/:id", checkToken, updateReservationByID);
 
-server.delete("/reservations/:id", deleteReservationByID);
+server.delete("/reservations/:id", checkToken, deleteReservationByID);
 
 // server.use(error)
 

@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1400px) {
   .pageConteiner-cont {
     flex-direction: column-reverse;
     justify-content: center;

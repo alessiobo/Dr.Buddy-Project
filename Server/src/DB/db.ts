@@ -15,6 +15,7 @@ CREATE TABLE patient (
   tel_num VARCHAR(15),
   password VARCHAR(65) NOT NULL,
   created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  role VARCHAR(15),
   token TEXT
 );
 
@@ -28,6 +29,7 @@ CREATE TABLE doctor (
   tel_num VARCHAR(15),
   password VARCHAR(65) NOT NULL,
   created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  role VARCHAR(15),
   token TEXT
 );
 
@@ -47,21 +49,21 @@ CREATE TABLE reservation(
 `);
   //PATIENTS
   await db.none(
-    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Mario','Rossi', 'email@email.com','12345','password')`
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password,role) VALUES ('Mario','Rossi', 'email@email.com','12345','password','client')`
   );
   await db.none(
-    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Luigi','Bianchi', 'email@email.com','12345','password')`
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password,role) VALUES ('Luigi','Bianchi', 'email@email.com','12345','password','client')`
   );
   await db.none(
-    `INSERT INTO patient (firstname,lastname,email,tel_num,password) VALUES ('Pippo','Verdi', 'email@email.com','12345','password')`
+    `INSERT INTO patient (firstname,lastname,email,tel_num,password,role) VALUES ('Pippo','Verdi', 'email@email.com','12345','password','client')`
   );
 
   //DOCTORS
   await db.none(
-    `INSERT INTO doctor (firstname,lastname,email,tel_num,password) VALUES ('Paperino','Paolino', 'email@email.com','12345','password')`
+    `INSERT INTO doctor (firstname,lastname,email,tel_num,password,role) VALUES ('Paperino','Paolino', 'email@email.com','12345','password','admin')`
   );
   await db.none(
-    `INSERT INTO doctor (firstname,lastname,email,tel_num,password) VALUES ('Pluto','Dogo', 'email@email.com','12345','password')`
+    `INSERT INTO doctor (firstname,lastname,email,tel_num,password,role) VALUES ('Pluto','Dogo', 'email@email.com','12345','password','doctor')`
   );
 
   //RESERVATIONS
