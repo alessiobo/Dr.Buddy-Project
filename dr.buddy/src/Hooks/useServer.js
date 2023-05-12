@@ -1,8 +1,6 @@
 import useSWR, { mutate } from "swr";
 import Cookies from "js-cookie";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
 function useServer(url) {
   const common_request = (data, method) => {
     return {
@@ -15,6 +13,16 @@ function useServer(url) {
     };
   };
 
+  const token = Cookies.get("token");
+
+  const token_request = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+
+  const fetcher = (url) => fetch(url, token_request).then((res) => res.json());
+
   const URL = "http://localhost:5000/" + url;
 
   //CRUD----------------------------------------------------------------------
@@ -25,7 +33,7 @@ function useServer(url) {
   //getAllReservationByPatientID
   async function getAllReservationByPatientID(id) {
     try {
-      const res = await fetch(URL + "/patient/" + id);
+      const res = await fetch(URL + "/patient/" + id, token_request);
       const json = await res.json();
 
       return json;
@@ -36,27 +44,7 @@ function useServer(url) {
   //GetAllReservationByID
   async function getAllReservationByDoctorID(id) {
     try {
-      const token = await Cookies.get("token");
-
-      // const fetchToken = (data, method) => {
-      //   return {
-      //     method: method,
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //       Authorization: "Bearer " + token,
-      //     },
-      //     body: data ? JSON.stringify(data) : null,
-      //     mode: "cors",
-      //   };
-      // };
-
-      // const res = await fetch(URL + "/doctor/" + id, fetchToken(null, "GET"));
-      const res = await fetch(URL + "/doctor/" + id, {
-        headers: {
-          // "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-      });
+      const res = await fetch(URL + "/doctor/" + id, token_request);
       const json = await res.json();
 
       return json;
