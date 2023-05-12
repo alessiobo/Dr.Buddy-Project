@@ -1,5 +1,13 @@
-.user-logo{
-  position: relative;
-  right: 10px;
-  top: 20px;
+.patient-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media (max-width: 1400px) {
+  .patient-page {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-content: center;
+  }
 }

@@ -5,6 +5,7 @@ import BookingCard from "../../Components/BookingCard/BookingCard";
 import Tabella from "../../Components/Table/Tabella";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
+import PatientNav from "../../Components/BookingCard/PatientNav";
 
 export default function PartClient({
   createReservation,
@@ -24,11 +25,11 @@ export default function PartClient({
   return (
     <div>
       <Navbar />
-      <div className="user-logo">
+      {/* <PatientNav /> */}
+      <div className="patient-page">
+        <BookingCard createReservation={createReservation} />
         <UserLoginPic name="Mario Rossi" />
       </div>
-      {/* <BookingCard onBook={handleBook} /> */}
-      <BookingCard createReservation={createReservation} />
       <Tabella getAllReservationByID={getAllReservationByID} />
       <Footer />
     </div>

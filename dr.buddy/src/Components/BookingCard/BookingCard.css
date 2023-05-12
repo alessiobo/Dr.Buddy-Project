@@ -1,124 +1,101 @@
-.booking-card {
-  background-color: #FBFAF8;
-  height: 400px;
+.BookingCard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto;
-  
+  width: 50%;
+  gap: 10px;
+  margin-bottom: 25px;
 }
-
-.card-header {
-  margin-bottom: 15px;
-  background-color: #FBFAF8;
-  border-radius: 10px;
-  text-align: center;
-  width: 100%;
-  max-width: 600px;
-  padding: 0;
-  display: block;
-}
-
-.form-label {
-  color: black;
-}
-.form-style {
-  color: #fff;
-}
-.time-label {
-  padding-top: 20px !important;
-}
-
-.booking-btn {
-  padding-top: 20px;
-}
-
-.custom-btn {
-  transition: 300ms !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  background-color: #21009d !important;
-  width: 227px !important;
-  margin: 5px !important;
-  height: 57px !important;
-  height: 57px !important;
-  border-radius: 20px !important;
-  color: white !important;
-  font-size: 18px !important;
-}
-.custom-btn:hover {
-  transition: 300ms !important;
-  color: black !important;
-  background-color: #0056d0 !important;
-  transform: translate(-2px, -2px) !important;
-  box-shadow: 2px 2px #21009d !important;
-  filter: brightness(125%) !important;
-}
-
-.custom-btn:active {
-  transform: translate(2px, 2px) !important;
-  box-shadow: 0px 0px !important;
-  filter: brightness(175%) !important;
-}
-
-.booked-card {
-  max-width: 600px;
-  width: 100%;
-  margin: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.card-title {
-  padding: 5% !important;
-}
-
 .toggle-btn-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
 }
-
 .toggle-btn {
-  transition: 300ms !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  background-color: #21009d !important;
-  width: 227px !important;
-  margin: 5px !important;
-  height: 57px !important;
-  height: 57px !important;
-  border-radius: 20px !important;
-  color: #FBFAF8 !important;
-  font-size: 18px !important;
+  width: 290px;
+  background-color: #083288;
+  color: #e5e5e5;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 300ms;
+  border: none;
 }
-
 
 .toggle-btn:hover {
-  transition: 300ms !important;
-  color: black !important;
-  background-color: #0056d0 !important;
-  transform: translate(-2px, -2px) !important;
-  box-shadow: 2px 2px #21009d !important;
-  filter: brightness(125%) !important;
+  transition: 300ms;
+  color: #040507;
+  background-color: #0056d0;
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px #21009d;
+  filter: brightness(125%);
 }
 
-.toggle-btn:active {
-  transform: translate(2px, 2px) !important;
-  box-shadow: 0px 0px !important;
-  filter: brightness(175%) !important;
+.booked-card {
+  background-color: rgba(255, 255, 255, 0.13);
+  top: 10%;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  align-self: center;
+  margin-top: 20px;
 }
 
-.HourSelect {
-  color : black;
-  border: 1px solid black;
-  margin-left: 10px;
+.card-title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 80px;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 0.5px;
 }
 
+.form-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #ffffff;
+}
+
+input,
+select {
+  display: block;
+  height: 50px;
+  width: 73%;
+  background-color: #0f3590bd;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: auto;
+  font-size: 14px;
+  font-weight: 300;
+  border: none;
+  color: floralwhite;
+}
+
+.style-label {
+}
+
+.booking-btn {
+  align-self: center;
+  margin-top: 50px;
+  width: 100%;
+  background-color: #083288;
+  color: #e5e5e5;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 300ms;
+  border: none;
+}
+
+.booking-btn:hover {
+  transition: 300ms;
+  filter: brightness(150%);
+}

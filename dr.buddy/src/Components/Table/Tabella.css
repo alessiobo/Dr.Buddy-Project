@@ -1,5 +1,4 @@
 .booked-tab {
-  
   max-width: 100%;
   width: auto;
   padding-left: 40px;
@@ -8,6 +7,7 @@
 }
 
 .table {
-  background-color: #FBFAF8 !important;
+  background-color: #fbfaf8 !important;
   margin-bottom: 0;
+  width: 100%;
 }

@@ -16,7 +16,7 @@ function Tabella({ getAllReservationByID }: { getAllReservationByID: any }) {
   return (
     <div className="booked-tab">
       <TableContainer>
-        <h3 style={{ margin: "0" }}>Visite Prenotate</h3>
+        <h3>Visite Prenotate</h3>
         <Table>
           <thead>
             <tr>
