@@ -1,6 +1,5 @@
 import useSWR, { mutate } from "swr";
 import Cookies from "js-cookie";
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function useServer(url) {
   const common_request = (data, method) => {
@@ -14,6 +13,16 @@ function useServer(url) {
     };
   };
 
+  const token = Cookies.get("token");
+
+  const token_request = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+
+  const fetcher = (url) => fetch(url, token_request).then((res) => res.json());
+
   const URL = "http://localhost:5000/" + url;
 
   //CRUD----------------------------------------------------------------------
@@ -24,7 +33,7 @@ function useServer(url) {
   //getAllReservationByPatientID
   async function getAllReservationByPatientID(id) {
     try {
-      const res = await fetch(URL + "/patient/" + id);
+      const res = await fetch(URL + "/patient/" + id, token_request);
       const json = await res.json();
 
       return json;
@@ -35,12 +44,12 @@ function useServer(url) {
   //GetAllReservationByID
   async function getAllReservationByDoctorID(id) {
     try {
-      const res = await fetch(URL + "/doctor/" + id);
+      const res = await fetch(URL + "/doctor/" + id, token_request);
       const json = await res.json();
 
       return json;
     } catch (error) {
-      console.log("Error: " + error);
+      console.log("Error: SONO QUI" + error);
     }
   }
 
@@ -100,12 +109,20 @@ function useServer(url) {
   //Login, SALVARE TOKEN NEI COOKIES
   async function login(data) {
     try {
-    const option = common_request(data, "POST");
-    const res = await fetch(URL + "/login", option);
-    const json = await res.json();
-    await Cookies.set(json)
+      const option = common_request(data, "POST");
+
+      const res = await fetch(URL + "/login", option);
+      const json = await res.json();
+
+      console.log(json);
+      // console.log();
+
+      Cookies.set("token", json.token);
+
+      mutate(URL);
+      return json;
     } catch (error) {
-      console.log("errore: " + error)
+      console.log("Error: " + error);
     }
   }
 
