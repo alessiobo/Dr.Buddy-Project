@@ -53,7 +53,7 @@ function useServer(url) {
       // const res = await fetch(URL + "/doctor/" + id, fetchToken(null, "GET"));
       const res = await fetch(URL + "/doctor/" + id, {
         headers: {
-          "Content-Type": "application/json",
+          // "Content-Type": "application/json",
           Authorization: "Bearer " + token,
         },
       });
