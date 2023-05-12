@@ -33,7 +33,7 @@ function useServer(url) {
   //getAllReservationByPatientID
   async function getAllReservationByPatientID(id) {
     try {
-      const res = await fetch(URL + "/patient/" + id);
+      const res = await fetch(URL + "/patient/" + id, token_request);
       const json = await res.json();
 
       return json;
