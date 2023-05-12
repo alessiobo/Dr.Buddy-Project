@@ -1,6 +1,7 @@
 import express from "express";
 import "express-async-errors";
 import morgan from "morgan";
+import cors from "cors";
 
 import {
   getAllPatients,
@@ -43,38 +44,40 @@ const port = 5000;
 server.use(morgan("dev"));
 server.use(express.json());
 
-// server.use(
-//   cors({
-//     origin,
-//     preflightContinue: true,
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     credentials: true,
-//   })
-// );
+const origin = "http://localhost:3000";
 
-server.use(function (req, res, next) {
-  // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "*");
+server.use(
+  cors({
+    origin,
+    preflightContinue: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+);
 
-  // Request methods you wish to allow
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
+// server.use(function (req, res, next) {
+//   // Website you wish to allow to connect
+//   res.setHeader("Access-Control-Allow-Origin", "*");
 
-  // Request headers you wish to allow
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
-  );
+//   // Request methods you wish to allow
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+//   );
 
-  // Set to true if you need the website to include cookies in the requests sent
-  // to the API (e.g. in case you use sessions)
-  // res.setHeader("Access-Control-Allow-Credentials");
+//   // Request headers you wish to allow
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "X-Requested-With,content-type"
+//   );
 
-  // Pass to next layer of middleware
-  next();
-});
+//   // Set to true if you need the website to include cookies in the requests sent
+//   // to the API (e.g. in case you use sessions)
+//   // res.setHeader("Access-Control-Allow-Credentials");
+
+//   // Pass to next layer of middleware
+//   next();
+// });
 
 server.get("/", (req, res) => {
   res.status(200).json({ msg: "Welcome" });
