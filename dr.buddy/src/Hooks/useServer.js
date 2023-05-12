@@ -38,25 +38,25 @@ function useServer(url) {
     try {
       const token = await Cookies.get("token");
 
-      const fetchToken = (data, method) => {
-        return {
-          method: method,
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token,
-          },
-          body: data ? JSON.stringify(data) : null,
-          mode: "cors",
-        };
-      };
+      // const fetchToken = (data, method) => {
+      //   return {
+      //     method: method,
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       Authorization: "Bearer " + token,
+      //     },
+      //     body: data ? JSON.stringify(data) : null,
+      //     mode: "cors",
+      //   };
+      // };
 
-      const res = await fetch(URL + "/doctor/" + id, fetchToken(null, "GET"));
-      // const res = await fetch(URL + "/doctor/" + id, {
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     Authorization: "Bearer " + token,
-      //   },
-      // });
+      // const res = await fetch(URL + "/doctor/" + id, fetchToken(null, "GET"));
+      const res = await fetch(URL + "/doctor/" + id, {
+        headers: {
+          // "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      });
       const json = await res.json();
 
       return json;
