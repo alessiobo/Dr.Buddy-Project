@@ -7,12 +7,12 @@ function Navbar() {
         <div className="navbar">
             <div className="logo_wrapper">
                 <Link to="/">
-                <img src={logo_white} alt="logo_white" className="logo_white"/>
+                    <img src={logo_white} alt="logo_white" className="logo_white" />
                 </Link>
             </div>
             <div className="link_container">
                 <div>
-                Prezzi
+                    Chi siamo
                 </div>
                 <div>
                     Come funziona
@@ -22,13 +22,14 @@ function Navbar() {
                 </div>
             </div>
             <div className="button_wrapper">
+                
                 <Link to="/login">
-                <button type="button" className="navbar_login_button">Accedi</button>
+                    <button type="button" className="navbar_login_button">Accedi</button>
                 </Link>
                 <Link to="/register">
-                <button type="button" className="navbar_register_button">Registrati</button>
+                    <button type="button" className="navbar_register_button">Registrati</button>
                 </Link>
-            </div> 
+            </div>
         </div>
     )
 }

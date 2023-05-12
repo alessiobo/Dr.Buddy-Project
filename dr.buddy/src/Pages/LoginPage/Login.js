@@ -5,11 +5,12 @@ import Navbar from "../../Components/Navbar/Navbar"
 // import "./LoginPage.css"
 import dottore from "./dottore.svg"
 
-function LoginPage() {
+function LoginPage({login}) {
+
     return (
         <div className="LoginPage" style={{backgroundColor : "#396CCD"}}>
             <Navbar />
-                <LoginCard/>
+                <LoginCard login={login}/>
             <Footer />
         </div>
 

@@ -1,5 +1,5 @@
 import useSWR, { mutate } from "swr";
-
+import Cookies from "js-cookie";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function useServer(url) {
@@ -98,7 +98,16 @@ function useServer(url) {
   }
 
   //Login, SALVARE TOKEN NEI COOKIES
-  async function login() {}
+  async function login(data) {
+    try {
+    const option = common_request(data, "POST");
+    const res = await fetch(URL + "/login", option);
+    const json = await res.json();
+    await Cookies.set(json)
+    } catch (error) {
+      console.log("errore: " + error)
+    }
+  }
 
   return {
     data,
@@ -109,6 +118,7 @@ function useServer(url) {
     deleteObj,
     getAllReservationByPatientID,
     getAllReservationByDoctorID,
+    login,
   };
 }
 export default useServer;

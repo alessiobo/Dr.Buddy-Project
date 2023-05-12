@@ -6,7 +6,11 @@ import PartClient from "./Pages/PartClient/PartClient";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import useServer from "./Hooks/useServer";
 import LoginPage from "./Pages/LoginPage/Login";
+
+
+
 function App() {
+  
   const {
     data: getAllPatients,
     error: errorPatients,
@@ -14,6 +18,7 @@ function App() {
     createObj: createPatient,
     updateObj: updatePatient,
     deleteObj: deletePatient,
+    login: loginPatient,
   } = useServer("patients");
   const {
     data: getAllReservations,
@@ -25,9 +30,9 @@ function App() {
     getAllReservationByPatientID,
     getAllReservationByDoctorID,
   } = useServer("reservations");
-
   return (
     <div>
+      <h1>'Welcome to React'</h1>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
@@ -41,7 +46,7 @@ function App() {
             />
           }
         />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage login={loginPatient} />} />
         <Route
           path="/register"
           element={<RegisterPage createPatient={createPatient} />}

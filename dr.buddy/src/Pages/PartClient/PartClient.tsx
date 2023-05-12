@@ -31,7 +31,7 @@ export default function PartClient({
         <UserLoginPic name="Mario Rossi" />
       </div>
       <Tabella getAllReservationByID={getAllReservationByID} />
-      <Footer />
+      <Footer/>
     </div>
   );
 }
