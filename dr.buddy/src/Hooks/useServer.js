@@ -1,4 +1,5 @@
 import useSWR, { mutate } from "swr";
+import Cookies from "js-cookie";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -35,12 +36,35 @@ function useServer(url) {
   //GetAllReservationByID
   async function getAllReservationByDoctorID(id) {
     try {
-      const res = await fetch(URL + "/doctor/" + id);
+      const token = await Cookies.get("token");
+
+      // const common_request = (data, method) => {
+      //   return {
+      //     method: method,
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       Authorization: "Bearer " + token,
+      //     },
+      //     body: data ? JSON.stringify(data) : null,
+      //     mode: "cors",
+      //   };
+      // };
+
+      // const res = await fetch(
+      //   URL + "/doctor/" + id,
+      //   common_request(null, "GET")
+      // );
+      const res = await fetch(URL + "/doctor/" + id, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      });
       const json = await res.json();
 
       return json;
     } catch (error) {
-      console.log("Error: " + error);
+      console.log("Error: SONO QUI" + error);
     }
   }
 
@@ -98,7 +122,24 @@ function useServer(url) {
   }
 
   //Login, SALVARE TOKEN NEI COOKIES
-  async function login() {}
+  async function login(data) {
+    try {
+      const option = common_request(data, "POST");
+
+      const res = await fetch(URL + "/login", option);
+      const json = await res.json();
+
+      console.log(json);
+      // console.log();
+
+      Cookies.set("token", json.token);
+
+      mutate(URL);
+      return json;
+    } catch (error) {
+      console.log("Error: " + error);
+    }
+  }
 
   return {
     data,
@@ -109,6 +150,7 @@ function useServer(url) {
     deleteObj,
     getAllReservationByPatientID,
     getAllReservationByDoctorID,
+    login,
   };
 }
 export default useServer;

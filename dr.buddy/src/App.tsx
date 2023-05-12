@@ -14,7 +14,17 @@ function App() {
     createObj: createPatient,
     updateObj: updatePatient,
     deleteObj: deletePatient,
+    login: loginPatient,
   } = useServer("patients");
+  const {
+    data: getAllDoctors,
+    error: errorDoctors,
+    getOneObj: getOneDoctor,
+    createObj: createDoctor,
+    updateObj: updateDoctor,
+    deleteObj: deleteDoctor,
+    login: loginDoctor,
+  } = useServer("doctors");
   const {
     data: getAllReservations,
     error: errorReservations,
@@ -41,7 +51,10 @@ function App() {
             />
           }
         />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/login"
+          element={<LoginPage loginDoctor={loginDoctor} />}
+        />
         <Route
           path="/register"
           element={<RegisterPage createPatient={createPatient} />}
