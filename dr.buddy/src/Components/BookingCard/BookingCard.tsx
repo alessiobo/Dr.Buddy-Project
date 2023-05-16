@@ -40,6 +40,16 @@ function BookingCard({ createReservation }: { createReservation: any }) {
     return options;
   }
 
+  function getHour(dataPlusOra: any) {
+    const ora = Number(dataPlusOra.substring(11, 13)) + 2;
+    let min = Number(dataPlusOra.substring(14, 16));
+    if (min === 0) {
+      //@ts-ignore
+      min += "0";
+    }
+    return ora + ":" + min;
+  }
+
   return (
     <div className="BookingCard">
       <div className="toggle-btn-wrapper">

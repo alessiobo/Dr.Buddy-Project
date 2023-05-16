@@ -1,11 +1,15 @@
 import "./LoginCard.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 function Login_card({ loginDoctor }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isDoctor, setIsDoctor] = useState(false);
+
+  const navigate = useNavigate();
+
   async function HandleData(ev) {
     ev.preventDefault();
     const inputData = {
@@ -14,6 +18,9 @@ function Login_card({ loginDoctor }) {
     };
 
     loginDoctor(inputData);
+    if (Cookies.get("token") !== undefined) {
+      isDoctor ? navigate("/doctor/profile") : navigate("/bookingpage");
+    }
 
     console.log(Cookies.get("token"));
   }
@@ -42,6 +49,11 @@ function Login_card({ loginDoctor }) {
             setPassword(event.target.value);
           }}
         />
+        <input
+          type="checkbox"
+          checked={isDoctor}
+          onChange={() => setIsDoctor(!isDoctor)}
+        ></input>
         <label>
           Prima volta su Dr.Buddy?{" "}
           <Link to="/register">
