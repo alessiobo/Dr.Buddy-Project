@@ -42,7 +42,7 @@
     font-size: 16px;
     font-weight: 600;
   }
-  .navbar .link_container div:hover {
+  .navbar .link_container div:hover, .navbar .link_container div a:hover{
     transition: 300ms;
     color: #21009d;
     cursor: pointer;
@@ -102,35 +102,9 @@
 }
 
 a {
+  color: white;
   text-decoration: none !important;
 }
-.toggle {
-  isolation: isolate;
-  position: relative;
-  z-index: 100;
-  height: 30px;
-  width: 60px;
-  border-radius: 15px;
-  overflow: hidden;
-}
 
-.toggle-state {
-  display: none;
-}
 
-.indicator {
-  height: 100%;
-  width: 200%;
-  background: #ecf0f3;
-  border-radius: 15px;
-  transform: translate3d(-75%, 0, 0);
-  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-  box-shadow:
-    -8px -4px 8px 0px #ffffff,
-    8px 4px 12px 0px #d1d9e6;
-}
-
-.toggle-state:checked ~ .indicator {
-  transform: translate3d(25%, 0, 0);
-}
 /*# sourceMappingURL=Navbar.css.map */

@@ -40,7 +40,7 @@ function App() {
   } = useServer("reservations");
   return (
     <div>
-      <h1>Welcome to React</h1>
+    
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
