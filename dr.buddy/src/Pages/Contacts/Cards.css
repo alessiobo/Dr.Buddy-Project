@@ -1,0 +1,34 @@
+.cardCo{
+    display: flex;
+    border: solid 1px black;
+    width: 50vh;
+    height: 30vh; 
+    border-radius: 2vh;
+    background-color: rgb(204, 229, 250);
+    
+}
+.cardCo :hover{
+    scale: 1.2;
+}
+.imgCo{
+ width: 100%;
+ height: 100%;
+}
+.imgCo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2vh;
+}
+.textCo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    gap: 1.5vh;
+   }
+   .textCo h2{
+   
+    font-size: 22px;
+   }

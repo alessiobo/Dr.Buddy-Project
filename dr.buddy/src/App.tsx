@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import HomePage from "./Pages/HomePage/HomePage";
 import DoctorProfile from "./Pages/DoctorProfile/DoctorProfile";
+import ContactsPage from "./Pages/Contacts/ContactsPage"
 // import "bootstrap/dist/css/bootstrap.min.css";
 import PartClient from "./Pages/PartClient/PartClient";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
@@ -68,6 +69,9 @@ function App() {
             />
           }
         />
+        <Route
+          path="/contacts"
+          element={<ContactsPage />} />
       </Routes>
     </div>
   );
