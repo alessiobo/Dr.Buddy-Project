@@ -5,9 +5,7 @@ import DoctorProfile from "./Pages/DoctorProfile/DoctorProfile";
 import PartClient from "./Pages/PartClient/PartClient";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import useServer from "./Hooks/useServer";
-import LoginPage from "./Pages/LoginPage/Login";
-
-
+import LoginPage from "./Pages/LoginPage/Login"; 
 
 function App() {
   
@@ -41,7 +39,7 @@ function App() {
   } = useServer("reservations");
   return (
     <div>
-      <h1>'Welcome to React'</h1>
+      <h1>Welcome to React</h1>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route

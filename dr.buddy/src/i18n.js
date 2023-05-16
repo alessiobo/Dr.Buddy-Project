@@ -1,25 +1,26 @@
-import i18n from "i18next";
-import { reactI18nextModule } from "react-i18next";
 
-import translationEN from '../src/assets/locale/en/translation.json';
-import translationIT from '../src/assets/locale/it/translation.json';
-// the translations
-const resources = {
-  en: {
-    translation: translationEN
-  },
-  it: {
-    translation: translationIT
-  }
-};
+import i18next from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import HttpApi from 'i18next-http-backend'
+import LanguageDetector from 'i18next-browser-languagedetector'   
 
-i18n
-  .use(reactI18nextModule) // passes i18n down to react-i18next
+
+i18next
+  .use(HttpApi)
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
-    resources,
-    lng: "en",
-
-    keySeparator: false, // we do not use keys in form messages.welcome
-  });
-
-export default i18n;
+    supportedLngs: ['en', 'ar', 'fr'],
+    fallbackLng: 'en',
+    debug: false,
+    // Options for language detector
+    detection: {
+      order: ['path', 'cookie', 'htmlTag'],
+      caches: ['cookie'],
+    },
+    // react: { useSuspense: false },
+    backend: {
+      loadPath: '/assets/locales/{{lng}}/translation.json',
+    },
+  })
+export default i18next
