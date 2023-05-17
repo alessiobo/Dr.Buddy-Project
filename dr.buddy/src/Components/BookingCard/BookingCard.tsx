@@ -63,46 +63,7 @@ function BookingCard({
               })}
           </div>
         </div>
-        {/* <button
-          className="toggle-btn"
-          onClick={() => setIsBookingVisible(!isBookingVisible)}
-        >
-          {isBookingVisible ? "Nascondi prenotazione" : "Prenota visita"}
-        </button> */}
       </div>
-      {/* {isBookingVisible && (
-        <div className="booked-card">
-          <h3 className="card-title" style={{ margin: "0" }}>
-            Prenota qui la tua visita
-          </h3>
-          <div className="booking-card">
-            <form className="form-style">
-              <label className="style-label">Data</label>
-              <input
-                type="date"
-                value={date}
-                onChange={(event) => setDate(event.target.value)}
-              />
-              <label className="style-label">Orario</label>
-              <select
-                className="time-select"
-                value={time}
-                onChange={(event) => setTime(event.target.value)}
-              >
-                <option value="" />
-                {/* {generateTimeOptions()} }
-              </select>
-              <button
-                className="booking-btn"
-                onClick={createReservationHandler}
-              >
-                Prenota
-              </button>
-            </form>
-            <div></div>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 }
