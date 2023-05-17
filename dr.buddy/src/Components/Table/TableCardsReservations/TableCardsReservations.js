@@ -8,7 +8,12 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
 
   useEffect(() => {
     async function fetchData() {
-      setData(await getAllReservationByDoctorID(1));
+      const getAllByID = await getAllReservationByDoctorID(1);
+      const filterPrenotations = await getAllByID.filter(
+        (res) => res.firstname !== null
+      );
+
+      setData(filterPrenotations);
     }
     fetchData();
     // console.log(data);
