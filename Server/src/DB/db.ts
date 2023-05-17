@@ -1,11 +1,11 @@
 import pgPromise from "pg-promise";
 //postgres://username:password
-const db = pgPromise()("postgres://postgres:asd@localhost:5432/postgres");
+const db = pgPromise()("postgres://postgres:hello1593@localhost:5432/postgres");
 
 const setupDB = async () => {
   await db.none(`
 
-  DROP TABLE IF EXISTS patient CASCADE;  
+  DROP TABLE IF EXISTS patient CASCADE;
 
 CREATE TABLE patient (
   id_patient SERIAL NOT NULL PRIMARY KEY,
@@ -68,37 +68,37 @@ CREATE TABLE reservation(
 
   //RESERVATIONS
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-12 10:00:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-22 10:00:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (2,null,'2023-05-11 15:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (2,null,'2023-05-22 15:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-12 08:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-23 08:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-10 08:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-24 08:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-09 09:00:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-26 09:00:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-07 09:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-23 09:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-10 10:00:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-24 10:00:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (2,null,'2023-05-07 10:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (2,null,'2023-05-25 10:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,1,'2023-05-08 17:00:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-25 17:00:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,2,'2023-05-08 08:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-26 08:30:00')`
   );
   await db.none(
-    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,3,'2023-05-08 10:30:00')`
+    `INSERT INTO reservation (id_doctor,id_patient,date_reservation) VALUES (1,null,'2023-05-08 10:30:00')`
   );
 };
 

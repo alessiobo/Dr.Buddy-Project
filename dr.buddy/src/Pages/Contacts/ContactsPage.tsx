@@ -24,6 +24,7 @@ function ContactsPage() {
     </div>
       <Footer/>
     </div>
+    <Footer/></>
   );
 }
 
