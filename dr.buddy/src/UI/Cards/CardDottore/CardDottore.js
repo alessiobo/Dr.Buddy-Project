@@ -1,7 +1,7 @@
 import TableContainer from "../../Container/TableContainer/TableContainer";
 import "./cardDottore.css";
 
-import defaultPic from "./circle-user.svg";
+import defaultPic from "./docPic.png";
 
 function CardDottore({ doctor }) {
   return (
