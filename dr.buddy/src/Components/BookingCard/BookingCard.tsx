@@ -37,53 +37,47 @@ function BookingCard({
   }, [doctorchoice]);
 
   return (
-    // <div className="BookingCard">
-    <div>
-      <div>
-        {/* <div className="toggle-btn-wrapper"> */}
-        <div>
-          <h2>Scegli il Dottore: </h2>
-          <div className="doctorsCards-container">
-            {getAllDoctors?.map((doc: any) => {
+    <section>
+      <h2>Scegli il Dottore: </h2>
+      <div className="doctorsCards-container">
+        {getAllDoctors?.map((doc: any) => {
+          return (
+            <button
+              className="btn-doctorsCards"
+              onClick={() => setDoctorchoice(doc.id_doctor)}
+            >
+              <CardDottore doctor={doc} />
+            </button>
+          );
+        })}
+      </div>
+      <TableContainer>
+        <h3>Disponibilità:</h3>
+        <div style={{ display: "flex", gap: "10px" }}>
+          {reservation
+            .filter((res: any) => res.id_patient === null)
+            .map((res: any, k) => {
               return (
-                <button
-                  className="btn-doctorsCards"
-                  onClick={() => setDoctorchoice(doc.id_doctor)}
-                >
-                  <CardDottore doctor={doc} />
-                </button>
+                <div key={k}>
+                  <h4>{res.date_reservation.substring(0, 10)}</h4>
+                  <button
+                    className="cal-btn-color"
+                    onClick={() =>
+                      updateReservation(res.id_reservation, {
+                        id_patient: 1,
+                        id_doctor: res.id_doctor,
+                        date_reservation: res.date_reservation,
+                      })
+                    }
+                  >
+                    {getHour(res.date_reservation)}
+                  </button>
+                </div>
               );
             })}
-          </div>
-          <TableContainer>
-            <h3>Disponibilità:</h3>
-            <div style={{ display: "flex", gap: "10px" }}>
-              {reservation
-                .filter((res: any) => res.id_patient === null)
-                .map((res: any, k) => {
-                  return (
-                    <div key={k}>
-                      <h4>{res.date_reservation.substring(0, 10)}</h4>
-                      <button
-                        className="cal-btn-color"
-                        onClick={() =>
-                          updateReservation(res.id_reservation, {
-                            id_patient: 1,
-                            id_doctor: res.id_doctor,
-                            date_reservation: res.date_reservation,
-                          })
-                        }
-                      >
-                        {getHour(res.date_reservation)}
-                      </button>
-                    </div>
-                  );
-                })}
-            </div>
-          </TableContainer>
         </div>
-      </div>
-    </div>
+      </TableContainer>
+    </section>
   );
 }
 
