@@ -27,7 +27,7 @@ async function getAllReservationByPatientID(req: Request, res: Response) {
       FROM reservation 
       LEFT JOIN doctor ON doctor.id_doctor = reservation.id_doctor
       WHERE id_patient=$1;`,
-    Number(id)  
+    Number(id)
   );
 
   res.status(200).json(reservation);
@@ -38,7 +38,7 @@ async function getAllReservationByDoctorID(req: Request, res: Response) {
   const reservation = await db.manyOrNone(
     `SELECT * 
       FROM reservation
-      JOIN patient ON patient.id_patient = reservation.id_patient    
+      LEFT JOIN patient ON patient.id_patient = reservation.id_patient    
       WHERE id_doctor=$1;`,
     Number(id)
   );

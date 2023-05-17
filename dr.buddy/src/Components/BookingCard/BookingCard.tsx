@@ -1,46 +1,33 @@
 import { useState, useEffect } from "react";
 import "./BookingCard.css";
+import CalendarBtn from "../../UI/Buttons/CalendarButtons/CalendarBtn";
 
-function BookingCard({ createReservation, getAllReservationByDoctorID }: { createReservation: any, getAllReservationByDoctorID: any}) {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [isBookingVisible, setIsBookingVisible] = useState(false);
-  const [doctorchoice,  setDoctorchoice] = useState({});
+function BookingCard({
+  createReservation,
+  getAllReservationByDoctorID,
+}: {
+  createReservation: any;
+  getAllReservationByDoctorID: any;
+}) {
+  // const [date, setDate] = useState("");
+  // const [time, setTime] = useState("");
+  // const [isBookingVisible, setIsBookingVisible] = useState(false);
+  const [doctorchoice, setDoctorchoice] = useState(1);
   const [reservation, setReservation] = useState([]);
-  console.log(getAllReservationByDoctorID)
-  const createReservationHandler = (ev: any) => {
-    ev.preventDefault();
-    const reserv = {
-      id_patient: 1, //per ora solo Mario
-      data: date,
-      ora: time,
-      stato: "⏳",
-    };
 
-    createReservation(reserv);
-    setDate("");
-    setTime("");
-  };
+  // const createReservationHandler = (ev: any) => {
+  //   ev.preventDefault();
+  //   const reserv = {
+  //     id_patient: 1, //per ora solo Mario
+  //     data: date,
+  //     ora: time,
+  //     stato: "⏳",
+  //   };
 
-  function generateTimeOptions() {
-    const options = [];
-
-    for (let hour = 8; hour < 20; hour++) {
-      for (let minute = 0; minute < 60; minute += 30) {
-        const timeString = `${hour.toString().padStart(2, "0")}:${minute
-          .toString()
-          .padStart(2, "0")}`;
-
-        options.push(
-          <option key={timeString} value={timeString}>
-            {timeString}
-          </option>
-        );
-      }
-    }
-
-    return options;
-  }
+  //   createReservation(reserv);
+  //   setDate("");
+  //   setTime("");
+  // };
 
   function getHour(dataPlusOra: any) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;
@@ -55,30 +42,41 @@ function BookingCard({ createReservation, getAllReservationByDoctorID }: { creat
 
   useEffect(() => {
     async function getDoctor() {
-      const res = await getAllReservationByDoctorID(1)
-      setReservation(res)
-    } 
-    getDoctor()
-  }, [doctorchoice])  
-  
+      const res = await getAllReservationByDoctorID(doctorchoice);
+      setReservation(res);
+    }
+    getDoctor();
+  }, [doctorchoice]);
 
   return (
     <div className="BookingCard">
       <div className="toggle-btn-wrapper">
-        <div> check prenotazioni
-         <h1>qui tutte le prenotazione </h1>
+        <div>
+          check prenotazioni
+          <h1>qui tutte le prenotazione </h1>
           <button onClick={() => setDoctorchoice(1)}>Paperino</button>
           <button onClick={() => setDoctorchoice(2)}>Pluto</button>
-          {reservation && reservation?.map((res : any) => {return <li>{res.date_reservation}</li>})}
+          <div style={{ display: "flex", gap: "10px" }}>
+            {reservation.map((res: any) => {
+              return (
+                <div>
+                  <CalendarBtn
+                    ora={getHour(res.date_reservation)}
+                    take={false}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <button
+        {/* <button
           className="toggle-btn"
           onClick={() => setIsBookingVisible(!isBookingVisible)}
         >
           {isBookingVisible ? "Nascondi prenotazione" : "Prenota visita"}
-        </button>
+        </button> */}
       </div>
-      {isBookingVisible && (
+      {/* {isBookingVisible && (
         <div className="booked-card">
           <h3 className="card-title" style={{ margin: "0" }}>
             Prenota qui la tua visita
@@ -98,7 +96,7 @@ function BookingCard({ createReservation, getAllReservationByDoctorID }: { creat
                 onChange={(event) => setTime(event.target.value)}
               >
                 <option value="" />
-                {generateTimeOptions()}
+                {/* {generateTimeOptions()} }
               </select>
               <button
                 className="booking-btn"
@@ -110,7 +108,7 @@ function BookingCard({ createReservation, getAllReservationByDoctorID }: { creat
             <div></div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

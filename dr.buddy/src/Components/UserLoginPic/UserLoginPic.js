@@ -15,7 +15,6 @@ function UserLoginPic({ getOnePatient }) {
     }
 
     getPatient();
-    console.log(pat);
   }, []);
 
   return (
