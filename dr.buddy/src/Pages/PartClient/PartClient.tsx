@@ -27,9 +27,8 @@ export default function PartClient({
           getAllReservationByDoctorID={getAllReservationByDoctorID}
           getAllDoctors={getAllDoctors}
         />
-        {/* <div style={{ width: "600px" }}> */}
+
         <UserLoginPic getOnePatient={getOnePatient} />
-        {/* </div> */}
 
         <Tabella getAllReservationByID={getAllReservationByID} />
       </section>
