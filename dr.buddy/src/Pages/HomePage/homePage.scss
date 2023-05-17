@@ -4,14 +4,18 @@
 * {
   box-sizing: border-box;
 }
+.homeContainer {
+  height: 98vh;
+}
+.text_wrapper{
+ 
+}
 
 .homepage {
   display: flex;
   flex-direction: column;
-  .homeContainer {
-    max-height: 600px;
-    aspect-ratio: 16 / 9;
-  }
+  height: 98vh;
+
   video {
     position: relative;
     top: 0;
@@ -22,16 +26,15 @@
     object-position: center;
   }
 
-  .Join {
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 0px;
-    margin-bottom: 119px;
-  }
 
+  .video_wrapper{
+    display: flex;
+    height: 100vh;
+    position: relative;
+    top: -1vh;
+  
+
+}
   .Join button {
     width: 27vh;
     height: 6vh;
@@ -81,4 +84,4 @@
   }
 }
 
-/*# sourceMappingURL=homePage.scss.map */
+

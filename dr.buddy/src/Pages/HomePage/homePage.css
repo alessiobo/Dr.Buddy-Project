@@ -1,15 +1,4 @@
-* {
-  box-sizing: border-box;
-}
 
-.homepage {
-  display: flex;
-  flex-direction: column;
-}
-.homepage .homeContainer {
-  max-height: 600px;
-  aspect-ratio: 16/9;
-}
 .homepage video {
   position: relative;
   top: 0;
@@ -19,14 +8,11 @@
   object-fit: cover;
   object-position: center;
 }
-.homepage .Join {
-  min-height: 400px;
+.homepage .video_wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
   position: relative;
-  top: 0px;
-  margin-bottom: 119px;
+  top: -1vh;
 }
 .homepage .Join button {
   width: 27vh;
@@ -70,7 +56,5 @@
   color: #fbfaf8;
   font-weight: 100;
 }
-
-/*# sourceMappingURL=homePage.scss.map */
 
 /*# sourceMappingURL=homePage.css.map */

@@ -18,7 +18,9 @@ function Navbar() {
                     Come funziona
                 </div>
                 <div>
+                <Link to="/contacts">
                     Contatti
+                    </Link>
                 </div>
             </div>
             <div className="button_wrapper">
