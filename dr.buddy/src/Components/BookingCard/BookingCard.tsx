@@ -10,25 +10,8 @@ function BookingCard({
   updateReservation: any;
   getAllReservationByDoctorID: any;
 }) {
-  // const [date, setDate] = useState("");
-  // const [time, setTime] = useState("");
-  // const [isBookingVisible, setIsBookingVisible] = useState(false);
   const [doctorchoice, setDoctorchoice] = useState(1);
   const [reservation, setReservation] = useState([]);
-
-  // const createReservationHandler = (ev: any) => {
-  //   ev.preventDefault();
-  //   const reserv = {
-  //     id_patient: 1, //per ora solo Mario
-  //     data: date,
-  //     ora: time,
-  //     stato: "⏳",
-  //   };
-
-  //   createReservation(reserv);
-  //   setDate("");
-  //   setTime("");
-  // };
 
   function getHour(dataPlusOra: any) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;
