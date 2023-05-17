@@ -29,6 +29,10 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
     return ora + ":" + min;
   }
 
+  function getData(dataPlusOra) {
+    return dataPlusOra.substring(0, 10).split("-").reverse().join("-");
+  }
+
   return (
     <TableContainer>
       <h3>Nuove Prenotazioni:</h3>
@@ -41,11 +45,7 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
                 key={k}
                 id={el.id_reservation}
                 paziente={el.firstname + " " + el.lastname}
-                data={el.date_reservation
-                  .substring(0, 10)
-                  .split("-")
-                  .reverse()
-                  .join("-")}
+                data={getData(el.date_reservation)}
                 ora={getHour(el.date_reservation)}
               />
             );
