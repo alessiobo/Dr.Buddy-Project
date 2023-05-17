@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./BookingCard.css";
+import "./bookingCard.css";
 
 import "../../UI/Buttons/CalendarButtons/calendarBtn.css";
 import CardDottore from "../../UI/Cards/CardDottore/CardDottore";
