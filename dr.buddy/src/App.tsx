@@ -70,6 +70,7 @@ function App() {
               getOnePatient={getOnePatient}
               getAllReservationByID={getAllReservationByPatientID}
               getAllReservationByDoctorID={getAllReservationByDoctorID}
+              getAllDoctors={getAllDoctors}
             />
           }
         />

@@ -6,9 +6,11 @@ import "../../UI/Buttons/CalendarButtons/calendarBtn.css";
 function BookingCard({
   updateReservation,
   getAllReservationByDoctorID,
+  getAllDoctors,
 }: {
   updateReservation: any;
   getAllReservationByDoctorID: any;
+  getAllDoctors: any;
 }) {
   const [doctorchoice, setDoctorchoice] = useState(1);
   const [reservation, setReservation] = useState([]);
@@ -37,8 +39,14 @@ function BookingCard({
       <div className="toggle-btn-wrapper">
         <div>
           <h1>qui tutte le prenotazione </h1>
-          <button onClick={() => setDoctorchoice(1)}>Paperino</button>
-          <button onClick={() => setDoctorchoice(2)}>Pluto</button>
+          {getAllDoctors.map((doc: any) => {
+            return (
+              <button onClick={() => setDoctorchoice(doc.id_doctor)}>
+                {doc.firstname}
+              </button>
+            );
+          })}
+
           <div style={{ display: "flex", gap: "10px" }}>
             {reservation
               .filter((res: any) => res.id_patient === null)

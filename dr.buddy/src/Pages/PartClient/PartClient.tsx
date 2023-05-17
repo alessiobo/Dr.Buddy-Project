@@ -10,11 +10,13 @@ export default function PartClient({
   getAllReservationByID,
   getOnePatient,
   getAllReservationByDoctorID,
+  getAllDoctors,
 }: {
   updateReservation: any;
   getAllReservationByID: any;
   getOnePatient: any;
   getAllReservationByDoctorID: any;
+  getAllDoctors: any;
 }) {
   return (
     <div>
@@ -23,6 +25,7 @@ export default function PartClient({
         <BookingCard
           updateReservation={updateReservation}
           getAllReservationByDoctorID={getAllReservationByDoctorID}
+          getAllDoctors={getAllDoctors}
         />
         <UserLoginPic getOnePatient={getOnePatient} />
       </div>
