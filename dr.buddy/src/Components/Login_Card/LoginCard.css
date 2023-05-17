@@ -43,7 +43,7 @@
   outline: none;
   border: none;
 }
-.LoginCard form h3 {
+.LoginCard h3 {
   font-size: 32px;
   font-weight: 500;
   line-height: 42px;
@@ -76,6 +76,21 @@
 }
 .LoginCard ::placeholder {
   color: #e5e5e5;
+}
+.LoginCard .doctor_checkbox_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1rem;
+}
+.LoginCard .doctor_checkbox_wrapper input {
+  max-height: 1rem;
+  margin: 0px;
+  max-width: 1rem;
+  margin-left: 1rem;
+}
+.LoginCard .doctor_checkbox_wrapper label {
+  margin: 0px;
 }
 .LoginCard button {
   margin-top: 50px;

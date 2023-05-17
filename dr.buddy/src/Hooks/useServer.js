@@ -56,10 +56,10 @@ function useServer(url) {
   //GetOne
   async function getOneObj(id) {
     try {
-      const res = await fetch(URL + "/" + id);
+      const res = await fetch(URL + "/" + id, token_request);
       const json = await res.json();
-
       return json;
+      
     } catch (error) {
       console.log("Error: " + error);
     }

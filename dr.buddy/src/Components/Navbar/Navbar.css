@@ -84,6 +84,7 @@
   border: none;
 }
 .navbar .button_wrapper button:hover {
+  cursor: pointer;
   transition: 300ms;
   color: #040507;
   background-color: #0056d0;

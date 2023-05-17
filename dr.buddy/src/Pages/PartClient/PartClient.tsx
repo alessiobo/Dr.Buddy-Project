@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./partclient.css";
 import UserLoginPic from "../../Components/UserLoginPic/UserLoginPic";
 import BookingCard from "../../Components/BookingCard/BookingCard";
@@ -8,9 +8,11 @@ import Footer from "../../Components/Footer/Footer";
 import PatientNav from "../../Components/BookingCard/PatientNav";
 
 export default function PartClient({
+  getOnePatient,
   createReservation,
   getAllReservationByID,
 }: {
+  getOnePatient: any;
   createReservation: any;
   getAllReservationByID: any;
 }) {
@@ -21,17 +23,18 @@ export default function PartClient({
   // }
 
   //! errore Promise
+  
 
   return (
     <div>
-      <Navbar />
+      <Navbar showButton={false} />
       {/* <PatientNav /> */}
       <div className="patient-page">
         <BookingCard createReservation={createReservation} />
-        <UserLoginPic name="Mario Rossi" />
+        <UserLoginPic getOnePatient={getOnePatient} />
       </div>
       <Tabella getAllReservationByID={getAllReservationByID} />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

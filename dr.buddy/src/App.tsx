@@ -56,7 +56,7 @@ function App() {
         />
         <Route
           path="/login"
-          element={<LoginPage loginDoctor={loginDoctor} />}
+          element={<LoginPage loginDoctor={loginDoctor} loginPatient={loginPatient} />}
         />
         <Route
           path="/register"
@@ -68,6 +68,7 @@ function App() {
             <PartClient
               createReservation={createReservation}
               getAllReservationByID={getAllReservationByPatientID}
+              getOnePatient={getOnePatient}
             />
           }
         />

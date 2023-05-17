@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-function Login_card({ loginDoctor }) {
+function Login_card({ loginDoctor, loginPatient }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isDoctor, setIsDoctor] = useState(false);
@@ -16,12 +16,14 @@ function Login_card({ loginDoctor }) {
       firstname: email, //cambiare email
       password: password,
     };
-
-    loginDoctor(inputData);
+    if (isDoctor) {
+      loginDoctor(inputData);
+    } else {
+      loginPatient(inputData);
+    }
     if (Cookies.get("token") !== undefined) {
       isDoctor ? navigate("/doctor/profile") : navigate("/bookingpage");
     }
-
     console.log(Cookies.get("token"));
   }
   return (
@@ -49,11 +51,15 @@ function Login_card({ loginDoctor }) {
             setPassword(event.target.value);
           }}
         />
+        <div className="doctor_checkbox_wrapper">
+        <label for="doctor_checkbox">Sei un dottore?</label>
         <input
+          id="doctor_checkbox"
           type="checkbox"
           checked={isDoctor}
           onChange={() => setIsDoctor(!isDoctor)}
         ></input>
+        </div>
         <label>
           Prima volta su Dr.Buddy?{" "}
           <Link to="/register">

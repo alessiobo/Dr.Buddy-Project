@@ -92,7 +92,7 @@ server.get(
   getAllPatients
 );
 
-server.get("/patients/:id", checkToken, authRole(["doctor"]), getPatientByID);
+server.get("/patients/:id", checkToken, authRole(["client", "doctor"]), getPatientByID);
 
 server.post("/patients", checkToken, createPatient);
 

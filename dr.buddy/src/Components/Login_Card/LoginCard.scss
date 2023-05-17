@@ -56,7 +56,7 @@
         border: none;
     }
 
-    form h3 {
+    h3 {
         font-size: 32px;
         font-weight: 500;
         line-height: 42px;
@@ -95,7 +95,21 @@
     ::placeholder {
         color: #e5e5e5;
     }
-
+    .doctor_checkbox_wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 1rem;
+        input {
+            max-height: 1rem;
+            margin: 0px;
+            max-width: 1rem;
+            margin-left: 1rem;
+        }
+        label {
+            margin: 0px;
+        }      
+    }
     button {
         margin-top: 50px;
         width: 100%;

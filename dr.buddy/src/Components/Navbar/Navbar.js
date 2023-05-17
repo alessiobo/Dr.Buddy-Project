@@ -2,7 +2,8 @@ import React from "react";
 import "./Navbar.css"
 import logo_white from "./img/logo_white.png"
 import { Link } from "react-router-dom";
-function Navbar() {
+function Navbar({showButton = true}) {
+
     return (
         <div className="navbar">
             <div className="logo_wrapper">
@@ -23,7 +24,7 @@ function Navbar() {
                     </Link>
                 </div>
             </div>
-            <div className="button_wrapper">
+            {showButton ? <div className="button_wrapper">
                 
                 <Link to="/login">
                     <button type="button" className="navbar_login_button">Accedi</button>
@@ -31,7 +32,7 @@ function Navbar() {
                 <Link to="/register">
                     <button type="button" className="navbar_register_button">Registrati</button>
                 </Link>
-            </div>
+            </div> : <div></div> }
         </div>
     )
 }
