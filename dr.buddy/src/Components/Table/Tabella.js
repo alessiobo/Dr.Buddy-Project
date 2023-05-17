@@ -1,34 +1,34 @@
-import { useEffect, useState } from "react";
-import CardPrenotazione from "../../../UI/Cards/CardPrenotazione/CardPrenotazione";
-import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
-import "./tableCardsReservations.css";
+import React, { useState, useEffect } from "react";
+import Table from "react-bootstrap/Table";
+import TableContainer from "../../UI/Container/TableContainer/TableContainer";
+import "./Tabella.css";
+import CardPrenotazione from "../../UI/Cards/CardPrenotazione/CardPrenotazione";
 
-function TableCardsReservations({ getAllReservationByDoctorID }) {
+function Tabella({ getAllReservationByID }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      setData(await getAllReservationByDoctorID(1));
+      setData(await getAllReservationByID(1));
     }
     fetchData();
-    // console.log(data);
-  }, [getAllReservationByDoctorID]);
+  }, [getAllReservationByID]);
 
   function getHour(dataPlusOra) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 4;
     let min = Number(dataPlusOra.substring(14, 16));
     if (min === 0) {
+      //@ts-ignore
       min += "0";
     }
-
     return ora + ":" + min;
   }
 
   return (
     <TableContainer>
-      <h3>Nuove Prenotazioni:</h3>
+      <h3>Visite prenotate:</h3>
       <div style={{ padding: "0 1.2%" }}>
-        <CardPrenotazione />
+        <CardPrenotazione doc={true} />
         {data &&
           data.map((el, k) => {
             return (
@@ -50,4 +50,4 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
   );
 }
 
-export default TableCardsReservations;
+export default Tabella;

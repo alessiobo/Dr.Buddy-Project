@@ -2,7 +2,8 @@ import "./cardPrenotazione.css";
 
 function CardPrenotazione({
   id = "ID",
-  paziente = "Paziente",
+  doc = false,
+  paziente = doc ? "Dottore" : "Paziente",
   data = "Data",
   ora = "Ora",
 }) {

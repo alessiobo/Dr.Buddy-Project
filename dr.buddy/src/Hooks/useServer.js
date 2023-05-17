@@ -7,6 +7,7 @@ function useServer(url) {
       method: method,
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
       },
       body: data ? JSON.stringify(data) : null,
       mode: "cors",
@@ -59,7 +60,6 @@ function useServer(url) {
       const res = await fetch(URL + "/" + id, token_request);
       const json = await res.json();
       return json;
-      
     } catch (error) {
       console.log("Error: " + error);
     }

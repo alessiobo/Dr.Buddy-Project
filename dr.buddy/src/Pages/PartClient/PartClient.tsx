@@ -6,26 +6,28 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 
 export default function PartClient({
-  createReservation,
+  updateReservation,
   getAllReservationByID,
   getOnePatient,
   getAllReservationByDoctorID,
-
 }: {
-  getOnePatient: any;
-  createReservation: any;
+  updateReservation: any;
   getAllReservationByID: any;
+  getOnePatient: any;
   getAllReservationByDoctorID: any;
 }) {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div className="patient-page">
-        <BookingCard createReservation={createReservation} getAllReservationByDoctorID={getAllReservationByDoctorID} />
+        <BookingCard
+          updateReservation={updateReservation}
+          getAllReservationByDoctorID={getAllReservationByDoctorID}
+        />
         <UserLoginPic getOnePatient={getOnePatient} />
       </div>
       <Tabella getAllReservationByID={getAllReservationByID} />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

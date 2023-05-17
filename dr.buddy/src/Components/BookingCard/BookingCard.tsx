@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import "./BookingCard.css";
-import CalendarBtn from "../../UI/Buttons/CalendarButtons/CalendarBtn";
+
+import "../../UI/Buttons/CalendarButtons/calendarBtn.css";
 
 function BookingCard({
-  createReservation,
+  updateReservation,
   getAllReservationByDoctorID,
 }: {
-  createReservation: any;
+  updateReservation: any;
   getAllReservationByDoctorID: any;
 }) {
   // const [date, setDate] = useState("");
@@ -57,13 +58,26 @@ function BookingCard({
           <button onClick={() => setDoctorchoice(1)}>Paperino</button>
           <button onClick={() => setDoctorchoice(2)}>Pluto</button>
           <div style={{ display: "flex", gap: "10px" }}>
-            {reservation.map((res: any) => {
+            {reservation.map((res: any, k) => {
               return (
-                <div>
-                  <CalendarBtn
+                <div key={k}>
+                  {/* <CalendarBtn
                     ora={getHour(res.date_reservation)}
                     take={false}
-                  />
+                  /> */}
+                  <h4>{res.date_reservation.substring(0, 10)}</h4>
+                  <button
+                    className="cal-btn-color"
+                    onClick={() =>
+                      updateReservation(res.id_reservation, {
+                        id_patient: 1,
+                        id_doctor: res.id_doctor,
+                        date_reservation: res.date_reservation,
+                      })
+                    }
+                  >
+                    {getHour(res.date_reservation)}
+                  </button>
                 </div>
               );
             })}

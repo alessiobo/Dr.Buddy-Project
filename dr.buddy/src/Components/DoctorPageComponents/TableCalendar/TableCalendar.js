@@ -26,9 +26,6 @@ function TableCalendar({ getAllReservations }) {
           </tr>
         </thead>
         <tbody>
-          {/* {tabella.map((el, k) => {
-            return el;
-          })} */}
           <tr>
             {getArrayWeek("8:30", startDay, endDay, weekReservations).map(
               (el, k) => {
