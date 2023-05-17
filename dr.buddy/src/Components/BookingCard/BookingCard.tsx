@@ -40,16 +40,17 @@ function BookingCard({
     <section>
       <h2>Scegli il Dottore: </h2>
       <div className="doctorsCards-container">
-        {getAllDoctors?.map((doc: any) => {
-          return (
-            <button
-              className="btn-doctorsCards"
-              onClick={() => setDoctorchoice(doc.id_doctor)}
-            >
-              <CardDottore doctor={doc} />
-            </button>
-          );
-        })}
+        {getAllDoctors &&
+          getAllDoctors?.map((doc: any) => {
+            return (
+              <button
+                className="btn-doctorsCards"
+                onClick={() => setDoctorchoice(doc.id_doctor)}
+              >
+                <CardDottore doctor={doc} />
+              </button>
+            );
+          })}
       </div>
       <TableContainer>
         <h3>Disponibilità:</h3>
