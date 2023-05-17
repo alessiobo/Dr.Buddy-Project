@@ -3,6 +3,7 @@ import "./bookingCard.css";
 
 import "../../UI/Buttons/CalendarButtons/calendarBtn.css";
 import CardDottore from "../../UI/Cards/CardDottore/CardDottore";
+import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 
 function BookingCard({
   updateReservation,
@@ -54,30 +55,32 @@ function BookingCard({
               );
             })}
           </div>
-
-          <div style={{ display: "flex", gap: "10px" }}>
-            {reservation
-              .filter((res: any) => res.id_patient === null)
-              .map((res: any, k) => {
-                return (
-                  <div key={k}>
-                    <h4>{res.date_reservation.substring(0, 10)}</h4>
-                    <button
-                      className="cal-btn-color"
-                      onClick={() =>
-                        updateReservation(res.id_reservation, {
-                          id_patient: 1,
-                          id_doctor: res.id_doctor,
-                          date_reservation: res.date_reservation,
-                        })
-                      }
-                    >
-                      {getHour(res.date_reservation)}
-                    </button>
-                  </div>
-                );
-              })}
-          </div>
+          <TableContainer>
+            <h3>Disponibilità:</h3>
+            <div style={{ display: "flex", gap: "10px" }}>
+              {reservation
+                .filter((res: any) => res.id_patient === null)
+                .map((res: any, k) => {
+                  return (
+                    <div key={k}>
+                      <h4>{res.date_reservation.substring(0, 10)}</h4>
+                      <button
+                        className="cal-btn-color"
+                        onClick={() =>
+                          updateReservation(res.id_reservation, {
+                            id_patient: 1,
+                            id_doctor: res.id_doctor,
+                            date_reservation: res.date_reservation,
+                          })
+                        }
+                      >
+                        {getHour(res.date_reservation)}
+                      </button>
+                    </div>
+                  );
+                })}
+            </div>
+          </TableContainer>
         </div>
       </div>
     </div>
