@@ -1,20 +1,22 @@
 import "./userLoginPic.css";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
 //@ts-ignore
 import defaultPic from "./circle-user.svg";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 
-function UserLoginPic({getOnePatient}) {
-  const [patient, setPatient] = useState({})
+function UserLoginPic({ getOnePatient }) {
+  const [pat, setPat] = useState({});
 
   useEffect(() => {
     async function getPatient() {
-      const patient1 = await getOnePatient(1);
-      setPatient(patient1)
-    } getPatient()
-  }, [])
- 
-  
+      const pat = await getOnePatient(1);
+      setPat(pat);
+    }
+
+    getPatient();
+    console.log(pat);
+  }, []);
 
   return (
     <div className="doctorProfileTable-cont">
@@ -22,7 +24,7 @@ function UserLoginPic({getOnePatient}) {
         <h3>Profilo:</h3>
         <div className="card-container">
           <img className="round" src={defaultPic} alt="user" />
-          <h4>{patient?.firstname}</h4>
+          <h4>{pat?.firstname}</h4>
           <h4>Napoli</h4>
           <p>Paziente</p>
         </div>
