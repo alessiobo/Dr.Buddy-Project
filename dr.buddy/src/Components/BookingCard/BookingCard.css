@@ -15,4 +15,9 @@
   filter: invert(1);
 }
 
+.doctorsCards-diponibility {
+  display: flex;
+  padding: 2%;
+}
+
 /*# sourceMappingURL=bookingCard.css.map */

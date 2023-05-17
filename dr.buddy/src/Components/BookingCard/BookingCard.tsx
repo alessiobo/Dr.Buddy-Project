@@ -53,7 +53,7 @@ function BookingCard({
       </div>
       <TableContainer>
         <h3>Disponibilità:</h3>
-        <div style={{ display: "flex", gap: "10px" }}>
+        <div className="doctorsCards-diponibility">
           {reservation
             .filter((res: any) => res.id_patient === null)
             .map((res: any, k) => {
