@@ -9,7 +9,7 @@ import PageConteiner from "../../UI/Container/PageContainer/PageConteiner";
 import { useEffect, useState } from "react";
 
 //@ts-ignore
-import pap from "./paperino.png";
+
 import DoctorProfileTable from "../../Components/DoctorPageComponents/DoctorProfileTable/DoctorProfileTable";
 
 function DoctorProfile({
