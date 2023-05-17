@@ -19,17 +19,21 @@ export default function PartClient({
   getAllDoctors: any;
 }) {
   return (
-    <div>
+    <div className="patient_page-container">
       <Navbar />
-      <div className="patient-page">
+      <section className="patient_page-section">
         <BookingCard
           updateReservation={updateReservation}
           getAllReservationByDoctorID={getAllReservationByDoctorID}
           getAllDoctors={getAllDoctors}
         />
+        {/* <div style={{ width: "600px" }}> */}
         <UserLoginPic getOnePatient={getOnePatient} />
-      </div>
-      <Tabella getAllReservationByID={getAllReservationByID} />
+        {/* </div> */}
+
+        <Tabella getAllReservationByID={getAllReservationByID} />
+      </section>
+
       <Footer />
     </div>
   );

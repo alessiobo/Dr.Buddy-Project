@@ -99,3 +99,21 @@ select {
   transition: 300ms;
   filter: brightness(150%);
 }
+
+/* MIO CSS */
+
+.doctorsCards-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-doctorsCards {
+  background: transparent;
+  border: none;
+  margin: 0 50px;
+}
+
+.btn-doctorsCards:hover {
+  filter: invert(1);
+}

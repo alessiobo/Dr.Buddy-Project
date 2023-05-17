@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./BookingCard.css";
 
 import "../../UI/Buttons/CalendarButtons/calendarBtn.css";
+import CardDottore from "../../UI/Cards/CardDottore/CardDottore";
 
 function BookingCard({
   updateReservation,
@@ -35,17 +36,24 @@ function BookingCard({
   }, [doctorchoice]);
 
   return (
-    <div className="BookingCard">
-      <div className="toggle-btn-wrapper">
+    // <div className="BookingCard">
+    <div>
+      <div>
+        {/* <div className="toggle-btn-wrapper"> */}
         <div>
-          <h1>qui tutte le prenotazione </h1>
-          {getAllDoctors.map((doc: any) => {
-            return (
-              <button onClick={() => setDoctorchoice(doc.id_doctor)}>
-                {doc.firstname}
-              </button>
-            );
-          })}
+          <h2>Scegli il Dottore: </h2>
+          <div className="doctorsCards-container">
+            {getAllDoctors?.map((doc: any) => {
+              return (
+                <button
+                  className="btn-doctorsCards"
+                  onClick={() => setDoctorchoice(doc.id_doctor)}
+                >
+                  <CardDottore doctor={doc} />
+                </button>
+              );
+            })}
+          </div>
 
           <div style={{ display: "flex", gap: "10px" }}>
             {reservation

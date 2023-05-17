@@ -1,13 +1,5 @@
-.patient-page {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.patient_page-section {
+  padding: 4%;
 }
 
-@media (max-width: 1400px) {
-  .patient-page {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-content: center;
-  }
-}
+/*# sourceMappingURL=partclient.css.map */
