@@ -23,9 +23,11 @@ function UserLoginPic({ getOnePatient }) {
         <h3>Profilo:</h3>
         <div className="card-container">
           <img className="round" src={defaultPic} alt="user" />
-          <h4>{pat?.firstname}</h4>
-          <h4>Napoli</h4>
-          <p>Paziente</p>
+          <h4>
+            {pat?.firstname} {pat.lastname}
+          </h4>
+          <h4>Email: {pat.email}</h4>
+          <p>Tel: {pat.tel_num}</p>
         </div>
         <span></span>
       </TableContainer>
