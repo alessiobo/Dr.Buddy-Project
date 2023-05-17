@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./BookingCard.css";
 
-function BookingCard({ createReservation }: { createReservation: any }) {
+function BookingCard({ createReservation, getAllReservationByDoctorID }: { createReservation: any, getAllReservationByDoctorID: any}) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [isBookingVisible, setIsBookingVisible] = useState(false);
-
+  const [doctorchoice,  setDoctorchoice] = useState({});
+  const [reservation, setReservation] = useState([]);
+  console.log(getAllReservationByDoctorID)
   const createReservationHandler = (ev: any) => {
     ev.preventDefault();
     const reserv = {
@@ -49,10 +51,26 @@ function BookingCard({ createReservation }: { createReservation: any }) {
     }
     return ora + ":" + min;
   }
+  //da qui parte la chiamata per i dottori
+
+  useEffect(() => {
+    async function getDoctor() {
+      const res = await getAllReservationByDoctorID(1)
+      setReservation(res)
+    } 
+    getDoctor()
+  }, [doctorchoice])  
+  
 
   return (
     <div className="BookingCard">
       <div className="toggle-btn-wrapper">
+        <div> check prenotazioni
+         <h1>qui tutte le prenotazione </h1>
+          <button onClick={() => setDoctorchoice(1)}>Paperino</button>
+          <button onClick={() => setDoctorchoice(2)}>Pluto</button>
+          {reservation && reservation?.map((res : any) => {return <li>{res.date_reservation}</li>})}
+        </div>
         <button
           className="toggle-btn"
           onClick={() => setIsBookingVisible(!isBookingVisible)}
