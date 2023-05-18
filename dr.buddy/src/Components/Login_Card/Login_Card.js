@@ -32,10 +32,10 @@ function Login_card({ loginDoctor, loginPatient }) {
       <form>
         <h3>Accedi qui</h3>
 
-        <label for="username">Email</label>
+        <label for="username">Nome</label>
         <input
           type="text"
-          placeholder="Email"
+          placeholder="Nome"
           id="username"
           onChange={(event) => {
             setEmail(event.target.value);
@@ -52,13 +52,13 @@ function Login_card({ loginDoctor, loginPatient }) {
           }}
         />
         <div className="doctor_checkbox_wrapper">
-        <label for="doctor_checkbox">Sei un dottore?</label>
-        <input
-          id="doctor_checkbox"
-          type="checkbox"
-          checked={isDoctor}
-          onChange={() => setIsDoctor(!isDoctor)}
-        ></input>
+          <label for="doctor_checkbox">Sei un dottore?</label>
+          <input
+            id="doctor_checkbox"
+            type="checkbox"
+            checked={isDoctor}
+            onChange={() => setIsDoctor(!isDoctor)}
+          ></input>
         </div>
         <label>
           Prima volta su Dr.Buddy?{" "}
