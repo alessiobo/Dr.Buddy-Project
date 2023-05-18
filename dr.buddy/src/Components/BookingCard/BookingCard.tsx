@@ -56,8 +56,8 @@ function BookingCard({
         <h3>Disponibilità:</h3>
         <div className="doctorsCards-diponibility">
           {reservation
-            .filter((res: any) => res.id_patient === null)
-            .map((res: any, k) => {
+            ?.filter((res: any) => res.id_patient === null)
+            ?.map((res: any, k) => {
               return (
                 <div key={k}>
                   <h4>{res.date_reservation.substring(0, 10)}</h4>
