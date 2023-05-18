@@ -20,6 +20,12 @@
   padding: 2%;
 }
 
+.container-slider {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .slider {
   display: flex;
   flex-direction: column;
