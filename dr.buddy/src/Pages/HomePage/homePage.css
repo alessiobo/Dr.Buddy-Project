@@ -10,6 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 30px;
+  padding-top: 75px;
 }
 .homepage .homeContainer .first_section {
   padding: 40px;
@@ -38,13 +40,12 @@
   position: relative;
 }
 .homepage .homeContainer .first_section .text_wrap h2 {
-  text-align: center;
-  color: #FBFAF8;
+  color: #fbfaf8;
   font-size: 68px;
   margin-bottom: 50px;
 }
 .homepage .homeContainer .first_section .text_wrap h3 {
-  color: #FBFAF8;
+  color: #fbfaf8;
   font-weight: 100;
   margin-bottom: 50px;
 }
@@ -56,21 +57,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #5A8CF2;
+  background-color: #5a8cf2;
   width: 12rem;
   margin: 5px;
   height: 65px;
   border-radius: 20px;
   font-weight: bold;
-  color: #FBFAF8;
+  color: #fbfaf8;
   font-size: 18px;
 }
 .homepage .homeContainer .first_section .text_wrap button:hover {
   transition: 300ms;
   color: #040507;
-  background-color: #0056D0;
+  background-color: #0056d0;
   transform: translate(-2px, -2px);
-  box-shadow: 2px 2px #21009D;
+  box-shadow: 2px 2px #21009d;
   filter: brightness(125%);
   cursor: pointer;
 }
@@ -84,4 +85,59 @@
   filter: brightness(175%);
 }
 
+.big-card {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 100px;
+  background-color: #396ccd;
+}
+
+.bcH2 {
+  text-align: center;
+  color: #fbfaf8;
+  font-size: 40px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.small-cards {
+  display: flex;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.small-card {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 300px;
+  height: 300px;
+  aspect-ratio: 1/1;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+
+.small-card .card-header img {
+  width: 70px; 
+  height: 70px;
+}
+
+
+.card-title {
+  color: #fbfaf8;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: #fbfaf8;
+}
 /*# sourceMappingURL=homePage.css.map */
