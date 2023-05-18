@@ -56,7 +56,7 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
         {todayApp &&
-          todayApp.map((el, k) => {
+          todayApp?.map((el, k) => {
             return (
               <CardPrenotazione
                 key={k}
