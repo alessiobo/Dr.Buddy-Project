@@ -4,12 +4,12 @@ import Footer from "../../Components/Footer/Footer";
 import hero_image from "./imgs/dottore_homepage.svg";
 import clock_image from "./imgs/icons8-orologio.svg";
 import doctor_image from "./imgs/icons8-medico-50.png";
-import microscopio_img from "./imgs/icons8-microscopio-50.png"
+import microscopio_img from "./imgs/icons8-microscopio-50.png";
 import { Link } from "react-router-dom";
 function HomePage() {
   return (
     <div className="homepage">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="homeContainer">
         <div className="first_section_wrapper">
           <div className="first_section">
@@ -35,7 +35,7 @@ function HomePage() {
           <div className="small-cards">
             <div className="small-card">
               <div className="card-header">
-              <img src={clock_image} />
+                <img src={clock_image} />
               </div>
               <div className="card-content">
                 <h3 className="card-title">Basta perdite di tempo</h3>
@@ -46,7 +46,7 @@ function HomePage() {
             </div>
             <div className="small-card">
               <div className="card-header">
-              <img src={doctor_image} />
+                <img src={doctor_image} />
               </div>
               <div className="card-content">
                 <h3 className="card-title">Personale altamente qualificato</h3>
@@ -57,7 +57,7 @@ function HomePage() {
             </div>
             <div className="small-card">
               <div className="card-header">
-              <img src={microscopio_img} />
+                <img src={microscopio_img} />
               </div>
               <div className="card-content">
                 <h3 className="card-title">Attrezzature moderne</h3>

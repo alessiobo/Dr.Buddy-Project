@@ -38,7 +38,7 @@ function BookingCard({
       "Dicembre",
     ];
 
-    const dataArr = dataPlusOra.substring(0, 10).split("-");
+    const dataArr = dataPlusOra?.substring(0, 10).split("-");
     const giorno = dataArr[2];
     const mese = nomiMesi[parseInt(dataArr[1]) - 1];
     const anno = dataArr[0];

@@ -30,7 +30,7 @@ function DoctorProfile({
   });
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <PageConteiner>
         <DoctorNavbar setMainComp={setMainComp} />
 
@@ -45,7 +45,6 @@ function DoctorProfile({
 
         <DoctorProfileTable />
       </PageConteiner>
-      {/* <Footer /> */}
     </div>
   );
 }
