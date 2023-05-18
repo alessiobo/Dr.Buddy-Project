@@ -1,17 +1,17 @@
-import Navbar from "../../Components/Navbar/Navbar"
-import RegisterCard from "../../Components/Register_Card/RegisterCard"
-import Footer from "../../Components/Footer/Footer"
-import "./RegisterPage.css"
-function LoginPage({createPatient}) {
-    return (
-        <div className="RegisterPage" >
-            <Navbar/>
+import Navbar from "../../Components/Navbar/Navbar";
+import RegisterCard from "../../Components/Register_Card/RegisterCard";
+import Footer from "../../Components/Footer/Footer";
+import "./RegisterPage.css";
+function LoginPage({ createPatient }) {
+  return (
+    <div className="RegisterPage">
+      {/* <Navbar/> */}
 
-            <RegisterCard createPatient={createPatient}/>
+      <RegisterCard createPatient={createPatient} />
 
-            <Footer/>
-        </div>
-    )
+      <Footer />
+    </div>
+  );
 }
 
-export default LoginPage
+export default LoginPage;

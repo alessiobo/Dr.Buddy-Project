@@ -117,6 +117,7 @@ function useServer(url) {
       console.log(json);
 
       Cookies.set("token", json.token);
+      Cookies.set("id", json.id);
 
       mutate(URL);
       return json;
