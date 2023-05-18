@@ -24,13 +24,27 @@ function BookingCard({
   //da qui parte la chiamata per i dottori
 
   function getData(dataPlusOra) {
-    const dataSottostringa = dataPlusOra
-      .substring(0, 10)
-      .split("-")
-      .reverse()
-      .join(" ");
+    const nomiMesi = [
+      "Gennaio",
+      "Febbraio",
+      "Marzo",
+      "Aprile",
+      "Maggio",
+      "Giugno",
+      "Luglio",
+      "Agosto",
+      "Settembre",
+      "Ottobre",
+      "Novembre",
+      "Dicembre",
+    ];
 
-    return dataSottostringa;
+    const dataArr = dataPlusOra.substring(0, 10).split("-");
+    const giorno = dataArr[2];
+    const mese = nomiMesi[parseInt(dataArr[1]) - 1];
+    const anno = dataArr[0];
+
+    return `${giorno} ${mese} ${anno}`;
   }
 
   useEffect(() => {
@@ -64,7 +78,7 @@ function BookingCard({
             ?.filter((res) => res.id_patient === null)
             ?.map((res, k) => {
               return (
-                <div key={k}>
+                <div className="container-slider" key={k}>
                   <div className="slider">
                     <h4 className="data-style">
                       {getData(res.date_reservation)}
@@ -77,7 +91,6 @@ function BookingCard({
                         updateReservation(res.id_reservation, {
                           id_patient: 1,
                           id_doctor: res.id_doctor,
-                          date_reservation: res.date_reservation,
                         })
                       }
                     >

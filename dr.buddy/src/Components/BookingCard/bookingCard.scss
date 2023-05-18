@@ -27,6 +27,13 @@
   padding: 2%;
 }
 
+.container-slider {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
 .slider {
   display: flex;
   flex-direction: column;
@@ -35,9 +42,15 @@
   margin: 0 10px;
   padding: 0 10px;
   border-radius: 5px;
+  width: 100px;
+  height: 60px;
+  justify-content: center;
 
   .data-style {
     text-align: center;
     font-size: 15px;
+    margin: 5px;
   }
 }
+
+// sass --watch bookingCard.scss bookingCard.css
