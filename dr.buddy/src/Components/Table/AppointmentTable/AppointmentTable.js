@@ -21,12 +21,12 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
   const todayApp =
     data &&
     data
-      .filter((app) => {
+      ?.filter((app) => {
         if (app.id_doctor === 1) {
           return app.date_reservation.substring(0, 10) === todayString;
         }
       })
-      .sort((a, b) => {
+      ?.sort((a, b) => {
         const timeA = new Date(
           `2023-05-08T${a.date_reservation.substring(11, 16)}:00.000Z`
         );
