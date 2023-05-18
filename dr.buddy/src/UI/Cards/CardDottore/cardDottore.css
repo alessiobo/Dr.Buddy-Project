@@ -1,8 +1,9 @@
 .cardDoctor-container {
   width: 300px;
-  height: 400px;
+  height: 100px;
 }
 .cardDoctor-container div {
+  height: 100%;
   color: #e5e5e5;
   padding: 30px 0px;
   width: 100%;
@@ -13,7 +14,7 @@
   gap: 50px;
 }
 .cardDoctor-container div img {
-  height: 140px;
+  height: 20px;
 }
 
 /*# sourceMappingURL=cardDottore.css.map */

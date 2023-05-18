@@ -1,6 +1,5 @@
 import TableContainer from "../../Container/TableContainer/TableContainer";
 import "./cardDottore.css";
-
 import defaultPic from "./docPic.png";
 
 function CardDottore({ doctor }) {
@@ -16,6 +15,7 @@ function CardDottore({ doctor }) {
           <p>Tel: {doctor.tel_num}</p>
         </div>
       </section>
+
     </TableContainer>
   );
 }

@@ -1,3 +1,5 @@
+//sass --watch bookingCard.scss BookingCard.css
+
 .doctorsCards-container {
   width: 100%;
   display: flex;
@@ -8,13 +10,19 @@
   background: transparent;
   border: none;
   margin: 0 50px;
+  transition: 300ms;
+  height: 200px;
+    img {
+      height: 20px;
+    }
 }
 
 .btn-doctorsCards:hover {
-  filter: invert(1);
+  transition: 300ms;
+  filter: brightness(110%)
 }
 
-.doctorsCards-diponibility {
+.doctorsCards-disponibility {
   display: flex;
   padding: 2%;
 }

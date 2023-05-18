@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./bookingCard.css";
+import "./BookingCard.css";
 
 import "../../UI/Buttons/CalendarButtons/calendarBtn.css";
 import CardDottore from "../../UI/Cards/CardDottore/CardDottore";
@@ -54,7 +54,7 @@ function BookingCard({
       </div>
       <TableContainer>
         <h3>Disponibilità:</h3>
-        <div className="doctorsCards-diponibility">
+        <div className="doctorsCards-disponibility">
           {reservation
             .filter((res: any) => res.id_patient === null)
             .map((res: any, k) => {

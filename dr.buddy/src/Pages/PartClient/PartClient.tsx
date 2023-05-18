@@ -22,13 +22,13 @@ export default function PartClient({
     <div className="patient_page-container">
       <Navbar />
       <section className="patient_page-section">
+        <UserLoginPic getOnePatient={getOnePatient}/>
         <BookingCard
           updateReservation={updateReservation}
           getAllReservationByDoctorID={getAllReservationByDoctorID}
           getAllDoctors={getAllDoctors}
         />
 
-        <UserLoginPic getOnePatient={getOnePatient} />
 
         <Tabella getAllReservationByID={getAllReservationByID} />
       </section>

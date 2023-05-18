@@ -1,8 +1,12 @@
+//sass --watch cardDottore.scss cardDottore.css
+
+
 .cardDoctor-container {
   width: 300px;
-  height: 400px;
+  height: 100px;
 
   div {
+    height: 100%;
     color: #e5e5e5;
     padding: 30px 0px;
     width: 100%;
@@ -13,7 +17,7 @@
     gap: 50px;
 
     img {
-      height: 140px;
+      height: 20px;
     }
   }
 }
