@@ -1,6 +1,6 @@
 import pgPromise from "pg-promise";
 //postgres://username:password
-const db = pgPromise()("postgres://postgres:root@localhost:5432/postgres");
+const db = pgPromise()("postgres://postgres:hello1593@localhost:5432/postgres");
 
 const setupDB = async () => {
   await db.none(`
