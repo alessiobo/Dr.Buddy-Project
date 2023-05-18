@@ -1,9 +1,10 @@
 import useReservation from "../../../Hooks/useReservation";
+import AddCalendarBtn from "../../../UI/Buttons/CalendarButtons/AddCalendarBtn";
 import CalendarBtn from "../../../UI/Buttons/CalendarButtons/CalendarBtn";
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./tableCalendar.css";
 
-function TableCalendar({ getAllReservations }) {
+function TableCalendar({ getAllReservations, createReservation }) {
   const { startDay, endDay, weekReservations, getArrayWeek } = useReservation({
     startD: "2023-05-22",
     endD: "2023-05-27",
@@ -32,7 +33,10 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn
+                        createReservation={createReservation}
+                        date={`2023-05-${startDay} 08:30:00`}
+                      />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"8:30"} />
                     ) : (
@@ -49,7 +53,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"9:00"} />
                     ) : (
@@ -66,7 +70,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"9:30"} />
                     ) : (
@@ -83,7 +87,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"10:00"} />
                     ) : (
@@ -100,7 +104,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"10:30"} />
                     ) : (
@@ -117,7 +121,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"11:00"} />
                     ) : (
@@ -134,7 +138,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"11:30"} />
                     ) : (
@@ -151,7 +155,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"14:00"} />
                     ) : (
@@ -168,7 +172,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"14:30"} />
                     ) : (
@@ -185,7 +189,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"15:00"} />
                     ) : (
@@ -202,7 +206,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"15:30"} />
                     ) : (
@@ -219,7 +223,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"16:00"} />
                     ) : (
@@ -236,7 +240,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"16:30"} />
                     ) : (
@@ -253,7 +257,7 @@ function TableCalendar({ getAllReservations }) {
                 return (
                   <td key={k}>
                     {el === null ? (
-                      "-"
+                      <AddCalendarBtn />
                     ) : el.id_patient === null ? (
                       <CalendarBtn ora={"17:00"} />
                     ) : (

@@ -49,6 +49,7 @@ function App() {
               updateReservation={updateReservation}
               getAllPatients={getAllPatients}
               getAllReservationByDoctorID={getAllReservationByDoctorID}
+              createReservation={createReservation}
             />
           }
         />
