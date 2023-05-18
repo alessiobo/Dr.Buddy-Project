@@ -1,20 +1,54 @@
-.cardDoctor-container {
-  width: 300px;
-  height: 100px;
+.cardCoDottore {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  height: 200px;
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
-.cardDoctor-container div {
-  height: 100%;
-  color: #e5e5e5;
-  padding: 30px 0px;
-  width: 100%;
+.cardCoDottore .textCo {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
 }
-.cardDoctor-container div img {
-  height: 20px;
+.cardCoDottore .textCo .icon_text_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.cardCoDottore .textCo .icon_text_wrapper img {
+  max-height: 30px;
+  aspect-ratio: 1/1;
+  margin-right: 5px;
+}
+.cardCoDottore .textCo * {
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+.cardCoDottore .textCo h2 {
+  font-size: 2rem;
+}
+.cardCoDottore .textCo h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  background-color: none;
+}
+.cardCoDottore .imgCoDottore {
+  height: 100%;
+}
+.cardCoDottore .imgCoDottore img {
+  margin-right: 10px;
+  border-radius: 100px;
+  height: 90%;
 }
 
 /*# sourceMappingURL=cardDottore.css.map */

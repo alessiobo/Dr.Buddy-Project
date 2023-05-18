@@ -4,7 +4,6 @@ import "./BookingCard.css";
 import "../../UI/Buttons/CalendarButtons/calendarBtn.css";
 import CardDottore from "../../UI/Cards/CardDottore/CardDottore";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
-
 function BookingCard({
   updateReservation,
   getAllReservationByDoctorID,
@@ -56,8 +55,8 @@ function BookingCard({
   }, [doctorchoice]);
 
   return (
-    <section>
-      <h2>Scegli il Dottore: </h2>
+    <section> 
+      <h2 id="scegli_il_dottore">Scegli il Dottore: </h2>
       <div className="doctorsCards-container">
         {getAllDoctors &&
           getAllDoctors?.map((doc) => {

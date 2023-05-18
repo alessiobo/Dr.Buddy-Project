@@ -4,7 +4,8 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 10px;
 }
 .btn-doctorsCards {
   background: transparent;
@@ -18,8 +19,10 @@
 }
 
 .btn-doctorsCards:hover {
+  cursor: pointer;
   transition: 300ms;
-  filter: brightness(110%)
+  filter: brightness(110%);
+  transform: translate(0px, -10px);
 }
 
 .doctorsCards-disponibility {
@@ -52,5 +55,7 @@
     margin: 5px;
   }
 }
-
+#scegli_il_dottore {
+  color: white;
+}
 // sass --watch bookingCard.scss bookingCard.css

@@ -20,7 +20,7 @@ export default function PartClient({
 }) {
   return (
     <div className="patient_page-container">
-      <Navbar />
+      <Navbar/>
       <section className="patient_page-section">
         <UserLoginPic getOnePatient={getOnePatient}/>
         <BookingCard

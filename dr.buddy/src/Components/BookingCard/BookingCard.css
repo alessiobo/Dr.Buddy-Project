@@ -2,7 +2,8 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 .btn-doctorsCards {
@@ -17,8 +18,10 @@
 }
 
 .btn-doctorsCards:hover {
+  cursor: pointer;
   transition: 300ms;
   filter: brightness(110%);
+  transform: translate(0px, -10px);
 }
 
 .doctorsCards-disponibility {
@@ -52,4 +55,8 @@
   margin: 5px;
 }
 
-/*# sourceMappingURL=bookingCard.css.map */
+#scegli_il_dottore {
+  color: white;
+}
+
+/*# sourceMappingURL=BookingCard.css.map */
