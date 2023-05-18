@@ -77,7 +77,6 @@ function BookingCard({
                         updateReservation(res.id_reservation, {
                           id_patient: 1,
                           id_doctor: res.id_doctor,
-                          date_reservation: res.date_reservation,
                         })
                       }
                     >

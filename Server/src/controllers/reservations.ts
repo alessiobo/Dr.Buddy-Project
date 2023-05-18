@@ -76,11 +76,11 @@ async function createReservation(req: Request, res: Response) {
 
 async function updateReservationByID(req: Request, res: Response) {
   const { id } = req.params;
-  const { date_reservation, id_patient } = req.body;
+  const { id_patient } = req.body;
 
   await db.none(
-    `UPDATE reservation SET date_reservation=$2,id_patient=$3 WHERE id_reservation=$1`,
-    [id, date_reservation, id_patient]
+    `UPDATE reservation SET id_patient=$2 WHERE id_reservation=$1`,
+    [id, id_patient]
   );
 
   res.status(200).json({ msg: "updato" });
