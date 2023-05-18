@@ -9,7 +9,7 @@ function TablePatients({ getAllPatients }) {
       <div style={{ padding: "0 1.2%" }}>
         <CardPazienti />
         {getAllPatients &&
-          getAllPatients.map((el, k) => {
+          getAllPatients?.map((el, k) => {
             return (
               <CardPazienti
                 key={k}

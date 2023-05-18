@@ -39,7 +39,7 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
         {data &&
-          data.map((el, k) => {
+          data?.map((el, k) => {
             return (
               <CardPrenotazione
                 key={k}

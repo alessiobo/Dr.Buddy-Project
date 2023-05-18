@@ -5,10 +5,31 @@ import "./appointmentTable.css";
 
 function AppointmentTable({ getAllReservationByDoctorID }) {
   const [data, setData] = useState([]);
+  const [todayApp, setTodayApp] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       setData(await getAllReservationByDoctorID(1));
+      const today =
+        (await data) &&
+        (await data
+          ?.filter((app) => {
+            if (app.id_doctor === 1) {
+              return app.date_reservation.substring(0, 10) === todayString;
+            }
+          })
+          ?.sort((a, b) => {
+            const timeA = new Date(
+              `2023-05-08T${a.date_reservation.substring(11, 16)}:00.000Z`
+            );
+            const timeB = new Date(
+              `2023-05-08T${b.date_reservation.substring(11, 16)}:00.000Z`
+            );
+            // console.log(timeB, timeA);
+
+            return timeA - timeB;
+          }));
+      await setTodayApp(today);
     }
     fetchData();
     // console.log(data);
@@ -17,26 +38,6 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
   const today = new Date();
   const todayString = today.toISOString().substring(0, 10);
   const todayIT = todayString.split("-").reverse().join("-");
-
-  const todayApp =
-    data &&
-    data
-      .filter((app) => {
-        if (app.id_doctor === 1) {
-          return app.date_reservation.substring(0, 10) === todayString;
-        }
-      })
-      .sort((a, b) => {
-        const timeA = new Date(
-          `2023-05-08T${a.date_reservation.substring(11, 16)}:00.000Z`
-        );
-        const timeB = new Date(
-          `2023-05-08T${b.date_reservation.substring(11, 16)}:00.000Z`
-        );
-        // console.log(timeB, timeA);
-
-        return timeA - timeB;
-      });
 
   // console.log(todayApp);
 
@@ -56,7 +57,7 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
         {todayApp &&
-          todayApp.map((el, k) => {
+          todayApp?.map((el, k) => {
             return (
               <CardPrenotazione
                 key={k}

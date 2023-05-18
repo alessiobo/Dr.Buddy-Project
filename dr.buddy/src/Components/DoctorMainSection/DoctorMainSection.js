@@ -11,6 +11,7 @@ function DoctorMainSection({
   getAllPatients,
   showMainComp,
   getAllReservationByDoctorID,
+  createReservation,
 }) {
   return (
     <section className="doctorMainSection-cont">
@@ -28,11 +29,11 @@ function DoctorMainSection({
         <TablePatients getAllPatients={getAllPatients} />
       )}
       {showMainComp.calendar === true && (
-        <TableCalendar getAllReservations={getAllReservations} />
+        <TableCalendar
+          getAllReservations={getAllReservations}
+          createReservation={createReservation}
+        />
       )}
-
-      {/* <TableCardsReservations getAllReservations={getAllReservations} /> */}
-      {/* <TablePatients getAllPatients={getAllPatients} /> */}
     </section>
   );
 }

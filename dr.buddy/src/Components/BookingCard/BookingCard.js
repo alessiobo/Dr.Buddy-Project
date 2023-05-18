@@ -9,24 +9,29 @@ function BookingCard({
   updateReservation,
   getAllReservationByDoctorID,
   getAllDoctors,
-}: {
-  updateReservation: any;
-  getAllReservationByDoctorID: any;
-  getAllDoctors: any;
 }) {
   const [doctorchoice, setDoctorchoice] = useState(1);
   const [reservation, setReservation] = useState([]);
 
-  function getHour(dataPlusOra: any) {
+  function getHour(dataPlusOra) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;
     let min = Number(dataPlusOra.substring(14, 16));
     if (min === 0) {
-      //@ts-ignore
       min += "0";
     }
     return ora + ":" + min;
   }
   //da qui parte la chiamata per i dottori
+
+  function getData(dataPlusOra) {
+    const dataSottostringa = dataPlusOra
+      .substring(0, 10)
+      .split("-")
+      .reverse()
+      .join(" ");
+
+    return dataSottostringa;
+  }
 
   useEffect(() => {
     async function getDoctor() {
@@ -41,7 +46,7 @@ function BookingCard({
       <h2>Scegli il Dottore: </h2>
       <div className="doctorsCards-container">
         {getAllDoctors &&
-          getAllDoctors?.map((doc: any) => {
+          getAllDoctors?.map((doc) => {
             return (
               <button
                 className="btn-doctorsCards"
@@ -56,23 +61,29 @@ function BookingCard({
         <h3>Disponibilità:</h3>
         <div className="doctorsCards-disponibility">
           {reservation
-            .filter((res: any) => res.id_patient === null)
-            .map((res: any, k) => {
+            ?.filter((res) => res.id_patient === null)
+            ?.map((res, k) => {
               return (
                 <div key={k}>
-                  <h4>{res.date_reservation.substring(0, 10)}</h4>
-                  <button
-                    className="cal-btn-color"
-                    onClick={() =>
-                      updateReservation(res.id_reservation, {
-                        id_patient: 1,
-                        id_doctor: res.id_doctor,
-                        date_reservation: res.date_reservation,
-                      })
-                    }
-                  >
-                    {getHour(res.date_reservation)}
-                  </button>
+                  <div className="slider">
+                    <h4 className="data-style">
+                      {getData(res.date_reservation)}
+                    </h4>
+                  </div>
+                  <div className="button-time">
+                    <button
+                      className="cal-btn-color button-time"
+                      onClick={() =>
+                        updateReservation(res.id_reservation, {
+                          id_patient: 1,
+                          id_doctor: res.id_doctor,
+                          date_reservation: res.date_reservation,
+                        })
+                      }
+                    >
+                      {getHour(res.date_reservation)}
+                    </button>
+                  </div>
                 </div>
               );
             })}
