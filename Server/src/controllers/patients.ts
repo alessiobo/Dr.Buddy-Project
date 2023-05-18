@@ -104,38 +104,18 @@ async function logInPatient(req: Request, res: Response) {
   }
 }
 
-//!Abbiamo già createPatient che fa la stessa cosa
-// async function signUp(req: Request, res: Response) {
-//   const { firstname, password } = req.body;
-//   const patient = await db.oneOrNone(
-//     `SELECT * FROM patient WHERE firstname=$1`,
-//     firstname
-//   );
-
-//   if (patient) {
-//     res.status(409).json({ msg: "Username already exist" });
-//   } else {
-//     const { id_patient } = await db.one(
-//       `INSERT INTO patient (firstname,password) VALUES ($1,$2) RETURNING id_patient`,
-//       [firstname, password]
-//     );
-
-//     res.status(201).json({ id_patient, msg: "User created successfully" });
-//   }
-// }
-
 async function logOutPatient(req: Request, res: Response) {
-  // try {
-  //   const user: any = req.user;
-  //   console.log(user);
-  //   await db.none(`UPDATE patient SET token=$2 WHERE id_patient=$1`, [
-  //     user?.id,
-  //     null,
-  //   ]);
-  //   res.status(200).json({ msg: "Logout successful." });
-  // } catch (error) {
-  //   console.log(error);
-  // }
+  try {
+    const { id } = req.params;
+
+    await db.none(`UPDATE patient SET token=$2 WHERE id_patient=$1`, [
+      id,
+      null,
+    ]);
+    res.status(200).json({ msg: "Logout successful." });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export {

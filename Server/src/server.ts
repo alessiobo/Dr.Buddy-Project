@@ -98,11 +98,11 @@ server.delete(
 
 server.post("/patients/login", logInPatient);
 // server.post("/patients/signup", signUp);
-// server.get("/patients/logout", authorize, logOutPatient);
+server.put("/patients/logout/:id", checkToken, logOutPatient);
 
 server.post("/doctors/login", logInDoctor);
 // server.post("/patients/signup", signUp);
-// server.get("/doctors/logout", authorize, logOutDoctor);
+server.put("/doctors/logout/:id", checkToken, logOutDoctor);
 
 //Reservations
 

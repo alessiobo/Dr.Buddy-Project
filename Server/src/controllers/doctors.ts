@@ -86,7 +86,7 @@ async function logInDoctor(req: Request, res: Response) {
         id_doctor: doctor.id_doctor,
         firstname,
       };
-      const { SECRET = ""  } = process.env;
+      const { SECRET = "" } = process.env;
       const token = jwt.sign(payload, SECRET);
 
       await db.none(`UPDATE doctor SET token=$2 WHERE id_doctor=$1`, [
@@ -104,38 +104,15 @@ async function logInDoctor(req: Request, res: Response) {
   }
 }
 
-//!Abbiamo già createPatient che fa la stessa cosa
-// async function signUp(req: Request, res: Response) {
-//   const { firstname, password } = req.body;
-//   const doctor = await db.oneOrNone(
-//     `SELECT * FROM doctor WHERE firstname=$1`,
-//     firstname
-//   );
-
-//   if (doctor) {
-//     res.status(409).json({ msg: "Username already exist" });
-//   } else {
-//     const { id_doctor } = await db.one(
-//       `INSERT INTO doctor (firstname,password) VALUES ($1,$2) RETURNING id_doctor`,
-//       [firstname, password]
-//     );
-
-//     res.status(201).json({ id_doctor, msg: "User created successfully" });
-//   }
-// }
-
 async function logOutDoctor(req: Request, res: Response) {
-  // try {
-  //   const user: any = req.user;
-  //   console.log(user);
-  //   await db.none(`UPDATE doctor SET token=$2 WHERE id_doctor=$1`, [
-  //     user?.id,
-  //     null,
-  //   ]);
-  //   res.status(200).json({ msg: "Logout successful." });
-  // } catch (error) {
-  //   console.log(error);
-  // }
+  try {
+    const { id } = req.params;
+
+    await db.none(`UPDATE doctor SET token=$2 WHERE id_doctor=$1`, [id, null]);
+    res.status(200).json({ msg: "Logout successful." });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export {

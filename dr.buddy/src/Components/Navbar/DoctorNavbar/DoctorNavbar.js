@@ -20,10 +20,10 @@ function DoctorNavbar({ setMainComp }) {
         <img className="navDoctor-icon" src={i_prenotazioni} alt="icon" />
         <span>Prenotazioni</span>
       </button>
-      <button onClick={() => setMainComp({ settings: true })}>
+      {/* <button onClick={() => setMainComp({ settings: true })}>
         <img className="navDoctor-icon" src={i_settings} alt="icon" />{" "}
         <span>Settings</span>
-      </button>
+      </button> */}
     </nav>
   );
 }
