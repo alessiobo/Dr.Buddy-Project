@@ -1,11 +1,23 @@
+import { useEffect, useState } from "react";
+
 function useReservation({ startD, endD, getAllReservations, id }) {
+  const [allReservation, setAllReservation] = useState([{}]);
+
+  useEffect(() => {
+    async function getAllReservation() {
+      setAllReservation(await getAllReservations);
+    }
+
+    getAllReservation();
+  }, [getAllReservations]);
+
   const startDate = new Date(startD);
   const endDate = new Date(endD);
 
   const startDay = startDate.getDate();
   const endDay = endDate.getDate();
 
-  const weekReservations = getAllReservations?.filter((reservation) => {
+  const weekReservations = allReservation?.filter((reservation) => {
     if (reservation.id_doctor === id) {
       const date = getDateRes(reservation.date_reservation);
 
