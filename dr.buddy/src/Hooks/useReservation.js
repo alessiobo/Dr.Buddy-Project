@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function useReservation({ startD, endD, getAllReservations, id }) {
-  const [allReservation, setAllReservation] = useState([{}]);
+  const [allReservation, setAllReservation] = useState([]);
 
   useEffect(() => {
     async function getAllReservation() {
@@ -17,15 +17,17 @@ function useReservation({ startD, endD, getAllReservations, id }) {
   const startDay = startDate.getDate();
   const endDay = endDate.getDate();
 
-  const weekReservations = allReservation?.filter((reservation) => {
-    if (reservation.id_doctor === id) {
-      const date = getDateRes(reservation.date_reservation);
+  const weekReservations =
+    allReservation.length > 0 &&
+    allReservation?.filter((reservation) => {
+      if (reservation.id_doctor === id) {
+        const date = getDateRes(reservation.date_reservation);
 
-      return startDate >= date <= endDate;
-    } else {
-      return false;
-    }
-  });
+        return startDate >= date <= endDate;
+      } else {
+        return false;
+      }
+    });
 
   function getHour(dataPlusOra) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;

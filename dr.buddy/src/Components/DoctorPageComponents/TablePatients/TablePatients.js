@@ -5,9 +5,7 @@ import "./tablePatients.css";
 import { useState, useEffect } from "react";
 
 function TablePatients({ getAllPatients }) {
-  const [pazienti, setPazienti] = useState([
-    { id: null, paziente: null, email: null, tel_num: null },
-  ]);
+  const [pazienti, setPazienti] = useState([]);
 
   useEffect(() => {
     async function getPazienti() {
@@ -22,17 +20,18 @@ function TablePatients({ getAllPatients }) {
       <div style={{ padding: "0 1.2%" }}>
         <CardPazienti />
 
-        {pazienti?.map((el, k) => {
-          return (
-            <CardPazienti
-              key={k}
-              id={el.id_patient}
-              paziente={el.firstname + " " + el.lastname}
-              email={el.email}
-              tel_num={el.tel_num}
-            />
-          );
-        })}
+        {pazienti.length > 0 &&
+          pazienti?.map((el, k) => {
+            return (
+              <CardPazienti
+                key={k}
+                id={el.id_patient}
+                paziente={el.firstname + " " + el.lastname}
+                email={el.email}
+                tel_num={el.tel_num}
+              />
+            );
+          })}
       </div>
     </TableContainer>
   );

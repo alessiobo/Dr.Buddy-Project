@@ -11,7 +11,7 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
     async function fetchData() {
       setData(await getAllReservationByDoctorID(1));
       const today =
-        (await data) &&
+        (await data.length) > 0 &&
         (await data
           ?.filter((app) => {
             if (app.id_doctor === 1) {
@@ -56,7 +56,7 @@ function AppointmentTable({ getAllReservationByDoctorID }) {
       <h3>Appuntamenti di oggi: {todayIT}</h3>
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione />
-        {todayApp &&
+        {todayApp.length > 0 &&
           todayApp?.map((el, k) => {
             return (
               <CardPrenotazione

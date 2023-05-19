@@ -14,14 +14,16 @@ function UserLoginPic({ getOnePatient }) {
     }
 
     getPatient();
-  }, []);
+  }, [getOnePatient]);
 
   return (
     <div className="doctorProfileTable-cont">
       <TableContainer>
         <div className="card-container-user">
           <img className="round" src={defaultPic} alt="user" />
-            <h2>{pat?.firstname} {pat.lastname}</h2>
+          <h2>
+            {pat?.firstname} {pat.lastname}
+          </h2>
         </div>
       </TableContainer>
     </div>
