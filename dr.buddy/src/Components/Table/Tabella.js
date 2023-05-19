@@ -33,7 +33,7 @@ function Tabella({ getAllReservationByID }) {
       <h3>Visite prenotate:</h3>
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione doc={true} />
-        {data &&
+        {data.length > 0 &&
           data?.map((el, k) => {
             return (
               <CardPrenotazione

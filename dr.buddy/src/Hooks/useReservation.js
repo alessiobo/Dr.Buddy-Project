@@ -47,11 +47,13 @@ function useReservation({ startD, endD, getAllReservations, id }) {
     const arrWeek = [];
     for (let i = startDay; i < endDay; i++) {
       let day = i < 10 ? "0" + i : i;
-      const foundDay = reservations?.find(
-        (el) =>
-          getHour(el.date_reservation) === ora &&
-          getDateRes(el.date_reservation) === "2023-05-" + day + ""
-      );
+      const foundDay =
+        reservations.length > 0 &&
+        reservations?.find(
+          (el) =>
+            getHour(el.date_reservation) === ora &&
+            getDateRes(el.date_reservation) === "2023-05-" + day + ""
+        );
 
       arrWeek[i] = foundDay || null;
     }
