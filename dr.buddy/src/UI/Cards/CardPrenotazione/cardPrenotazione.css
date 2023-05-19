@@ -7,12 +7,20 @@
   align-items: center;
   justify-content: space-around;
   margin: 10px 0;
+  position: relative;
 }
 .cardPrenotazione-cont h4 {
   width: 20%;
 }
 .cardPrenotazione-cont h4:first-child {
   width: 5%;
+}
+.cardPrenotazione-cont .btn_removePrenotation {
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=cardPrenotazione.css.map */

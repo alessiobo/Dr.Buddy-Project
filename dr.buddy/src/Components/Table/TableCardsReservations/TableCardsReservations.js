@@ -3,7 +3,10 @@ import CardPrenotazione from "../../../UI/Cards/CardPrenotazione/CardPrenotazion
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./tableCardsReservations.css";
 
-function TableCardsReservations({ getAllReservationByDoctorID }) {
+function TableCardsReservations({
+  getAllReservationByDoctorID,
+  updateReservation,
+}) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -47,6 +50,7 @@ function TableCardsReservations({ getAllReservationByDoctorID }) {
                 paziente={el.firstname + " " + el.lastname}
                 data={getData(el.date_reservation)}
                 ora={getHour(el.date_reservation)}
+                updateReservation={updateReservation}
               />
             );
           })}

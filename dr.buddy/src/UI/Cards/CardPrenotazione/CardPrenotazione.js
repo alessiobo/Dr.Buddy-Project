@@ -6,6 +6,7 @@ function CardPrenotazione({
   paziente = doc ? "Dottore" : "Paziente",
   data = "Data",
   ora = "Ora",
+  updateReservation,
 }) {
   return (
     <div className="cardPrenotazione-cont">
@@ -13,6 +14,14 @@ function CardPrenotazione({
       <h4>{paziente}</h4>
       <h4>{data}</h4>
       <h4>{ora}</h4>
+      {updateReservation && (
+        <button
+          className="btn_removePrenotation"
+          onClick={() => updateReservation(1, { id_patient: null })}
+        >
+          ❌
+        </button>
+      )}
     </div>
   );
 }
