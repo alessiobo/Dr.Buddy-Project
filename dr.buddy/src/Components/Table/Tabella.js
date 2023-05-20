@@ -15,7 +15,7 @@ function Tabella({ getAllReservationByID }) {
   }, [getAllReservationByID]);
 
   function getHour(dataPlusOra) {
-    const ora = Number(dataPlusOra.substring(11, 13)) + 4;
+    const ora = Number(dataPlusOra.substring(11, 13)) + 2;
     let min = Number(dataPlusOra.substring(14, 16));
     if (min === 0) {
       //@ts-ignore
