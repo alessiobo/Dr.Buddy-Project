@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // .doctorsCards-container {
 //   width: 100%;
 //   display: flex;
@@ -47,38 +46,30 @@
 // }
 
 // sass --watch bookingCard.scss bookingCard.css
-=======
 //sass --watch bookingCard.scss BookingCard.css
->>>>>>> 08de180aeb5b71b9995b6712c0cdfb913619c4fa
 
 .doctorsCards-container {
   width: 100%;
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   justify-content: center;
   //flex-wrap: wrap; /* aggiunto per gestire il wrapping dei contenuti su schermi più piccoli */
-=======
   justify-content: space-around;
   padding: 10px;
->>>>>>> 08de180aeb5b71b9995b6712c0cdfb913619c4fa
 }
 
 .btn-doctorsCards {
   background: transparent;
   border: none;
-<<<<<<< HEAD
   margin: 0 20px;
   // flex: 1; /* aggiunto per rendere i bottoni responsive */
   // max-width: 150px; /* aggiunto per limitare la larghezza massima dei bottoni */
-=======
   margin: 0 50px;
   transition: 300ms;
   height: 200px;
-    img {
-      height: 20px;
-    }
->>>>>>> 08de180aeb5b71b9995b6712c0cdfb913619c4fa
+  img {
+    height: 20px;
+  }
 }
 
 .btn-doctorsCards:hover {
