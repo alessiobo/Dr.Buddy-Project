@@ -1,0 +1,72 @@
+// sass --watch Cards.scss Cards.css
+
+.cardCo {
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+    align-items: center;
+    align-content: center;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.13);
+    top: 10%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    // border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    // box-shadow: inset 20px red;
+    // padding: 40px 25px;
+
+
+    .textCo {
+        // padding: 10px;
+        display: flex;
+        flex-direction: column;
+
+        .icon_text_wrapper {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+
+            img {
+                max-height: 30px;
+                aspect-ratio: 1 / 1;
+                margin-right: 5px;
+            }
+        }
+
+
+    }
+
+    .textCo * {
+        color: #ffffff;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+    }
+
+    .textCo h2 {
+        font-size: 2rem;
+    }
+
+    .textCo h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+    }
+
+    .imgCo {
+        height: 100%;
+        img {
+            
+            box-shadow: 0 0 20px rgba(8, 7, 16, 0.6);
+            border-radius: 10px;
+            height: 210px;
+            object-fit: cover;
+            aspect-ratio: 1 / 1.19;
+        }
+    }
+}

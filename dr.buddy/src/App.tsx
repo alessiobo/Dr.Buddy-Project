@@ -7,6 +7,8 @@ import PartClient from "./Pages/PartClient/PartClient";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import useServer from "./Hooks/useServer";
 import LoginPage from "./Pages/LoginPage/Login";
+import Navbar from "./Components/Navbar/Navbar";
+import { useState } from "react";
 
 function App() {
   const {
@@ -17,6 +19,7 @@ function App() {
     updateObj: updatePatient,
     deleteObj: deletePatient,
     login: loginPatient,
+    logout: logoutPatient,
   } = useServer("patients");
   const {
     data: getAllDoctors,
@@ -26,6 +29,7 @@ function App() {
     updateObj: updateDoctor,
     deleteObj: deleteDoctor,
     login: loginDoctor,
+    logout: logoutDoctor,
   } = useServer("doctors");
   const {
     data: getAllReservations,
@@ -37,8 +41,19 @@ function App() {
     getAllReservationByPatientID,
     getAllReservationByDoctorID,
   } = useServer("reservations");
+
+  const [isLogin, setIsLogin] = useState(false);
+  const [isPatient, setIsPatient] = useState(true);
+
   return (
     <div>
+      <Navbar
+        isLogin={isLogin}
+        setIsLogin={setIsLogin}
+        logoutDoctor={logoutDoctor}
+        logoutPatient={logoutPatient}
+        isPatient={isPatient}
+      />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
@@ -56,7 +71,13 @@ function App() {
         <Route
           path="/login"
           element={
-            <LoginPage loginDoctor={loginDoctor} loginPatient={loginPatient} />
+            <LoginPage
+              loginDoctor={loginDoctor}
+              loginPatient={loginPatient}
+              setIsLogin={setIsLogin}
+              setIsPatient={setIsPatient}
+              isPatient={isPatient}
+            />
           }
         />
         <Route

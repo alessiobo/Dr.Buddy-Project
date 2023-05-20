@@ -115,9 +115,26 @@ function useServer(url) {
       const json = await res.json();
 
       console.log(json);
-      // console.log();
 
       Cookies.set("token", json.token);
+      Cookies.set("id", json.id);
+
+      mutate(URL);
+      return json;
+    } catch (error) {
+      console.log("Error: " + error);
+    }
+  }
+  async function logout(id) {
+    try {
+      const option = common_request(data, "PUT");
+
+      const res = await fetch(URL + "/logout/" + id, option);
+      const json = await res.json();
+
+      console.log(json);
+
+      Cookies.set("token", "");
 
       mutate(URL);
       return json;
@@ -136,6 +153,7 @@ function useServer(url) {
     getAllReservationByPatientID,
     getAllReservationByDoctorID,
     login,
+    logout,
   };
 }
 export default useServer;

@@ -3,20 +3,33 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 .btn-doctorsCards {
   background: transparent;
   border: none;
+<<<<<<< HEAD
   margin: 0 20px;
+=======
+  margin: 0 50px;
+  transition: 300ms;
+  height: 200px;
+}
+.btn-doctorsCards img {
+  height: 20px;
+>>>>>>> 08de180aeb5b71b9995b6712c0cdfb913619c4fa
 }
 
 .btn-doctorsCards:hover {
-  filter: invert(1);
+  cursor: pointer;
+  transition: 300ms;
+  filter: brightness(110%);
+  transform: translate(0px, -10px);
 }
 
-.doctorsCards-diponibility {
+.doctorsCards-disponibility {
   display: flex;
   padding: 2%;
 }
@@ -54,6 +67,7 @@
   margin: 5px;
 }
 
+<<<<<<< HEAD
 /* Aggiunto media query per schermi con larghezza massima di 600px */
 @media (max-width: 600px) {
   .btn-doctorsCards {
@@ -70,3 +84,10 @@
 }
 
 /*# sourceMappingURL=bookingCard.css.map */
+=======
+#scegli_il_dottore {
+  color: white;
+}
+
+/*# sourceMappingURL=BookingCard.css.map */
+>>>>>>> 08de180aeb5b71b9995b6712c0cdfb913619c4fa

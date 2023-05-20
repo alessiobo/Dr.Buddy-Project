@@ -1,54 +1,56 @@
-.cardCoDottore {
-  padding: 1rem;
+.cardCo {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
-  height: 200px;
-  width: 550px;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.13);
+  top: 10%;
   border-radius: 10px;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
-.cardCoDottore .textCo {
+.cardCo .textCo {
   display: flex;
   flex-direction: column;
 }
-.cardCoDottore .textCo .icon_text_wrapper {
+.cardCo .textCo .icon_text_wrapper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
 }
-.cardCoDottore .textCo .icon_text_wrapper img {
+.cardCo .textCo .icon_text_wrapper img {
   max-height: 30px;
   aspect-ratio: 1/1;
   margin-right: 5px;
 }
-.cardCoDottore .textCo * {
+.cardCo .textCo * {
   color: #ffffff;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
 }
-.cardCoDottore .textCo h2 {
+.cardCo .textCo h2 {
   font-size: 2rem;
 }
-.cardCoDottore .textCo h3 {
+.cardCo .textCo h3 {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 42px;
   text-align: center;
-  background-color: none;
 }
-.cardCoDottore .imgCoDottore {
+.cardCo .imgCo {
   height: 100%;
 }
-.cardCoDottore .imgCoDottore img {
-  margin-right: 10px;
-  border-radius: 100px;
-  height: 90%;
+.cardCo .imgCo img {
+  box-shadow: 0 0 20px rgba(8, 7, 16, 0.6);
+  border-radius: 10px;
+  height: 210px;
+  object-fit: cover;
+  aspect-ratio: 1/1.19;
 }
 
-/*# sourceMappingURL=cardDottore.css.map */
+/*# sourceMappingURL=Cards.css.map */

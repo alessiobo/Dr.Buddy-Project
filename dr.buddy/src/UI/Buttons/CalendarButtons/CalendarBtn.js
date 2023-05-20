@@ -4,7 +4,7 @@ function CalendarBtn({ take, ora }) {
     <button
       className="cal-btn-color"
       style={
-        take ? { backgroundColor: "#feecd4" } : { backgroundColor: "#d4f4fe" }
+        take ? { backgroundColor: "#ffadad" } : { backgroundColor: "#d4f4fe" }
       }
     >
       {ora}

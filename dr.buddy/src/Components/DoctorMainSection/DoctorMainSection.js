@@ -22,6 +22,7 @@ function DoctorMainSection({
           />
           <TableCardsReservations
             getAllReservationByDoctorID={getAllReservationByDoctorID}
+            updateReservation={updateReservation}
           />
         </>
       )}
