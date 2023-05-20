@@ -1,13 +1,66 @@
+// .doctorsCards-container {
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+// .btn-doctorsCards {
+//   background: transparent;
+//   border: none;
+//   margin: 0 50px;
+// }
+
+// .btn-doctorsCards:hover {
+//   filter: invert(1);
+// }
+
+// .doctorsCards-diponibility {
+//   display: flex;
+//   padding: 2%;
+// }
+
+// .container-slider {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   gap: 10px;
+//   align-items: center;
+// }
+// .slider {
+//   display: flex;
+//   flex-direction: column;
+//   background-color: rgba(255, 255, 255, 0.13);
+//   color: white;
+//   margin: 0 10px;
+//   padding: 0 10px;
+//   border-radius: 5px;
+//   width: 100px;
+//   height: 60px;
+//   justify-content: center;
+
+//   .data-style {
+//     text-align: center;
+//     font-size: 15px;
+//     margin: 5px;
+//   }
+// }
+
+// sass --watch bookingCard.scss bookingCard.css
+
 .doctorsCards-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  //flex-wrap: wrap; /* aggiunto per gestire il wrapping dei contenuti su schermi più piccoli */
 }
+
 .btn-doctorsCards {
   background: transparent;
   border: none;
-  margin: 0 50px;
+  margin: 0 20px;
+  // flex: 1; /* aggiunto per rendere i bottoni responsive */
+  // max-width: 150px; /* aggiunto per limitare la larghezza massima dei bottoni */
 }
 
 .btn-doctorsCards:hover {
@@ -19,6 +72,14 @@
   padding: 2%;
 }
 
+/* Aggiunto media query per schermi con larghezza massima di 600px */
+@media (max-width: 600px) {
+  .doctorsCards-diponibility {
+    justify-content: center;
+    flex-wrap: wrap; /* aggiunto per gestire il wrapping dei contenuti su schermi più piccoli */
+  }
+}
+
 .container-slider {
   display: flex;
   justify-content: center;
@@ -26,6 +87,7 @@
   gap: 10px;
   align-items: center;
 }
+
 .slider {
   display: flex;
   flex-direction: column;
@@ -45,4 +107,47 @@
   }
 }
 
-// sass --watch bookingCard.scss bookingCard.css
+/* Aggiunto media query per schermi con larghezza massima di 600px */
+@media (max-width: 600px) {
+  .btn-doctorsCards {
+    margin: 0 10px;
+    max-width: 100px;
+  }
+
+  .slider {
+    width: 80px;
+    height: 50px;
+  }
+
+  .data-style {
+    font-size: 12px;
+  }
+}
+
+.handle {
+  border: none;
+  border-radius: 1rem;
+  flex-grow: 0;
+  width: 5rem;
+  z-index: 10;
+  cursor: pointer;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  line-height: 0;
+  transition: background-color 150ms ease-in-out;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.left-handle {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.right-handle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

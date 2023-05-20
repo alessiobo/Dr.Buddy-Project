@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .doctorsCards-container {
   width: 100%;
   display: flex;
@@ -8,7 +9,7 @@
 .btn-doctorsCards {
   background: transparent;
   border: none;
-  margin: 0 50px;
+  margin: 0 20px;
 }
 
 .btn-doctorsCards:hover {
@@ -20,6 +21,13 @@
   padding: 2%;
 }
 
+/* Aggiunto media query per schermi con larghezza massima di 600px */
+@media (max-width: 600px) {
+  .doctorsCards-diponibility {
+    justify-content: center;
+    flex-wrap: wrap; /* aggiunto per gestire il wrapping dei contenuti su schermi più piccoli */
+  }
+}
 .container-slider {
   display: flex;
   justify-content: center;
@@ -44,6 +52,48 @@
   text-align: center;
   font-size: 15px;
   margin: 5px;
+}
+
+/* Aggiunto media query per schermi con larghezza massima di 600px */
+@media (max-width: 600px) {
+  .btn-doctorsCards {
+    margin: 0 10px;
+    max-width: 100px;
+  }
+  .slider {
+    width: 80px;
+    height: 50px;
+  }
+  .data-style {
+    font-size: 12px;
+  }
+}
+.handle {
+  border: none;
+  border-radius: 1rem;
+  flex-grow: 0;
+  width: 5rem;
+  z-index: 10;
+  cursor: pointer;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  line-height: 0;
+  transition: background-color 150ms ease-in-out;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.left-handle {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.right-handle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /*# sourceMappingURL=bookingCard.css.map */

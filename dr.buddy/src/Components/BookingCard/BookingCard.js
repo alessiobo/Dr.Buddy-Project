@@ -12,6 +12,8 @@ function BookingCard({
 }) {
   const [doctorchoice, setDoctorchoice] = useState(1);
   const [reservation, setReservation] = useState([]);
+  // const [startIndex, setStartIndex] = useState(0);
+  // const [numSlides, setNumSlides] = useState(3);
 
   function getHour(dataPlusOra) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;
@@ -55,6 +57,18 @@ function BookingCard({
     getDoctor();
   }, [doctorchoice]);
 
+  // const handlePrevSlide = () => {
+  //   if (startIndex > 0) {
+  //     setStartIndex(startIndex - numSlides);
+  //   }
+  // };
+
+  // const handleNextSlide = () => {
+  //   if (startIndex + numSlides < reservation.length) {
+  //     setStartIndex(startIndex + numSlides);
+  //   }
+  // };
+
   return (
     <section>
       <h2>Scegli il Dottore: </h2>
@@ -73,7 +87,11 @@ function BookingCard({
       </div>
       <TableContainer>
         <h3>Disponibilità:</h3>
+
         <div className="doctorsCards-diponibility">
+          {/* <button class="handle left-handle" onClick={handlePrevSlide}>
+            <div class="text">&#8249;</div>
+          </button> */}
           {reservation
             ?.filter((res) => res.id_patient === null)
             ?.map((res, k) => {
@@ -84,6 +102,7 @@ function BookingCard({
                       {getData(res.date_reservation)}
                     </h4>
                   </div>
+
                   <div className="button-time">
                     <button
                       className="cal-btn-color button-time"
@@ -101,6 +120,9 @@ function BookingCard({
                 </div>
               );
             })}
+          {/* <button class="handle right-handle" onClick={handleNextSlide}>
+            <div class="text">&#8250;</div>
+          </button> */}
         </div>
       </TableContainer>
     </section>
