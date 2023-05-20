@@ -124,30 +124,30 @@
   }
 }
 
-.handle {
-  border: none;
-  border-radius: 1rem;
-  flex-grow: 0;
-  width: 5rem;
-  z-index: 10;
-  cursor: pointer;
-  font-size: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  line-height: 0;
-  transition: background-color 150ms ease-in-out;
-  margin: auto;
-  flex-wrap: wrap;
-}
+// .handle {
+//   border: none;
+//   border-radius: 1rem;
+//   flex-grow: 0;
+//   width: 5rem;
+//   z-index: 10;
+//   cursor: pointer;
+//   font-size: 5rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: white;
+//   line-height: 0;
+//   transition: background-color 150ms ease-in-out;
+//   margin: auto;
+//   flex-wrap: wrap;
+// }
 
-.left-handle {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
+// .left-handle {
+//   border-top-left-radius: 0;
+//   border-bottom-left-radius: 0;
+// }
 
-.right-handle {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
+// .right-handle {
+//   border-top-right-radius: 0;
+//   border-bottom-right-radius: 0;
+// }
