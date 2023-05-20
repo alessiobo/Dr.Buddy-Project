@@ -1,4 +1,4 @@
-/* @charset "UTF-8";
+@charset "UTF-8";
 .doctorsCards-container {
   width: 100%;
   display: flex;
@@ -30,4 +30,54 @@
 .doctorsCards-disponibility {
   display: flex;
   padding: 2%;
-} */
+}
+
+/* Aggiunto media query per schermi con larghezza massima di 600px */
+@media (max-width: 600px) {
+  .doctorsCards-diponibility {
+    justify-content: center;
+    flex-wrap: wrap; /* aggiunto per gestire il wrapping dei contenuti su schermi più piccoli */
+  }
+}
+.container-slider {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.13);
+  color: white;
+  margin: 0 10px;
+  padding: 0 10px;
+  border-radius: 5px;
+  width: 100px;
+  height: 60px;
+  justify-content: center;
+}
+.slider .data-style {
+  text-align: center;
+  font-size: 15px;
+  margin: 5px;
+}
+
+/* Aggiunto media query per schermi con larghezza massima di 600px */
+@media (max-width: 600px) {
+  .btn-doctorsCards {
+    margin: 0 10px;
+    max-width: 100px;
+  }
+  .slider {
+    width: 80px;
+    height: 50px;
+  }
+  .data-style {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=bookingCard.css.map */
