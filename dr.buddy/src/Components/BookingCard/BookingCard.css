@@ -1,8 +1,9 @@
-@charset "UTF-8";
+/* @charset "UTF-8";
 .doctorsCards-container {
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   justify-content: space-around;
   padding: 10px;
 }
@@ -10,16 +11,13 @@
 .btn-doctorsCards {
   background: transparent;
   border: none;
-<<<<<<< HEAD
   margin: 0 20px;
-=======
   margin: 0 50px;
   transition: 300ms;
   height: 200px;
 }
 .btn-doctorsCards img {
   height: 20px;
->>>>>>> 08de180aeb5b71b9995b6712c0cdfb913619c4fa
 }
 
 .btn-doctorsCards:hover {
@@ -32,62 +30,4 @@
 .doctorsCards-disponibility {
   display: flex;
   padding: 2%;
-}
-
-/* Aggiunto media query per schermi con larghezza massima di 600px */
-@media (max-width: 600px) {
-  .doctorsCards-diponibility {
-    justify-content: center;
-    flex-wrap: wrap; /* aggiunto per gestire il wrapping dei contenuti su schermi più piccoli */
-  }
-}
-.container-slider {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-
-.slider {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.13);
-  color: white;
-  margin: 0 10px;
-  padding: 0 10px;
-  border-radius: 5px;
-  width: 100px;
-  height: 60px;
-  justify-content: center;
-}
-.slider .data-style {
-  text-align: center;
-  font-size: 15px;
-  margin: 5px;
-}
-
-<<<<<<< HEAD
-/* Aggiunto media query per schermi con larghezza massima di 600px */
-@media (max-width: 600px) {
-  .btn-doctorsCards {
-    margin: 0 10px;
-    max-width: 100px;
-  }
-  .slider {
-    width: 80px;
-    height: 50px;
-  }
-  .data-style {
-    font-size: 12px;
-  }
-}
-
-/*# sourceMappingURL=bookingCard.css.map */
-=======
-#scegli_il_dottore {
-  color: white;
-}
-
-/*# sourceMappingURL=BookingCard.css.map */
->>>>>>> 08de180aeb5b71b9995b6712c0cdfb913619c4fa
+} */
