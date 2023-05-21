@@ -1,27 +1,21 @@
+import useServer from "../../../Hooks/useServer";
 import CardPazienti from "../../../UI/Cards/CardPazienti/CardPazienti";
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./tablePatients.css";
 
-import { useState, useEffect } from "react";
-
-function TablePatients({ getAllPatients }) {
-  const [pazienti, setPazienti] = useState([]);
-
-  useEffect(() => {
-    async function getPazienti() {
-      setPazienti(await getAllPatients);
-    }
-    getPazienti();
-  }, [getAllPatients]);
+function TablePatients() {
+  const { data } = useServer("patients");
 
   return (
     <TableContainer>
       <h3>Tutti i pazienti:</h3>
       <div style={{ padding: "0 1.2%" }}>
         <CardPazienti />
-
-        {pazienti.length > 0 &&
-          pazienti?.map((el, k) => {
+        {data === undefined || data === null || !Array.isArray(data) ? (
+          <div>Loading...</div>
+        ) : (
+          data &&
+          data.map((el, k) => {
             return (
               <CardPazienti
                 key={k}
@@ -31,7 +25,8 @@ function TablePatients({ getAllPatients }) {
                 tel_num={el.tel_num}
               />
             );
-          })}
+          })
+        )}
       </div>
     </TableContainer>
   );

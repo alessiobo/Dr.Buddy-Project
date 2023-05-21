@@ -61,7 +61,11 @@ function BookingCard({
     <section>
       <h2 id="scegli_il_dottore">Scegli il Dottore: </h2>
       <div className="doctorsCards-container">
-        {doctors.length > 0 &&
+        {doctors === null ||
+        doctors === undefined ||
+        !Array.isArray(doctors) ? (
+          <div>is loading...</div>
+        ) : (
           doctors?.map((doc) => {
             return (
               <button
@@ -71,12 +75,17 @@ function BookingCard({
                 <CardDottore doctor={doc} />
               </button>
             );
-          })}
+          })
+        )}
       </div>
       <TableContainer>
         <h3>Disponibilità:</h3>
         <div className="doctorsCards-disponibility">
-          {reservation.length > 0 &&
+          {reservation === null ||
+          reservation === undefined ||
+          !Array.isArray(reservation) ? (
+            <div>is loading...</div>
+          ) : (
             reservation
               ?.filter((res) => res.id_patient === null)
               ?.map((res, k) => {
@@ -102,7 +111,8 @@ function BookingCard({
                     </div>
                   </div>
                 );
-              })}
+              })
+          )}
         </div>
       </TableContainer>
     </section>

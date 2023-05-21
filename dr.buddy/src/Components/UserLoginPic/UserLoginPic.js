@@ -1,29 +1,33 @@
 import "./userLoginPic.css";
+import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 //@ts-ignore
 import defaultPic from "./circle-user.svg";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 
 function UserLoginPic({ getOnePatient }) {
-  const [pat, setPat] = useState({});
+  const [data, setData] = useState(null);
+  const id = Cookies.get("id");
 
   useEffect(() => {
-    async function getPatient() {
-      const pat = await getOnePatient(1);
-      setPat(pat);
+    async function getData() {
+      setData(await getOnePatient(id));
     }
-
-    getPatient();
-  }, [getOnePatient]);
+    getData();
+  }, []);
 
   return (
     <div className="doctorProfileTable-cont">
       <TableContainer>
         <div className="card-container-user">
           <img className="round" src={defaultPic} alt="user" />
-          <h2>
-            {pat?.firstname} {pat.lastname}
-          </h2>
+          {data === undefined || data === null ? (
+            <div>Loading...</div>
+          ) : (
+            <h5>
+              {data.firstname} {data.lastname}
+            </h5>
+          )}
         </div>
       </TableContainer>
     </div>

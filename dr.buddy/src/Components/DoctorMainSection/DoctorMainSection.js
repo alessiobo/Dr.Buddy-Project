@@ -1,3 +1,4 @@
+import useServer from "../../Hooks/useServer";
 import TableCalendar from "../DoctorPageComponents/TableCalendar/TableCalendar";
 import TablePatients from "../DoctorPageComponents/TablePatients/TablePatients";
 import AppointmentTable from "../Table/AppointmentTable/AppointmentTable";
@@ -5,14 +6,14 @@ import TableCardsReservations from "../Table/TableCardsReservations/TableCardsRe
 
 import "./doctorMainSection.css";
 
-function DoctorMainSection({
-  updateReservation,
-  getAllReservations,
-  getAllPatients,
-  showMainComp,
-  getAllReservationByDoctorID,
-  createReservation,
-}) {
+function DoctorMainSection({ showMainComp }) {
+  const {
+    getAllReservationByDoctorID,
+    updateObj: updateReservation,
+    data: getAllReservations,
+    createObj: createReservation,
+  } = useServer("reservations");
+
   return (
     <section className="doctorMainSection-cont">
       {showMainComp.reservations === true && (
@@ -26,9 +27,7 @@ function DoctorMainSection({
           />
         </>
       )}
-      {showMainComp.patients === true && (
-        <TablePatients getAllPatients={getAllPatients} />
-      )}
+      {showMainComp.patients === true && <TablePatients />}
       {showMainComp.calendar === true && (
         <TableCalendar
           getAllReservations={getAllReservations}

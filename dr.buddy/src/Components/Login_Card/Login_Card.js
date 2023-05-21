@@ -1,37 +1,62 @@
 import "./LoginCard.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import useServer from "../../Hooks/useServer";
 
-function Login_card({
-  loginDoctor,
-  loginPatient,
-  setIsLogin,
-  setIsPatient,
-  isPatient,
-}) {
+function Login_card({ setIsLogin, isLogin }) {
+  const navigate = useNavigate();
+
+  const { login: loginDoctor } = useServer("doctors");
+  const { login: loginPatient } = useServer("patients");
+
+  //FORM
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isDoctor, setIsDoctor] = useState(false);
+  //Alert
+  const [alert, setAlert] = useState("none");
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    if (alert === "block") {
+      setTimeout(() => {
+        setAlert("none");
+      }, 2000);
+    }
+  }, [alert]);
 
-  async function HandleData(ev) {
+  function loginHandler(ev) {
     ev.preventDefault();
-    const inputData = {
-      firstname: email, //cambiare email
-      password: password,
-    };
-    if (isDoctor) {
-      loginDoctor(inputData);
+
+    if (email !== "" && password !== "") {
+      if (isDoctor) {
+        loginDoctor({ firstname: email, password })
+          .then((res) => {
+            if (Cookies.get("token") !== "undefined") {
+              console.log(Cookies.get("token"));
+              navigate("/doctor/profile");
+              setIsLogin(!isLogin);
+            } else {
+              setAlert("block");
+            }
+          })
+          .catch((err) => console.log("401 non puoi entrare"));
+      } else {
+        loginPatient({ firstname: email, password })
+          .then((res) => {
+            if (Cookies.get("token") !== "undefined") {
+              console.log(Cookies.get("token"));
+              navigate("/bookingpage");
+              setIsLogin(!isLogin);
+            } else {
+              setAlert("block");
+            }
+          })
+          .catch((err) => console.log(err));
+      }
     } else {
-      loginPatient(inputData);
+      setAlert("block");
     }
-    if (Cookies.get("token") !== undefined) {
-      isDoctor ? navigate("/doctor/profile") : navigate("/bookingpage");
-      setIsLogin(true);
-    }
-    console.log(Cookies.get("token"));
   }
   return (
     <div className="LoginCard">
@@ -44,6 +69,7 @@ function Login_card({
           type="text"
           placeholder="Nome"
           id="username"
+          value={email}
           onChange={(event) => {
             setEmail(event.target.value);
           }}
@@ -54,6 +80,7 @@ function Login_card({
           type="password"
           placeholder="Password"
           id="password"
+          value={password}
           onChange={(event) => {
             setPassword(event.target.value);
           }}
@@ -66,17 +93,32 @@ function Login_card({
             checked={isDoctor}
             onChange={() => {
               setIsDoctor(!isDoctor);
-              setIsPatient(!isPatient);
             }}
           ></input>
         </div>
         <label>
-          Prima volta su Dr.Buddy?{" "}
+          Prima volta su Dr.Buddy?
           <Link to="/register">
             <span className="clicca_qui">Clicca qui</span>
           </Link>
         </label>
-        <button onClick={HandleData}>Accedi</button>
+        <alert
+          style={{
+            display: alert,
+            marginTop: "40px",
+            background: "red",
+            padding: "2%",
+          }}
+        >
+          Email or password incorrect!
+        </alert>
+        <button
+          style={alert === "block" ? { display: "none" } : { display: "block" }}
+          type="submit"
+          onClick={loginHandler}
+        >
+          Accedi
+        </button>
       </form>
       <div class="shape"></div>
     </div>

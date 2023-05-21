@@ -11,39 +11,12 @@ import Navbar from "./Components/Navbar/Navbar";
 import { useState } from "react";
 
 function App() {
-  const {
-    data: getAllPatients,
-    error: errorPatients,
-    getOneObj: getOnePatient,
-    createObj: createPatient,
-    updateObj: updatePatient,
-    deleteObj: deletePatient,
-    login: loginPatient,
-    logout: logoutPatient,
-  } = useServer("patients");
-  const {
-    data: getAllDoctors,
-    error: errorDoctors,
-    getOneObj: getOneDoctor,
-    createObj: createDoctor,
-    updateObj: updateDoctor,
-    deleteObj: deleteDoctor,
-    login: loginDoctor,
-    logout: logoutDoctor,
-  } = useServer("doctors");
-  const {
-    data: getAllReservations,
-    error: errorReservations,
-    getOneObj: getOneReservation,
-    createObj: createReservation,
-    updateObj: updateReservation,
-    deleteObj: deleteReservation,
-    getAllReservationByPatientID,
-    getAllReservationByDoctorID,
-  } = useServer("reservations");
+  const { createObj: createPatient, logout: logoutPatient } =
+    useServer("patients");
+  const { logout: logoutDoctor } = useServer("doctors");
 
   const [isLogin, setIsLogin] = useState(false);
-  const [isPatient, setIsPatient] = useState(true);
+  // const [isPatient, setIsPatient] = useState(true);
 
   return (
     <div>
@@ -52,50 +25,19 @@ function App() {
         setIsLogin={setIsLogin}
         logoutDoctor={logoutDoctor}
         logoutPatient={logoutPatient}
-        isPatient={isPatient}
       />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route
-          path="/doctor/profile"
-          element={
-            <DoctorProfile
-              getAllReservations={getAllReservations}
-              updateReservation={updateReservation}
-              getAllPatients={getAllPatients}
-              getAllReservationByDoctorID={getAllReservationByDoctorID}
-              createReservation={createReservation}
-            />
-          }
-        />
+        <Route path="/doctor/profile" element={<DoctorProfile />} />
         <Route
           path="/login"
-          element={
-            <LoginPage
-              loginDoctor={loginDoctor}
-              loginPatient={loginPatient}
-              setIsLogin={setIsLogin}
-              setIsPatient={setIsPatient}
-              isPatient={isPatient}
-            />
-          }
+          element={<LoginPage setIsLogin={setIsLogin} isLogin={isLogin} />}
         />
         <Route
           path="/register"
           element={<RegisterPage createPatient={createPatient} />}
         />
-        <Route
-          path="/bookingpage"
-          element={
-            <PartClient
-              updateReservation={updateReservation}
-              getOnePatient={getOnePatient}
-              getAllReservationByID={getAllReservationByPatientID}
-              getAllReservationByDoctorID={getAllReservationByDoctorID}
-              getAllDoctors={getAllDoctors}
-            />
-          }
-        />
+        <Route path="/bookingpage" element={<PartClient />} />
         <Route path="/contacts" element={<ContactsPage />} />
       </Routes>
     </div>

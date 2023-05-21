@@ -1,9 +1,24 @@
+import useServer from "../../../Hooks/useServer";
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./doctorProfileTable.css";
+import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 import paperino from "./paperino.png";
 
 function DoctorProfileTable() {
+  const { getOneObj } = useServer("doctors");
+
+  const [data, setData] = useState(null);
+  const id = Cookies.get("id");
+
+  useEffect(() => {
+    async function getData() {
+      setData(await getOneObj(id));
+    }
+    getData();
+  }, []);
+
   return (
     <div className="doctorProfileTable-cont">
       <TableContainer>
@@ -11,7 +26,13 @@ function DoctorProfileTable() {
 
         <div class="card-container">
           <img class="round" src={paperino} alt="user" />
-          <h4>Paolino Paperino</h4>
+          {data === undefined || data === null ? (
+            <div>Loading...</div>
+          ) : (
+            <h5>
+              {data.firstname} {data.lastname}
+            </h5>
+          )}
           <h4>New York</h4>
           <p>Dottore</p>
         </div>

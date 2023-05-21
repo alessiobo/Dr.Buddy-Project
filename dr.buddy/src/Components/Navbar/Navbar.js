@@ -3,22 +3,10 @@ import Cookies from "js-cookie";
 import "./Navbar.css";
 import logo_white from "./img/logo_white.png";
 import { Link } from "react-router-dom";
-function Navbar({
-  isLogin,
-  setIsLogin,
-  logoutPatient,
-  logoutDoctor,
-  isPatient,
-}) {
-  //Logout btn
-  function btnHandlerLogout() {
-    setIsLogin(!isLogin);
-    isPatient
-      ? logoutPatient(Cookies.get("id"))
-      : logoutDoctor(Cookies.get("id"));
+function Navbar({ isLogin, setIsLogin, logoutPatient, logoutDoctor }) {
+  const id = Cookies.get("id");
 
-    Cookies.set("id", "");
-  }
+  //Logout btn
 
   return (
     <div className="navbar">
@@ -51,7 +39,11 @@ function Navbar({
         <div className="button_wrapper">
           <Link to="/">
             <button
-              onClick={btnHandlerLogout}
+              onClick={() => {
+                logoutDoctor(id);
+                logoutPatient(id);
+                setIsLogin(!isLogin);
+              }}
               type="button"
               className="navbar_login_button"
             >
