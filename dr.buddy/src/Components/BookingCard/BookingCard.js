@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./bookingCard.css";
+import Cookies from "js-cookie";
 
 import "../../UI/Buttons/CalendarButtons/calendarBtn.css";
 import CardDottore from "../../UI/Cards/CardDottore/CardDottore";
@@ -13,6 +14,8 @@ function BookingCard({
   const [doctorchoice, setDoctorchoice] = useState(1);
   const [reservation, setReservation] = useState([]);
   const [doctors, setDoctors] = useState([]);
+
+  const id = Cookies.get("id");
 
   function getHour(dataPlusOra) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;
@@ -103,7 +106,7 @@ function BookingCard({
                         className="cal-btn-color button-time"
                         onClick={() =>
                           updateReservation(res.id_reservation, {
-                            id_patient: 1,
+                            id_patient: id,
                             id_doctor: res.id_doctor,
                           })
                         }
