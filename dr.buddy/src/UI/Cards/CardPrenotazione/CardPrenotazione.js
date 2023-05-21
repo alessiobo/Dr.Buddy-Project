@@ -17,7 +17,7 @@ function CardPrenotazione({
       {updateReservation && (
         <button
           className="btn_removePrenotation"
-          onClick={() => updateReservation(1, { id_patient: null })}
+          onClick={() => updateReservation(id, { id_patient: null })}
         >
           ❌
         </button>
