@@ -5,7 +5,7 @@ import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 import "./Tabella.css";
 import CardPrenotazione from "../../UI/Cards/CardPrenotazione/CardPrenotazione";
 
-function Tabella({ getAllReservationByID }) {
+function Tabella({ getAllReservationByID, force }) {
   const id = Cookies.get("id");
   const [data, setData] = useState();
 
@@ -14,7 +14,7 @@ function Tabella({ getAllReservationByID }) {
       setData(await getAllReservationByID(id));
     }
     fetchData();
-  }, []);
+  }, [getAllReservationByID]);
 
   function getHour(dataPlusOra) {
     const ora = Number(dataPlusOra.substring(11, 13)) + 2;
@@ -33,6 +33,7 @@ function Tabella({ getAllReservationByID }) {
   return (
     <TableContainer>
       <h3>Visite prenotate:</h3>
+      <input style={{ display: "none" }} value={force} />
       <div style={{ padding: "0 1.2%" }}>
         <CardPrenotazione doc={true} />
         {data === undefined || data === null || !Array.isArray(data) ? (

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
-function useReservation({ startD, endD, getAllReservations, id }) {
+function useReservation({ startD, endD, getAllReservations }) {
+  const id = Number(Cookies.get("id"));
+
   const [allReservation, setAllReservation] = useState([]);
 
   useEffect(() => {

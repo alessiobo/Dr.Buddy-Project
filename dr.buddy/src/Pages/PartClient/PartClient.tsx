@@ -5,7 +5,10 @@ import Tabella from "../../Components/Table/Tabella";
 import Footer from "../../Components/Footer/Footer";
 import useServer from "../../Hooks/useServer";
 
+import { useState } from "react";
+
 export default function PartClient() {
+  const [forceUp, setForceUp] = useState(false);
   const { getOneObj: getOnePatient } = useServer("patients");
   const { data: getAllDoctors } = useServer("doctors");
   const {
@@ -17,14 +20,19 @@ export default function PartClient() {
   return (
     <div className="patient_page-container">
       <section className="patient_page-section">
-        <UserLoginPic getOnePatient={getOnePatient} />
+        {/* <button onClick={() => setForceUp(!forceUp)}>Aggiorna</button> */}
+        <UserLoginPic force={forceUp} getOnePatient={getOnePatient} />
         <BookingCard
+          force={forceUp}
           updateReservation={updateReservation}
           getAllReservationByDoctorID={getAllReservationByDoctorID}
           getAllDoctors={getAllDoctors}
         />
 
-        <Tabella getAllReservationByID={getAllReservationByPatientID} />
+        <Tabella
+          force={forceUp}
+          getAllReservationByID={getAllReservationByPatientID}
+        />
       </section>
 
       <Footer />

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import defaultPic from "./circle-user.svg";
 import TableContainer from "../../UI/Container/TableContainer/TableContainer";
 
-function UserLoginPic({ getOnePatient }) {
+function UserLoginPic({ getOnePatient, force }) {
   const [data, setData] = useState(null);
   const id = Cookies.get("id");
 
@@ -19,6 +19,7 @@ function UserLoginPic({ getOnePatient }) {
   return (
     <div className="doctorProfileTable-cont">
       <TableContainer>
+        <input style={{ display: "none" }} value={force} />
         <div className="card-container-user">
           <img className="round" src={defaultPic} alt="user" />
           {data === undefined || data === null ? (

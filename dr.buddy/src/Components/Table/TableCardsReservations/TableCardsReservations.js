@@ -6,12 +6,13 @@ import "./tableCardsReservations.css";
 function TableCardsReservations({
   getAllReservationByDoctorID,
   updateReservation,
+  id,
 }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const getAllByID = await getAllReservationByDoctorID(1);
+      const getAllByID = await getAllReservationByDoctorID(id);
       const filterPrenotations = await getAllByID.filter(
         (res) => res.firstname !== null
       );

@@ -6,11 +6,10 @@ import Cookies from "js-cookie";
 
 import paperino from "./paperino.png";
 
-function DoctorProfileTable() {
+function DoctorProfileTable({ id }) {
   const { getOneObj } = useServer("doctors");
 
   const [data, setData] = useState(null);
-  const id = Cookies.get("id");
 
   useEffect(() => {
     async function getData() {

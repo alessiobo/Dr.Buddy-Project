@@ -4,12 +4,11 @@ import CalendarBtn from "../../../UI/Buttons/CalendarButtons/CalendarBtn";
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./tableCalendar.css";
 
-function TableCalendar({ getAllReservations, createReservation }) {
+function TableCalendar({ getAllReservations, createReservation, id }) {
   const { startDay, endDay, weekReservations, getArrayWeek } = useReservation({
     startD: "2023-05-22",
     endD: "2023-05-27",
     getAllReservations,
-    id: 1,
   });
 
   return (

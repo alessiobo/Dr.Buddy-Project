@@ -3,18 +3,18 @@ import CardPrenotazione from "../../../UI/Cards/CardPrenotazione/CardPrenotazion
 import TableContainer from "../../../UI/Container/TableContainer/TableContainer";
 import "./appointmentTable.css";
 
-function AppointmentTable({ getAllReservationByDoctorID }) {
+function AppointmentTable({ getAllReservationByDoctorID, id }) {
   const [data, setData] = useState([]);
   const [todayApp, setTodayApp] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      setData(await getAllReservationByDoctorID(1));
+      setData(await getAllReservationByDoctorID(id));
       const today =
         (await data.length) > 0 &&
         (await data
           ?.filter((app) => {
-            if (app.id_doctor === 1) {
+            if (app.id_doctor === id) {
               return app.date_reservation.substring(0, 10) === todayString;
             }
           })

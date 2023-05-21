@@ -6,7 +6,7 @@ import TableCardsReservations from "../Table/TableCardsReservations/TableCardsRe
 
 import "./doctorMainSection.css";
 
-function DoctorMainSection({ showMainComp }) {
+function DoctorMainSection({ showMainComp, id }) {
   const {
     getAllReservationByDoctorID,
     updateObj: updateReservation,
@@ -20,10 +20,12 @@ function DoctorMainSection({ showMainComp }) {
         <>
           <AppointmentTable
             getAllReservationByDoctorID={getAllReservationByDoctorID}
+            id={id}
           />
           <TableCardsReservations
             getAllReservationByDoctorID={getAllReservationByDoctorID}
             updateReservation={updateReservation}
+            id={id}
           />
         </>
       )}

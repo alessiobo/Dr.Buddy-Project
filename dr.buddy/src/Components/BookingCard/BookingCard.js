@@ -8,6 +8,7 @@ function BookingCard({
   updateReservation,
   getAllReservationByDoctorID,
   getAllDoctors,
+  force,
 }) {
   const [doctorchoice, setDoctorchoice] = useState(1);
   const [reservation, setReservation] = useState([]);
@@ -55,11 +56,12 @@ function BookingCard({
       setReservation(res);
     }
     getDoctor();
-  }, [doctorchoice]);
+  }, [doctorchoice, getAllReservationByDoctorID]);
 
   return (
     <section>
       <h2 id="scegli_il_dottore">Scegli il Dottore: </h2>
+      <input style={{ display: "none" }} value={force} />
       <div className="doctorsCards-container">
         {doctors === null ||
         doctors === undefined ||

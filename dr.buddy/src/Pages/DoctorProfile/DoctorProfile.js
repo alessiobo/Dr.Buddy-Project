@@ -2,6 +2,7 @@ import DoctorMainSection from "../../Components/DoctorMainSection/DoctorMainSect
 import { useState } from "react";
 import DoctorNavbar from "../../Components/Navbar/DoctorNavbar/DoctorNavbar";
 import PageConteiner from "../../UI/Container/PageContainer/PageConteiner";
+import Cookies from "js-cookie";
 
 //@ts-ignore
 
@@ -12,15 +13,17 @@ function DoctorProfile() {
     reservations: true,
   });
 
+  const id = Cookies.get("id");
+
   return (
     <div>
       {/* <Navbar /> */}
       <PageConteiner>
         <DoctorNavbar setMainComp={setMainComp} />
 
-        <DoctorMainSection showMainComp={showMainComp} />
+        <DoctorMainSection showMainComp={showMainComp} id={id} />
 
-        <DoctorProfileTable />
+        <DoctorProfileTable id={id} />
       </PageConteiner>
     </div>
   );
